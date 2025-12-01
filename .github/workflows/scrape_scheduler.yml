@@ -1,0 +1,37 @@
+name: Laptop Scraper Bot
+
+on:
+  workflow_dispatch:      # Agar bisa dijalankan manual tombol klik
+  schedule:
+    - cron: '0 */6 * * *' # Jalan setiap 6 jam sekali (jam 0, 6, 12, 18 UTC)
+
+permissions:
+  contents: write         # Izin untuk menyimpan hasil CSV kembali ke repo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Scraper
+        run: python masterscrapselenium.py
+
+      - name: Commit and Push results
+        # Langkah ini akan menyimpan file CSV yang dihasilkan kembali ke GitHub
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Update Data Laptop (Auto)"
+          file_pattern: "*.csv" # Hanya simpan file CSV
