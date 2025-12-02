@@ -104,7 +104,7 @@ def step_1_fetch_laptops_selenium():
     # Github Actions akan jalan fix tiap 6 jam. Kita tambah delay acak di awal 
     # agar tidak selalu tepat waktu (meniru distribusi normal "telat" atau "awal")
     # Kita geser rata-rata delay 10 menit, variasi 5 menit.
-    random_start_delay = abs(random.gauss(600, 300)) 
+    random_start_delay = abs(random.gauss(60, 30)) 
     print(f"⏳ Menunggu {random_start_delay:.2f} detik sebelum start browser (Random Start)...")
     time.sleep(random_start_delay)
     # ------------------------------------
@@ -116,14 +116,6 @@ def step_1_fetch_laptops_selenium():
     options.add_argument("--start-maximized")
     options.add_argument("--disable-blink-features=AutomationControlled")
     
-    # --- WAJIB DITAMBAH UNTUK CLOUD (HEADLESS) ---
-    options.add_argument("--headless=new") # Wajib agar jalan di server
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--disable-gpu")
-    # ---------------------------------------------
-    
-    # Sisanya sama seperti script lama Anda...
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     
     page_counter = 1
