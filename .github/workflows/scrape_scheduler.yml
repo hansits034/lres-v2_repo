@@ -3,7 +3,7 @@ name: Laptop Scraper Bot
 on:
   workflow_dispatch:      # Agar bisa dijalankan manual tombol klik
   schedule:
-    - cron: '0 */6 * * *' # Jalan setiap 6 jam sekali (jam 0, 6, 12, 18 UTC)
+    - cron: '0 */2 * * *' # Jalan setiap 6 jam sekali (jam 0, 6, 12, 18 UTC)
 
 permissions:
   contents: write         # Izin untuk menyimpan hasil CSV kembali ke repo
