@@ -115,6 +115,26 @@ def step_1_fetch_laptops_selenium():
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
     options.add_argument("--disable-blink-features=AutomationControlled")
+
+# 1. Wajib: Mode tanpa layar
+    options.add_argument("--headless=new") 
+    
+    # 2. Wajib: Mengatasi isu permission di Linux (Root)
+    options.add_argument("--no-sandbox")
+    
+    # 3. Wajib: Mengatasi limitasi memori di Docker/Container GitHub
+    options.add_argument("--disable-dev-shm-usage")
+    
+    # 4. Tambahan: Mencegah error rendering & GPU
+    options.add_argument("--disable-gpu")
+    options.add_argument("--window-size=1920,1080")
+    
+    # 5. Tambahan: Trik agar Selenium bisa connect ke Chrome yang "invisible"
+    options.add_argument("--remote-debugging-port=9222")
+    
+    # 6. Anti-detect bot sederhana
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
     
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     
@@ -398,4 +418,5 @@ if __name__ == "__main__":
     
     end_time = time.time()
     print(f"\n⏱️ Selesai dalam {end_time - start_time:.2f} detik.")
+
 
