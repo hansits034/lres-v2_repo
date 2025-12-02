@@ -38,7 +38,7 @@ LAPTOP_START_URLS = [
     "https://laptopmedia.com/specs/?size=n_1000_n&filters%5B0%5D%5Bfield%5D=availability&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bto%5D=n_2_n&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bfrom%5D=n_1_n&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bname%5D=Show%20only%20available%20laptops&filters%5B0%5D%5Btype%5D=any&filters%5B1%5D%5Bfield%5D=brand&filters%5B1%5D%5Bvalues%5D%5B0%5D=LG&filters%5B1%5D%5Bvalues%5D%5B1%5D=Alienware&filters%5B1%5D%5Bvalues%5D%5B2%5D=Samsung&filters%5B1%5D%5Bvalues%5D%5B3%5D=Microsoft&filters%5B1%5D%5Bvalues%5D%5B4%5D=Apple&filters%5B1%5D%5Bvalues%5D%5B5%5D=Panasonic&filters%5B1%5D%5Bvalues%5D%5B6%5D=Gigabyte&filters%5B1%5D%5Bvalues%5D%5B7%5D=AORUS&filters%5B1%5D%5Bvalues%5D%5B8%5D=Razer&filters%5B1%5D%5Bvalues%5D%5B9%5D=Intel&filters%5B1%5D%5Bvalues%5D%5B10%5D=Gainward&filters%5B1%5D%5Bvalues%5D%5B11%5D=Manli&filters%5B1%5D%5Bvalues%5D%5B12%5D=Dynabook&filters%5B1%5D%5Bvalues%5D%5B13%5D=Google&filters%5B1%5D%5Btype%5D=any"
 ]
 
-MAX_PAGES_PER_URL = 10  # Loop sampai halaman 10
+MAX_PAGES_PER_URL = 1  # Loop sampai halaman 10
 
 # Nama File Output
 FILE_FINAL_RAW = 'final_scrap.csv'
@@ -398,3 +398,4 @@ if __name__ == "__main__":
     
     end_time = time.time()
     print(f"\n⏱️ Selesai dalam {end_time - start_time:.2f} detik.")
+
