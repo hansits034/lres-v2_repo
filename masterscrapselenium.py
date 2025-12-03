@@ -6,7 +6,6 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import random
 
-# --- LIBRARY BARU: SELENIUM (Browser Automation) ---
 try:
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
@@ -20,9 +19,7 @@ except ImportError:
     print("⚠️ Library 'selenium' atau 'webdriver-manager' belum terinstall.")
     print("👉 Jalankan: `pip install selenium webdriver-manager`")
 
-# ================= KONFIGURASI =================
-# Masukkan Link Pencarian LaptopMedia PERTAMA di sini.
-# Script akan memanipulasi URL ini untuk membuka halaman 2, 3, dst secara otomatis.
+
 LAPTOP_START_URLS = [
     "https://laptopmedia.com/specs/?size=n_1000_n&filters%5B0%5D%5Bfield%5D=availability&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bto%5D=n_2_n&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bfrom%5D=n_1_n&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bname%5D=Show%20only%20available%20laptops&filters%5B0%5D%5Btype%5D=any&filters%5B1%5D%5Bfield%5D=brand&filters%5B1%5D%5Bvalues%5D%5B0%5D=HP&filters%5B1%5D%5Btype%5D=any&filters%5B2%5D%5Bfield%5D=price_list&filters%5B2%5D%5Bvalues%5D%5B0%5D%5Bto%5D=n_500_n&filters%5B2%5D%5Bvalues%5D%5B0%5D%5Bfrom%5D=n_1_n&filters%5B2%5D%5Bvalues%5D%5B0%5D%5Bname%5D=Under%20%24500&filters%5B2%5D%5Bvalues%5D%5B1%5D%5Bto%5D=n_800_n&filters%5B2%5D%5Bvalues%5D%5B1%5D%5Bfrom%5D=n_500_n&filters%5B2%5D%5Bvalues%5D%5B1%5D%5Bname%5D=%24500%20-%20%24800&filters%5B2%5D%5Btype%5D=any",
     "https://laptopmedia.com/specs/?size=n_1000_n&filters%5B0%5D%5Bfield%5D=availability&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bto%5D=n_2_n&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bfrom%5D=n_1_n&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bname%5D=Show%20only%20available%20laptops&filters%5B0%5D%5Btype%5D=any&filters%5B1%5D%5Bfield%5D=brand&filters%5B1%5D%5Bvalues%5D%5B0%5D=HP&filters%5B1%5D%5Btype%5D=any&filters%5B2%5D%5Bfield%5D=price_list&filters%5B2%5D%5Bvalues%5D%5B0%5D%5Bto%5D=n_1200_n&filters%5B2%5D%5Bvalues%5D%5B0%5D%5Bfrom%5D=n_800_n&filters%5B2%5D%5Bvalues%5D%5B0%5D%5Bname%5D=%24800%20-%20%241200&filters%5B2%5D%5Bvalues%5D%5B1%5D%5Bto%5D=n_1500_n&filters%5B2%5D%5Bvalues%5D%5B1%5D%5Bfrom%5D=n_1200_n&filters%5B2%5D%5Bvalues%5D%5B1%5D%5Bname%5D=%241200%20-%20%241500&filters%5B2%5D%5Btype%5D=any",
@@ -38,7 +35,7 @@ LAPTOP_START_URLS = [
     "https://laptopmedia.com/specs/?size=n_1000_n&filters%5B0%5D%5Bfield%5D=availability&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bto%5D=n_2_n&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bfrom%5D=n_1_n&filters%5B0%5D%5Bvalues%5D%5B0%5D%5Bname%5D=Show%20only%20available%20laptops&filters%5B0%5D%5Btype%5D=any&filters%5B1%5D%5Bfield%5D=brand&filters%5B1%5D%5Bvalues%5D%5B0%5D=LG&filters%5B1%5D%5Bvalues%5D%5B1%5D=Alienware&filters%5B1%5D%5Bvalues%5D%5B2%5D=Samsung&filters%5B1%5D%5Bvalues%5D%5B3%5D=Microsoft&filters%5B1%5D%5Bvalues%5D%5B4%5D=Apple&filters%5B1%5D%5Bvalues%5D%5B5%5D=Panasonic&filters%5B1%5D%5Bvalues%5D%5B6%5D=Gigabyte&filters%5B1%5D%5Bvalues%5D%5B7%5D=AORUS&filters%5B1%5D%5Bvalues%5D%5B8%5D=Razer&filters%5B1%5D%5Bvalues%5D%5B9%5D=Intel&filters%5B1%5D%5Bvalues%5D%5B10%5D=Gainward&filters%5B1%5D%5Bvalues%5D%5B11%5D=Manli&filters%5B1%5D%5Bvalues%5D%5B12%5D=Dynabook&filters%5B1%5D%5Bvalues%5D%5B13%5D=Google&filters%5B1%5D%5Btype%5D=any"
 ]
 
-MAX_PAGES_PER_URL = 10  # Loop sampai halaman 10
+MAX_PAGES_PER_URL = 10  
 
 # Nama File Output
 FILE_FINAL_RAW = 'final_scrap.csv'
@@ -46,7 +43,7 @@ FILE_CPU_CSV = 'cpu_bm.csv'
 FILE_GPU_CSV = 'gpu_bm.csv'
 FILE_FINAL_DATASET = 'dataset_final_super_lengkap.csv'
 
-# URL Benchmark (Tetap download biasa karena jarang diblokir ketat)
+# URL Benchmark 
 URL_CPU_BENCHMARK = "https://www.cpubenchmark.net/cpu_list.php"
 URL_GPU_BENCHMARK = "https://www.videocardbenchmark.net/gpu_list.php"
 
@@ -70,7 +67,7 @@ def smart_sleep():
     print(f"   ⏳ Menunggu {sleep_time:.2f} detik (Mode Manusia)...")
     time.sleep(sleep_time)
 
-# ================= LANGKAH 0: BERSIH-BERSIH =================
+# LANGKAH 0: BERSIH-BERSIH 
 def step_0_cleanup():
     print("\n[LANGKAH 0] Membersihkan file lama...")
     patterns = [
@@ -93,17 +90,14 @@ def step_0_cleanup():
                 print(f"⚠️ Gagal menghapus {f}: {e}")
     print(f"✅ Berhasil menghapus {deleted_count} file lama.")
 
-# ================= LANGKAH 1: BROWSER AUTOMATION (DIRECT LINK PATTERN) =================
+# LANGKAH 1: BROWSER AUTOMATION
 def step_1_fetch_laptops_selenium():
     if not HAS_SELENIUM:
         return
 
     print("\n[LANGKAH 1] Memulai Browser Otomatis (Selenium)...")
     
-    # --- TAMBAHAN LOGIKA RANDOM START ---
-    # Github Actions akan jalan fix tiap 6 jam. Kita tambah delay acak di awal 
-    # agar tidak selalu tepat waktu (meniru distribusi normal "telat" atau "awal")
-    # Kita geser rata-rata delay 10 menit, variasi 5 menit.
+    # Delay acak
     random_start_delay = abs(random.gauss(600, 300)) 
     print(f"⏳ Menunggu {random_start_delay:.2f} detik sebelum start browser (Random Start)...")
     time.sleep(random_start_delay)
@@ -116,23 +110,23 @@ def step_1_fetch_laptops_selenium():
     options.add_argument("--start-maximized")
     options.add_argument("--disable-blink-features=AutomationControlled")
 
-# 1. Wajib: Mode tanpa layar
+    # Mode tanpa layar
     options.add_argument("--headless=new") 
     
-    # 2. Wajib: Mengatasi isu permission di Linux (Root)
+    # Mengatasi isu permission di Linux (Root)
     options.add_argument("--no-sandbox")
     
-    # 3. Wajib: Mengatasi limitasi memori di Docker/Container GitHub
+    # Mengatasi limitasi memori di Docker/Container GitHub
     options.add_argument("--disable-dev-shm-usage")
     
-    # 4. Tambahan: Mencegah error rendering & GPU
+    # Mencegah error rendering & GPU
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
     
-    # 5. Tambahan: Trik agar Selenium bisa connect ke Chrome yang "invisible"
+    # Trik agar Selenium bisa connect ke Chrome yang "invisible"
     options.add_argument("--remote-debugging-port=9222")
     
-    # 6. Anti-detect bot sederhana
+    # Anti-detect bot sederhana
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
     
@@ -149,7 +143,7 @@ def step_1_fetch_laptops_selenium():
                 
                 # --- LOGIKA PEMBUATAN URL ---
                 if i == 1:
-                    # Halaman 1 pakai link asli
+                    # Halaman 1 
                     target_url = base_url
                 else:
                     # Halaman 2+ menyisipkan parameter 'current=n_X_n' setelah tanda tanya (?)
@@ -164,7 +158,6 @@ def step_1_fetch_laptops_selenium():
                 
                 driver.get(target_url)
                 
-                #print("   ⏳ Menunggu 30 detik agar data termuat sempurna...")
                 smart_sleep() 
 
                 filename = f"halaman{page_counter}.html"
@@ -181,7 +174,7 @@ def step_1_fetch_laptops_selenium():
         print("   ✅ Menutup Browser.")
         driver.quit()
 
-# ================= LANGKAH 2: PARSING HTML LAPTOP =================
+# LANGKAH 2: PARSING HTML LAPTOP
 def parse_single_laptop_page(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
     data_laptop = []
@@ -240,7 +233,7 @@ def step_2_process_laptops():
     print("\n[LANGKAH 2] Memproses file halaman*.html...")
     all_data = []
     
-    files = sorted(glob.glob("halaman*.html"), key=os.path.getmtime) # Urutkan berdasarkan waktu
+    files = sorted(glob.glob("halaman*.html"), key=os.path.getmtime) 
     
     if not files:
         print("❌ Tidak ditemukan file halaman*.html! Pastikan Langkah 1 sukses.")
@@ -271,7 +264,7 @@ def step_2_process_laptops():
     else:
         print("   ⚠️ Tidak ada data laptop yang terekstrak.")
 
-# ================= LANGKAH 3-6: BENCHMARK (Requests biasa cukup) =================
+# LANGKAH 3-6: BENCHMARK 
 # Menggunakan requests biasa karena situs benchmark jarang memblokir
 import requests 
 
@@ -333,7 +326,7 @@ def step_3_to_6_benchmarks():
     except Exception as e:
         print(f"   ❌ Error GPU: {e}")
 
-# ================= LANGKAH 7: PREPROCESSING FINAL =================
+# LANGKAH 7: PREPROCESSING FINAL 
 def step_7_preprocessing():
     print("\n[LANGKAH 7] Preprocessing & Scoring (Final)...")
     
@@ -405,7 +398,7 @@ def step_7_preprocessing():
     print(f"\n🎉 SUKSES! Dataset Lengkap disimpan di: {os.path.abspath(FILE_FINAL_DATASET)}")
     print(df[['Nama_Laptop', 'CPU_Score', 'GPU_Score', 'Price_IDR']].head())
 
-# ================= MAIN LOOP =================
+# MAIN LOOP
 if __name__ == "__main__":
     print("🚀 Memulai Scraper All-in-One (Mode Browser Otomatis)...")
     start_time = time.time()
@@ -418,6 +411,7 @@ if __name__ == "__main__":
     
     end_time = time.time()
     print(f"\n⏱️ Selesai dalam {end_time - start_time:.2f} detik.")
+
 
 
 
