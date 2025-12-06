@@ -92,5 +92,5 @@ def index():
                            current_sort=sort_option,
                            brands=brands_list)          # NEW
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)

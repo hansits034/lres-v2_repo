@@ -3,84 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pakar: Rekomendasi Laptop V4</title>
+    <title>Sistem Pakar: Rekomendasi Laptop V5</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
-    <style>
-        .toolbar-panel {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid var(--glass-border);
-            padding: 10px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(5px);
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .cyber-pagination .page-link {
-            background: rgba(0,0,0,0.5);
-            border: 1px solid var(--primary-neon);
-            color: var(--text-main);
-            font-family: 'Orbitron';
-            margin: 0 5px;
-            border-radius: 5px;
-        }
-        .cyber-pagination .page-item.active .page-link {
-            background: var(--primary-neon);
-            color: black;
-            box-shadow: 0 0 10px var(--primary-neon);
-        }
-        .cyber-pagination .page-link:hover {
-            background: var(--secondary-neon);
-            color: white;
-        }
-        
-        /* Select & Input Styling */
-        .cyber-select {
-            background: black;
-            color: var(--primary-neon);
-            border: 1px solid var(--primary-neon);
-            padding: 8px 15px;
-            font-family: 'Rajdhani';
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .cyber-text-input {
-            background: rgba(0,0,0,0.5);
-            border: 1px solid var(--primary-neon);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
-            font-family: 'Rajdhani';
-            width: 100%;
-        }
-        .cyber-text-input::placeholder { color: #555; }
-    </style>
 </head>
 <body>
 
     <canvas id="canvas-bg"></canvas>
 
+    <div class="top-controls">
+        <button class="btn-icon" data-bs-toggle="modal" data-bs-target="#settingsModal" title="Appearance Settings">
+            <i class="fas fa-cog"></i>
+        </button>
+        <button class="btn-icon" data-bs-toggle="modal" data-bs-target="#guideModal" title="User Guide">
+            <i class="fas fa-question"></i>
+        </button>
+    </div>
+
     <div id="loading-overlay">
         <div class="loader-ring"></div>
         <div class="loading-text">PROCESSING DATA</div>
-        <div class="console-logs" id="console-logs"></div>
     </div>
 
     <div class="header-bg cyber-header text-center">
         <div class="container animate__animated animate__fadeInDown">
             <h1 class="glitch-title">LAPTOP<span style="color:var(--primary-neon)">EXPERT</span></h1>
-            <p class="subtitle">ADVANCED DECISION SUPPORT SYSTEM</p>
+            <p class="subtitle">LAPTOP RECOMENDER EXPERT SYSTEM</p>
         </div>
     </div>
 
@@ -88,17 +41,16 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="glass-panel animate__animated animate__fadeInUp">
-                    <h4 class="mb-4" style="color: white; font-family:'Orbitron';"><i class="fas fa-sliders-h me-2"></i> PARAMETERS</h4>
+                    <h4 class="mb-4" style="color: var(--text-main); font-family: var(--font-head);"><i class="fas fa-sliders-h me-2"></i> PARAMETERS</h4>
                     
                     <form method="POST" action="/" id="expert-form">
-                        
                         <input type="hidden" id="page" name="page" value="1">
                         <input type="hidden" id="category" name="category" value="{{ last_cat }}">
                         <input type="hidden" id="sub_category" name="sub_category" value="{{ last_sub }}">
                         <input type="hidden" id="sort_option" name="sort_option" value="{{ current_sort }}">
                         
                         <div class="row g-3 mb-4">
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <label for="budget" class="form-label">MAXIMUM BUDGET (IDR)</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-dark border-secondary text-white">Rp</span>
@@ -107,10 +59,21 @@
                                 </div>
                                 <small id="budget-preview" style="color: var(--primary-neon); font-size: 0.8em;">Rp 0</small>
                             </div>
-                            <div class="col-md-6">
-                                <label class="form-label">KEYWORD SEARCH (OPTIONAL)</label>
+                            
+                            <div class="col-md-3">
+                                <label class="form-label">TOLERANCE</label>
+                                <select class="form-select cyber-select" name="tolerance">
+                                    <option value="0" {% if last_tolerance == 0 %}selected{% endif %}>Exact Budget (0%)</option>
+                                    <option value="5" {% if last_tolerance == 5 %}selected{% endif %}>+5% Limit</option>
+                                    <option value="10" {% if last_tolerance == 10 %}selected{% endif %}>+10% Limit</option>
+                                    <option value="20" {% if last_tolerance == 20 %}selected{% endif %}>+20% Limit</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">KEYWORD</label>
                                 <input type="text" class="cyber-text-input" name="search_query" 
-                                       placeholder="e.g. Legion, ROG, Pavilion" value="{{ last_search }}">
+                                       placeholder="e.g. Legion, ROG" value="{{ last_search }}">
                             </div>
                         </div>
 
@@ -143,8 +106,8 @@
                                     <i class="fas fa-gamepad cat-icon text-success"></i>
                                     <div class="fw-bold">GAMER</div>
                                 </div>
-                                <div class="cat-card" onclick="selectCategory('SHOW_ALL', this)" style="border-color: #fff;">
-                                    <i class="fas fa-globe cat-icon text-white"></i>
+                                <div class="cat-card" onclick="selectCategory('SHOW_ALL', this)">
+                                    <i class="fas fa-globe cat-icon text-muted"></i>
                                     <div class="fw-bold">SHOW ALL</div>
                                 </div>
                             </div>
@@ -166,24 +129,23 @@
         </div>
 
         {% if error %}
-            <div class="alert alert-danger text-center shadow-lg mt-4 animate__animated animate__shakeX" 
-                 style="background: rgba(220, 53, 69, 0.2); border: 1px solid #dc3545; color: #ff8b94;">
+            <div class="alert alert-danger text-center shadow-lg mt-4 animate__animated animate__shakeX">
                 <i class="fas fa-exclamation-triangle me-2"></i> <strong>SYSTEM ALERT:</strong> {{ error }}
             </div>
         {% endif %}
 
         {% if recommendations %}
-            <div class="mt-5 pt-3">
-                <h3 class="mb-4 text-center" style="font-family: 'Orbitron'; letter-spacing: 2px;">
+            <div id="results-section" class="mt-5 pt-3">
+                <h3 class="mb-4 text-center glitch-title" style="font-size: 2rem;">
                     <span style="color: var(--primary-neon)">>></span> TARGETS ACQUIRED <span style="color: var(--primary-neon)"><<</span>
                 </h3>
 
                 <div class="toolbar-panel animate__animated animate__fadeIn">
-                    <div style="font-family:'Orbitron'; color:white;">
-                        FOUND <span style="color:var(--secondary-neon)">MANY</span> UNITS
+                    <div style="font-family: var(--font-head); color:var(--text-main);">
+                        FOUND <span style="color:var(--secondary-neon)">{{ total_items }}</span> UNITS
                     </div>
                     <div>
-                        <span class="me-2 text-muted">SORT BY:</span>
+                        <span class="me-2" style="color: var(--primary-neon); font-weight: bold;">SORT BY:</span>
                         <select class="cyber-select" onchange="changeSort(this.value)">
                             <option value="score" {% if current_sort == 'score' %}selected{% endif %}>Highest Score</option>
                             <option value="lowest_price" {% if current_sort == 'lowest_price' %}selected{% endif %}>Lowest Price</option>
@@ -191,6 +153,7 @@
                             <option value="best_value" {% if current_sort == 'best_value' %}selected{% endif %}>Best Value</option>
                         </select>
                     </div>
+                    <div  style="padding-bottom: 30px;"></div>
                 </div>
                 
                 <div class="row g-4">
@@ -207,7 +170,6 @@
                                     {% if laptop.RefreshRate > 60 %}
                                     <span class="tech-badge" style="color:var(--secondary-neon); border-color:var(--secondary-neon)">{{ laptop.RefreshRate }}Hz</span>
                                     {% endif %}
-                                    <span class="tech-badge" style="border-color: #aaa; color: #aaa;">{{ laptop.Nama_Produk.split()[0] }}</span>
                                 </div>
 
                                 <div class="mt-2 mb-3">
@@ -230,7 +192,7 @@
                                 </div>
                                 
                                 <div class="ai-terminal">
-                                    <i class="fas fa-terminal me-1"></i> {{ laptop.Penjelasan_AI }}
+                                    {{ laptop.Penjelasan_AI }}
                                 </div>
 
                                 <div class="btn-action-group">
@@ -253,7 +215,7 @@
                     </div>
                     {% endfor %}
                 </div>
-
+                
                 {% if total_pages > 1 %}
                 <div class="d-flex justify-content-center mt-5">
                     <nav aria-label="Page navigation">
@@ -263,13 +225,11 @@
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                             </li>
-
                             <li class="page-item disabled">
-                                <span class="page-link" style="border:none; background:transparent; color:var(--primary-neon)">
+                                <span class="page-link" style="background:transparent; color:var(--primary-neon)">
                                     PAGE {{ current_page }} / {{ total_pages }}
                                 </span>
                             </li>
-
                             <li class="page-item {% if current_page == total_pages %}disabled{% endif %}">
                                 <a class="page-link" href="#" onclick="changePage({{ (current_page|int) + 1 }}); return false;">
                                     <i class="fas fa-chevron-right"></i>
@@ -279,38 +239,158 @@
                     </nav>
                 </div>
                 {% endif %}
-
             </div>
         {% endif %}
     </div>
 
+    <div class="modal fade" id="guideModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-cyber">
+                <div class="modal-header">
+                    <h5 class="modal-title">USER MANUAL</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <ol>
+                        <li><strong>Input Budget:</strong> Masukkan harga maksimal. Gunakan fitur "Tolerance" jika ingin melihat harga sedikit lebih dari batas.</li>
+                        <li><strong>Select Category:</strong> Pilih kebutuhan utama Anda.</li>
+                        <li><strong>Analyze:</strong> Klik tombol Analyze.</li>
+                        <li><strong>X_AI Reason:</strong> Baca penjelasan AI untuk memahami rekomendasi.</li>
+                        <li><strong>Settings:</strong> Gunakan menu Settings untuk mengubah tampilan (Neon/Simple, Dark/Light).</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="settingsModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-cyber">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-sliders-h me-2"></i> DISPLAY SETTINGS</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-3 text-muted small">Kombinasikan switch di bawah untuk mendapatkan 4 tampilan berbeda.</p>
+
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="checkSimple" onchange="applyVisualSettings()">
+                        <label class="form-check-label" for="checkSimple">
+                            <strong>Simple Mode</strong> (Casual/Clean)
+                        </label>
+                        <div class="text-muted small">Nonaktifkan efek neon berlebihan & font sci-fi.</div>
+                    </div>
+                    
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="checkLight" onchange="applyVisualSettings()">
+                        <label class="form-check-label" for="checkLight">
+                            <strong>Light Color</strong> (Bright Theme)
+                        </label>
+                        <div class="text-muted small">Gunakan latar belakang terang/putih.</div>
+                    </div>
+                    
+                    <div class="mt-4 p-2 bg-light border rounded small text-center" id="mode-preview" style="color: black;">
+                        Current Mode: <span id="currentModeLabel" class="fw-bold text-primary">Neon Dark</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="text-center py-4">
-        <small style="color: #666; font-family: 'Rajdhani';">
-        SYSTEM V4.0 | LAPTOP RECOMENDER EXPERT SYSTEM
-        </small>
+        <small style="color: #666; font-family: 'Rajdhani';">SYSTEM V5.0 | LAPTOP RECOMENDER EXPERT SYSTEM</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
 
     <script>
+        // --- 4-MODE THEME LOGIC ---
+        function applyVisualSettings() {
+            const isSimple = document.getElementById('checkSimple').checked;
+            const isLight = document.getElementById('checkLight').checked;
+            const body = document.body;
+            const label = document.getElementById('currentModeLabel');
+
+            body.classList.remove('neon-light', 'simple-dark', 'simple-light');
+            
+            let modeName = "Neon Dark (Default)";
+            
+            if (!isSimple && !isLight) {
+                modeName = "Neon Dark (Default)";
+            } 
+            else if (!isSimple && isLight) {
+                body.classList.add('neon-light');
+                modeName = "Neon Light";
+            } 
+            else if (isSimple && !isLight) {
+                body.classList.add('simple-dark');
+                modeName = "Simple Dark";
+            } 
+            else if (isSimple && isLight) {
+                body.classList.add('simple-light');
+                modeName = "Simple Light";
+            }
+
+            if(label) label.textContent = modeName;
+            localStorage.setItem('isSimple', isSimple);
+            localStorage.setItem('isLight', isLight);
+        }
+
+        // --- Init Scripts ---
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedSimple = localStorage.getItem('isSimple') === 'true';
+            const savedLight = localStorage.getItem('isLight') === 'true';
+            
+            document.getElementById('checkSimple').checked = savedSimple;
+            document.getElementById('checkLight').checked = savedLight;
+            
+            applyVisualSettings();
+
+            const resultsSection = document.getElementById('results-section');
+            if (resultsSection) {
+                setTimeout(() => { resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+            }
+            
+            const lastCat = "{{ last_cat }}";
+            const lastSub = "{{ last_sub }}";
+            if (lastCat) {
+                const catEl = document.querySelector(`[onclick*="${lastCat}"]`);
+                if (catEl) selectCategory(lastCat, catEl);
+                if (lastCat !== "SHOW_ALL") {
+                    setTimeout(() => {
+                        if (lastSub) {
+                            const subIndex = subCategoriesData[lastCat].findIndex(s => s.id === lastSub);
+                            const subCards = document.querySelectorAll('.sub-card');
+                            if(subCards[subIndex]) subCards[subIndex].click();
+                        }
+                    }, 100);
+                }
+            }
+            
+            VanillaTilt.init(document.querySelectorAll(".js-tilt"), { max: 5, speed: 400, glare: true, "max-glare": 0.2 });
+            const bInput = document.getElementById('budget');
+            if(bInput) bInput.dispatchEvent(new Event('input'));
+        });
+
         const subCategoriesData = {
             "ADMIN_PELAJAR": [ { id: "umum", label: "General Tasks", desc: "Office, Browsing" }, { id: "spesifik", label: "Science / Data", desc: "Matlab, SPPS" } ],
             "PROGRAMMER_CODING": [ { id: "web_mobile", label: "Web & Mobile Dev", desc: "Android Studio, Docker" }, { id: "machine_learning", label: "AI & ML", desc: "Deep Learning (GPU)" } ],
             "DESAIN_VIDEO": [ { id: "ui_ux", label: "UI/UX Design", desc: "Figma, Photoshop" }, { id: "video_editing", label: "Video Editor / 3D", desc: "Premiere, Blender" } ],
             "GAMING_BERAT": [ { id: "indie", label: "Casual / Indie", desc: "Valorant, Genshin" }, { id: "esport_stream", label: "Esports & Stream", desc: "High FPS, OBS" }, { id: "aaa_high", label: "AAA Hardcore", desc: "Cyberpunk, RT" } ],
-            "SHOW_ALL": [] // Kosong, logic ditangani khusus
+            "SHOW_ALL": []
         };
 
         function selectCategory(catValue, element) {
             document.getElementById('category').value = catValue;
             document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
             element.classList.add('active');
-            
-            // Logic Show All: Sembunyikan sub kategori dan set default
             if(catValue === "SHOW_ALL") {
                 document.getElementById('sub-cat-container').style.display = 'none';
-                document.getElementById('sub_category').value = 'all'; // Default value agar form valid
+                document.getElementById('sub_category').value = 'all';
             } else {
                 renderSubCategories(catValue);
             }
@@ -320,10 +400,8 @@
             const container = document.getElementById('sub-cat-container');
             const grid = document.getElementById('sub-cat-grid');
             const hiddenInput = document.getElementById('sub_category');
-            
             grid.innerHTML = '';
             hiddenInput.value = ''; 
-            
             if (subCategoriesData[catValue]) {
                 container.style.display = 'block';
                 subCategoriesData[catValue].forEach(sub => {
@@ -340,54 +418,20 @@
             } else { container.style.display = 'none'; }
         }
 
-        function submitSearch() {
-            document.getElementById('page').value = 1;
-            document.getElementById('expert-form').submit();
-        }
-
-        function changeSort(sortVal) {
-            document.getElementById('sort_option').value = sortVal;
-            document.getElementById('page').value = 1;
-            document.getElementById('expert-form').submit();
-        }
-
-        function changePage(pageNum) {
-            document.getElementById('page').value = pageNum;
-            document.getElementById('expert-form').submit();
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const lastCat = "{{ last_cat }}";
-            const lastSub = "{{ last_sub }}";
-            if (lastCat) {
-                const catEl = document.querySelector(`[onclick*="${lastCat}"]`);
-                if (catEl) selectCategory(lastCat, catEl);
-                
-                // Jika bukan SHOW_ALL, pilih sub kategori
-                if (lastCat !== "SHOW_ALL") {
-                    setTimeout(() => {
-                        if (lastSub) {
-                            const subIndex = subCategoriesData[lastCat].findIndex(s => s.id === lastSub);
-                            const subCards = document.querySelectorAll('.sub-card');
-                            if(subCards[subIndex]) subCards[subIndex].click();
-                        }
-                    }, 100);
-                }
-            }
-            VanillaTilt.init(document.querySelectorAll(".js-tilt"), { max: 5, speed: 400, glare: true, "max-glare": 0.2 });
-        });
+        function submitSearch() { document.getElementById('page').value = 1; document.getElementById('expert-form').submit(); }
+        function changeSort(sortVal) { document.getElementById('sort_option').value = sortVal; document.getElementById('page').value = 1; document.getElementById('expert-form').submit(); }
+        function changePage(pageNum) { document.getElementById('page').value = pageNum; document.getElementById('expert-form').submit(); }
 
         const budgetInput = document.getElementById('budget');
-        budgetInput.addEventListener('input', (e) => {
-            const v = e.target.value;
-            document.getElementById('budget-preview').textContent = v ? new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(v) : "Rp 0";
-        });
-        budgetInput.dispatchEvent(new Event('input'));
+        if(budgetInput){
+            budgetInput.addEventListener('input', (e) => {
+                const v = e.target.value;
+                document.getElementById('budget-preview').textContent = v ? new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(v).replace('IDR', 'Rp').trim() : "Rp 0";
+            });
+        }
+        document.getElementById('expert-form').addEventListener('submit', function() { document.getElementById('loading-overlay').style.display = 'flex'; });
 
-        document.getElementById('expert-form').addEventListener('submit', function() {
-            document.getElementById('loading-overlay').style.display = 'flex';
-        });
-
+        // --- Canvas Animation ---
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -396,7 +440,34 @@
         resize();
         class P { constructor(){ this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height; this.vx=(Math.random()-.5); this.vy=(Math.random()-.5); } update(){ this.x+=this.vx; this.y+=this.vy; if(this.x<0||this.x>canvas.width)this.vx*=-1; if(this.y<0||this.y>canvas.height)this.vy*=-1; } }
         for(let i=0; i<60; i++) particles.push(new P());
-        function anim(){ ctx.clearRect(0,0,canvas.width,canvas.height); ctx.fillStyle='rgba(0, 243, 255, 0.5)'; particles.forEach(p=>{ p.update(); ctx.beginPath(); ctx.arc(p.x,p.y,1,0,Math.PI*2); ctx.fill(); particles.forEach(p2=>{ let d = Math.hypot(p.x-p2.x, p.y-p2.y); if(d<100){ ctx.strokeStyle=`rgba(100,100,255,${1-d/100})`; ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(p2.x,p2.y); ctx.stroke(); } }); }); requestAnimationFrame(anim); }
+
+        function anim(){ 
+            ctx.clearRect(0,0,canvas.width,canvas.height); 
+            let particleColor = 'rgba(0, 243, 255, 0.5)';
+            let lineColor = 'rgba(100,100,255,';
+            const body = document.body;
+            if (body.classList.contains('neon-light')) {
+                particleColor = 'rgba(0,0,0,0.5)'; lineColor = 'rgba(0,0,0,'; 
+            } else if (body.classList.contains('simple-dark')) {
+                 particleColor = 'rgba(46, 204, 113, 0.2)'; lineColor = 'rgba(46, 204, 113,';
+            } else if (body.classList.contains('simple-light')) {
+                particleColor = 'rgba(0,0,0,0)'; 
+            }
+            ctx.fillStyle = particleColor;
+            particles.forEach(p=>{ 
+                p.update(); 
+                ctx.beginPath(); ctx.arc(p.x,p.y,1,0,Math.PI*2); ctx.fill(); 
+                particles.forEach(p2=>{ 
+                    let d = Math.hypot(p.x-p2.x, p.y-p2.y); 
+                    if(d<100){ 
+                        let opacity = body.classList.contains('simple-dark') ? (0.2-d/1000) : (1-d/100);
+                        ctx.strokeStyle = `${lineColor}${opacity})`; 
+                        ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(p2.x,p2.y); ctx.stroke(); 
+                    } 
+                }); 
+            }); 
+            requestAnimationFrame(anim); 
+        }
         anim();
     </script>
 </body>

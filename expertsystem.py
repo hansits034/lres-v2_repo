@@ -37,7 +37,7 @@ class SistemPakarLaptop:
             "GAMING_BERAT": {
                 "indie": { "min_cpu": 10281, "min_gpu": 1964, "min_ram": 8, "min_screen": 0, "min_frame": 60, "w_cpu": 0.2, "w_gpu": 0.6, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.0, "w_frame": 0.1, "desc": "Indie Games." },
                 "esport_stream": { "min_cpu": 16131, "min_gpu": 10142, "min_ram": 16, "min_screen": 0, "min_frame": 144, "w_cpu": 0.2, "w_gpu": 0.5, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.0, "w_frame": 0.2, "desc": "Esports." },
-                "aaa_high": { "min_cpu": 30562, "min_gpu": 17399, "min_ram": 32, "min_screen": 120, "min_frame": 165, "w_cpu": 0.15, "w_gpu": 0.6, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.1, "w_frame": 0.05, "desc": "AAA Games." }
+                "aaa_high": { "min_cpu": 30562, "min_gpu": 17399, "min_ram": 32, "min_screen": 80, "min_frame": 165, "w_cpu": 0.15, "w_gpu": 0.6, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.1, "w_frame": 0.05, "desc": "AAA Games." }
             }
         }
 
@@ -59,7 +59,6 @@ class SistemPakarLaptop:
                 if df[col].dtype == 'object': df[col] = df[col].astype(str).str.replace(r'[^\d.]', '', regex=True)
                 df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
 
-            # Ekstraksi Refresh Rate
             def extract_hz(text):
                 if not isinstance(text, str): return 60 
                 match = re.search(r'(\d+)\s*Hz', text, re.IGNORECASE)
@@ -68,7 +67,6 @@ class SistemPakarLaptop:
             if 'DetailLayar' in df.columns: df['RefreshRate'] = df['DetailLayar'].apply(extract_hz)
             else: df['RefreshRate'] = 60
 
-            # --- FITUR BARU: Identifikasi Brand ---
             def identify_brand(product_name):
                 if not isinstance(product_name, str): return "Other"
                 name_upper = product_name.upper()
@@ -84,43 +82,44 @@ class SistemPakarLaptop:
             print(f"Error Loading: {e}")
             return pd.DataFrame()
 
-    def _reality_check(self, budget_idr, kategori, sub_kategori):
-        if kategori == "SHOW_ALL": return True, "Valid" # Show all bypass
-        
-        batas_min = 2000000
-        if kategori == "GAMING_BERAT":
-            batas_min = 15000000 if sub_kategori == "aaa_high" else 8000000
-        elif kategori == "DESAIN_VIDEO": batas_min = 7000000
-        elif kategori == "PROGRAMMER_CODING": batas_min = 4000000
-        return (False, f"Budget terlalu rendah (Min Rp {batas_min:,})") if budget_idr < batas_min else (True, "Valid")
-
-    def _generate_explanation(self, row, rule, kategori):
-        reasons = []
+    def _generate_explanation(self, row, rule, kategori, sub_kategori):
         est_rupiah = row['Harga'] * self.KONVERSI_FACTOR
+        final_score = row.get('Nilai_Rekomendasi', 0) * 100
         
-        # Penjelasan Generic untuk Show All
+        # Format angka rupiah
+        rp_formatted = "{:,.0f}".format(est_rupiah).replace(',', '.')
+
+        # Handle Show All (Generic)
         if kategori == "SHOW_ALL":
-            return f"Est: Rp {est_rupiah:,.0f} | CPU {int(row['CpuScore'])}, GPU {int(row['GpuScore'])}, RAM {int(row['RAM'])}GB"
+            return (f"Estimasi harga Rp {rp_formatted}. Laptop ini memiliki CPU Score {int(row['CpuScore'])}, "
+                    f"GPU Score {int(row['GpuScore'])}, dan RAM {int(row['RAM'])}GB. "
+                    f"Overall score teknis unit ini adalah {final_score:.1f}%.")
 
-        cpu_act = int(row['CpuScore'])
-        reasons.append(f"CPU {cpu_act} (min:{rule['min_cpu']})")
+        # Kalimat Lengkap Sesuai Permintaan
+        kalimat = (
+            f"Estimasi harga Rp {rp_formatted}. "
+            f"Dengan CPU {row['TipeProcessor']} ini memiliki benchmark score {int(row['CpuScore'])}, "
+            f"dan kriteria minimal benchmark untuk subkategori ini adalah {rule['min_cpu']}, "
+            f"bobot spesifikasi CPU untuk sub kategori ini adalah {int(rule['w_cpu']*100)}%. "
+            
+            f"GPU {row['TipeGPU']} ini memiliki benchmark score {int(row['GpuScore'])}, "
+            f"dan kriteria minimal benchmark adalah {rule['min_gpu']}, "
+            f"bobot spesifikasi GPU untuk sub kategori ini adalah {int(rule['w_gpu']*100)}%. "
+            
+            f"Memiliki RAM sebesar {int(row['RAM'])}GB (Min: {rule['min_ram']}GB, Bobot: {int(rule['w_ram']*100)}%). "
+            f"Storage sebesar {int(row['Storage_GB'])}GB (Bobot: {int(rule['w_storage']*100)}%). "
+            
+            f"Layar dengan kualitas score {int(row['ScreenScore'])} (Min: {rule['min_screen']}, Bobot: {int(rule['w_screen']*100)}%) "
+            f"dan Refresh Rate {int(row['RefreshRate'])}Hz (Min: {rule['min_frame']}Hz). "
+            
+            f"Overall score kecocokan untuk kategori {sub_kategori.replace('_', ' ').upper()} ini adalah {final_score:.1f}%."
+        )
         
-        if rule['w_gpu'] > 0 or row['GpuScore'] > 2000:
-            gpu_act = int(row['GpuScore'])
-            if rule['min_gpu'] > 0: reasons.append(f"GPU {gpu_act} (min:{rule['min_gpu']})")
-            else: reasons.append(f"GPU {gpu_act}")
-
-        reasons.append(f"RAM {int(row['RAM'])}GB")
-        
-        if rule['w_screen'] > 0: reasons.append(f"Scrn {int(row['ScreenScore'])}")
-        if rule['w_frame'] > 0 and row['RefreshRate'] > 60: reasons.append(f"{int(row['RefreshRate'])}Hz")
-
-        final_score = row.get('Nilai_Rekomendasi', 0)
-        details = ", ".join(reasons)
-        return f"Est: Rp {est_rupiah:,.0f} | {details}, Overall Score: {final_score:.3f}"
+        return kalimat
 
     def rekomendasi(self, user_budget_idr, user_kategori, user_sub_kategori, 
-                    search_query=None, brand_filter=None, sort_option="score", page=1, per_page=20):
+                    search_query=None, brand_filter=None, sort_option="score", 
+                    tolerance_percent=0, page=1, per_page=20):
         
         empty_result = {"data": [], "total_pages": 0, "current_page": 1, "total_items": 0}
 
@@ -136,15 +135,18 @@ class SistemPakarLaptop:
 
         rule = self.rules[user_kategori][user_sub_kategori]
         
-        # 1. Validasi Budget
-        budget_limit_usd = (user_budget_idr / self.KONVERSI_FACTOR) * 1.1 
+        # 1. Validasi Budget dengan TOLERANSI
+        budget_multiplier = 1 + (tolerance_percent / 100)
+        budget_limit_usd = (user_budget_idr * budget_multiplier) / self.KONVERSI_FACTOR
+        
+        # Base filter harga
         candidates = self.data[self.data['Harga'] <= budget_limit_usd].copy()
         
-        # 2. Filter Search Name (Jika ada)
+        # 2. Filter Search Name
         if search_query:
             candidates = candidates[candidates['Nama_Produk'].str.contains(search_query, case=False, na=False)]
 
-        # 3. Filter Brand (Jika ada)
+        # 3. Filter Brand
         if brand_filter and brand_filter != "ALL":
             candidates = candidates[candidates['Brand'] == brand_filter]
 
@@ -192,9 +194,9 @@ class SistemPakarLaptop:
         else:
             candidates = candidates.sort_values(by='Nilai_Rekomendasi', ascending=False)
 
-        # Generate Penjelasan
+        # Generate Penjelasan yang Lengkap
         candidates['Penjelasan_AI'] = candidates.apply(
-            lambda row: self._generate_explanation(row, rule, user_kategori), axis=1
+            lambda row: self._generate_explanation(row, rule, user_kategori, user_sub_kategori), axis=1
         )
 
         cols_output = ['Nama_Produk', 'Estimasi_Rupiah', 'TipeProcessor', 'TipeGPU', 'RAM', 'Storage_GB', 'DetailLayar', 'RefreshRate', 'Penjelasan_AI', 'LinkPenjelasan', 'LinkPembelian']
