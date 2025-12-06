@@ -27,24 +27,90 @@ class SistemPakarLaptop:
                 "spesifik": { "min_cpu": 16225, "min_gpu": 3836, "min_ram": 16, "min_screen": 0, "min_frame": 0, "w_cpu": 0.5, "w_gpu": 0.0, "w_ram": 0.4, "w_storage": 0.1, "w_screen": 0.0, "w_frame": 0.0, "desc": "Matlab, data." }
             },
             "PROGRAMMER_CODING": {
-                "web_mobile": { "min_cpu": 17216, "min_gpu": 6906, "min_ram": 16, "min_screen": 0, "min_frame": 0, "w_cpu": 0.55, "w_gpu": 0.05, "w_ram": 0.35, "w_storage": 0.05, "w_screen": 0.0, "w_frame": 0.0, "desc": "Web/Mobile Dev." },
+                "web_mobile": { "min_cpu": 17216, "min_gpu": 6906, "min_ram": 16, "min_screen": 60, "min_frame": 0, "w_cpu": 0.55, "w_gpu": 0.05, "w_ram": 0.35, "w_storage": 0.05, "w_screen": 0.0, "w_frame": 0.0, "desc": "Web/Mobile Dev." },
                 "machine_learning": { "min_cpu": 25368, "min_gpu": 10142, "min_ram": 32, "min_screen": 0, "min_frame": 0, "w_cpu": 0.35, "w_gpu": 0.5, "w_ram": 0.15, "w_storage": 0.0, "w_screen": 0.0, "w_frame": 0.0, "desc": "AI/ML." }
             },
             "DESAIN_VIDEO": {
-                "ui_ux": { "min_cpu": 17216, "min_gpu": 5737, "min_ram": 16, "min_screen": 80, "min_frame": 0, "w_cpu": 0.2, "w_gpu": 0.45, "w_ram": 0.05, "w_storage": 0.0, "w_screen": 0.3, "w_frame": 0.0, "desc": "UI/UX." },
-                "video_editing": { "min_cpu": 25368, "min_gpu": 10142, "min_ram": 32, "min_screen": 80, "min_frame": 0, "w_cpu": 0.3, "w_gpu": 0.45, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.15, "w_frame": 0.0, "desc": "Video Editing." }
+                "ui_ux": { "min_cpu": 17216, "min_gpu": 5737, "min_ram": 16, "min_screen": 70, "min_frame": 0, "w_cpu": 0.2, "w_gpu": 0.45, "w_ram": 0.05, "w_storage": 0.0, "w_screen": 0.3, "w_frame": 0.0, "desc": "UI/UX." },
+                "video_editing": { "min_cpu": 25368, "min_gpu": 10142, "min_ram": 32, "min_screen": 70, "min_frame": 0, "w_cpu": 0.3, "w_gpu": 0.45, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.15, "w_frame": 0.0, "desc": "Video Editing." }
             },
             "GAMING_BERAT": {
                 "indie": { "min_cpu": 10281, "min_gpu": 1964, "min_ram": 8, "min_screen": 0, "min_frame": 60, "w_cpu": 0.2, "w_gpu": 0.6, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.0, "w_frame": 0.1, "desc": "Indie Games." },
-                "esport_stream": { "min_cpu": 16131, "min_gpu": 10142, "min_ram": 16, "min_screen": 0, "min_frame": 144, "w_cpu": 0.2, "w_gpu": 0.5, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.0, "w_frame": 0.2, "desc": "Esports." },
-                "aaa_high": { "min_cpu": 30562, "min_gpu": 17399, "min_ram": 32, "min_screen": 80, "min_frame": 165, "w_cpu": 0.15, "w_gpu": 0.6, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.1, "w_frame": 0.05, "desc": "AAA Games." }
+                "esport_stream": { "min_cpu": 16131, "min_gpu": 10142, "min_ram": 16, "min_screen": 60, "min_frame": 144, "w_cpu": 0.2, "w_gpu": 0.5, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.0, "w_frame": 0.2, "desc": "Esports." },
+                "aaa_high": { "min_cpu": 30562, "min_gpu": 17399, "min_ram": 32, "min_screen": 70, "min_frame": 165, "w_cpu": 0.15, "w_gpu": 0.6, "w_ram": 0.1, "w_storage": 0.0, "w_screen": 0.1, "w_frame": 0.05, "desc": "AAA Games." }
             }
         }
+
+    def _calculate_screen_score(self, text):
+        """
+        Menghitung skor layar (0-100) berdasarkan Panel dan Resolusi.
+        Input: String deskripsi layar (misal: "15.6", Full HD (1920 x 1080), IPS")
+        """
+        if not isinstance(text, str):
+            return 0
+        
+        score = 0
+        text_upper = text.upper()
+
+        # 1. TIPE PANEL (Bobot Max 40)
+        # OLED/Mini-LED adalah kasta tertinggi
+        if 'OLED' in text_upper or 'AMOLED' in text_upper or 'MINI-LED' in text_upper:
+            score += 40
+        # IPS/Retina/WVA adalah standar bagus
+        elif 'IPS' in text_upper or 'RETINA' in text_upper or 'WVA' in text_upper or 'SVA' in text_upper or 'UWVA' in text_upper:
+            score += 30
+        # TN adalah kasta terendah (viewing angle buruk)
+        elif 'TN' in text_upper:
+            score += 10
+        else:
+            # Jika tidak disebutkan, asumsi rata-rata (biasanya IPS level bawah atau TN bagus)
+            score += 20 
+
+        # 2. RESOLUSI (Bobot Max 60)
+        # Menggunakan Regex untuk mencari pola angka (e.g. 1920 x 1080)
+        resolutions = re.findall(r'(\d{4})\s*x\s*(\d{3,4})', text_upper)
+        
+        pixel_count = 0
+        if resolutions:
+            # Ambil resolusi pertama yang ditemukan
+            w, h = map(int, resolutions[0])
+            pixel_count = w * h
+        
+        # Scoring berdasarkan jumlah pixel
+        if pixel_count >= 8000000:   # 4K / UHD (approx 8.3M pixels) -> Sangat Tajam
+            score += 60
+        elif pixel_count >= 3600000: # QHD / 2K / 3K (approx 3.6M - 5M pixels)
+            score += 50
+        elif pixel_count >= 2300000: # WUXGA / FHD+ (approx 2.3M pixels)
+            score += 45
+        elif pixel_count >= 2000000: # FHD (approx 2M pixels) -> Standar
+            score += 40
+        elif pixel_count >= 1400000: # HD+ (approx 1.4M pixels)
+            score += 20
+        else:                        # HD (768p) atau dibawahnya -> Buruk
+            score += 10
+            
+        return score
 
     def _load_and_clean_data(self):
         try:
             df = pd.read_csv(self.file_path, encoding='utf-8', low_memory=False)
-            column_map = {'Harga_USD': 'Harga', 'CPU_Score': 'CpuScore', 'GPU_Score': 'GpuScore', 'RAM_Clean': 'RAM', 'Storage': 'Storage_GB', 'Nama_Laptop': 'Nama_Produk', 'Screen_Score': 'ScreenScore', 'Processor': 'TipeProcessor', 'GPU': 'TipeGPU', 'Display': 'DetailLayar', 'Detail_URL': 'LinkPenjelasan', 'Buy_Link': 'LinkPembelian'}
+            
+            # Mapping kolom agar standar
+            column_map = {
+                'Harga_USD': 'Harga', 
+                'CPU_Score': 'CpuScore', 
+                'GPU_Score': 'GpuScore', 
+                'RAM_Clean': 'RAM', 
+                'Storage': 'Storage_GB', 
+                'Nama_Laptop': 'Nama_Produk', 
+                'Screen_Score': 'ScreenScore_Asli', # Rename jika ada, tapi kita akan override
+                'Processor': 'TipeProcessor', 
+                'GPU': 'TipeGPU', 
+                'Display': 'DetailLayar', 
+                'Detail_URL': 'LinkPenjelasan', 
+                'Buy_Link': 'LinkPembelian'
+            }
             df = df.rename(columns={k: v for k, v in column_map.items() if k in df.columns})
             df = df.loc[:, ~df.columns.duplicated()]
             
@@ -52,21 +118,30 @@ class SistemPakarLaptop:
                 if 'Price' in df.columns: df = df.rename(columns={'Price': 'Harga'})
                 else: return pd.DataFrame()
             
-            numeric_cols = ['Harga', 'CpuScore', 'GpuScore', 'RAM', 'Storage_GB', 'ScreenScore']
+            # Bersihkan data numerik dasar
+            numeric_cols = ['Harga', 'CpuScore', 'GpuScore', 'RAM', 'Storage_GB']
             for col in numeric_cols:
                 if col not in df.columns: df[col] = 0
                 if isinstance(df[col], pd.DataFrame): df[col] = df[col].iloc[:, 0]
                 if df[col].dtype == 'object': df[col] = df[col].astype(str).str.replace(r'[^\d.]', '', regex=True)
                 df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
 
+            # --- SCREEN SCORING & REFRESH RATE ---
+            # 1. Refresh Rate Extraction
             def extract_hz(text):
                 if not isinstance(text, str): return 60 
                 match = re.search(r'(\d+)\s*Hz', text, re.IGNORECASE)
                 return int(match.group(1)) if match else 60
             
-            if 'DetailLayar' in df.columns: df['RefreshRate'] = df['DetailLayar'].apply(extract_hz)
-            else: df['RefreshRate'] = 60
+            if 'DetailLayar' in df.columns: 
+                df['RefreshRate'] = df['DetailLayar'].apply(extract_hz)
+                # 2. Calculate Screen Score (Quality)
+                df['ScreenScore'] = df['DetailLayar'].apply(self._calculate_screen_score)
+            else: 
+                df['RefreshRate'] = 60
+                df['ScreenScore'] = 0
 
+            # --- BRAND EXTRACTION ---
             def identify_brand(product_name):
                 if not isinstance(product_name, str): return "Other"
                 name_upper = product_name.upper()
@@ -86,16 +161,13 @@ class SistemPakarLaptop:
         est_rupiah = row['Harga'] * self.KONVERSI_FACTOR
         final_score = row.get('Nilai_Rekomendasi', 0) * 100
         
-        # Format angka rupiah
         rp_formatted = "{:,.0f}".format(est_rupiah).replace(',', '.')
 
-        # Handle Show All (Generic)
         if kategori == "SHOW_ALL":
             return (f"Estimasi harga Rp {rp_formatted}. Laptop ini memiliki CPU Score {int(row['CpuScore'])}, "
                     f"GPU Score {int(row['GpuScore'])}, dan RAM {int(row['RAM'])}GB. "
                     f"Overall score teknis unit ini adalah {final_score:.1f}%.")
 
-        # Kalimat Lengkap Sesuai Permintaan
         kalimat = (
             f"Estimasi harga Rp {rp_formatted}. "
             f"Dengan CPU {row['TipeProcessor']} ini memiliki benchmark score {int(row['CpuScore'])}, "
@@ -126,7 +198,6 @@ class SistemPakarLaptop:
         if self.data.empty or user_kategori not in self.rules:
             return empty_result
 
-        # Handle Sub Kategori untuk SHOW_ALL
         if user_kategori == "SHOW_ALL":
             user_sub_kategori = "all"
         
@@ -139,7 +210,6 @@ class SistemPakarLaptop:
         budget_multiplier = 1 + (tolerance_percent / 100)
         budget_limit_usd = (user_budget_idr * budget_multiplier) / self.KONVERSI_FACTOR
         
-        # Base filter harga
         candidates = self.data[self.data['Harga'] <= budget_limit_usd].copy()
         
         # 2. Filter Search Name
@@ -152,7 +222,7 @@ class SistemPakarLaptop:
 
         if candidates.empty: return empty_result
 
-        # 4. Filtering Spek (Hanya jika bukan SHOW_ALL)
+        # 4. Filtering Spek
         if user_kategori != "SHOW_ALL":
             candidates = candidates[
                 (candidates['CpuScore'] >= rule['min_cpu']) &
@@ -194,7 +264,7 @@ class SistemPakarLaptop:
         else:
             candidates = candidates.sort_values(by='Nilai_Rekomendasi', ascending=False)
 
-        # Generate Penjelasan yang Lengkap
+        # Generate Penjelasan
         candidates['Penjelasan_AI'] = candidates.apply(
             lambda row: self._generate_explanation(row, rule, user_kategori, user_sub_kategori), axis=1
         )
