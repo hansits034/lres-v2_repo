@@ -194,18 +194,63 @@ body.simple-dark .cyber-input, body.simple-dark .cyber-select, body.simple-dark 
 }
 
 /* Category Cards */
-.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 10px; }
+/* Category Cards */
+.category-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+    gap: 15px; 
+    margin-top: 10px; 
+}
+
 .cat-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--glass-border);
-    border-radius: 10px; padding: 15px; cursor: pointer; text-align: center; transition: 0.3s;
+    border-radius: 10px; 
+    padding: 15px; 
+    cursor: pointer; 
+    text-align: center; 
+    transition: 0.3s;
 }
-body.neon-light .cat-card, body.simple-light .cat-card { background: #fff; border-color: #ddd; }
-body.simple-dark .cat-card { background: rgba(0,0,0,0.2); }
 
-.cat-card:hover { transform: translateY(-5px); border-color: var(--primary-neon); }
-.cat-card.active { border-color: var(--secondary-neon); background: rgba(188, 19, 254, 0.1); }
-body.simple-light .cat-card.active { background: #e7f1ff; border-color: var(--primary-neon); }
+/* Base Style untuk Light Modes (Neon Light & Simple Light) */
+body.neon-light .cat-card, 
+body.simple-light .cat-card { 
+    background: #fff; 
+    border-color: #ddd; 
+}
+
+/* Base Style untuk Simple Dark */
+body.simple-dark .cat-card { 
+    background: rgba(0,0,0,0.2); 
+}
+
+/* Hover Effect (General) */
+.cat-card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--primary-neon); 
+}
+
+/* --- ACTIVE STATES (SAAT DIKLIK) --- */
+
+/* 1. Default Active (Neon Dark) */
+.cat-card.active { 
+    border-color: var(--secondary-neon); 
+    background: rgba(188, 19, 254, 0.1); 
+}
+
+/* 2. Simple Light Active (Biru Kalem) */
+body.simple-light .cat-card.active { 
+    background: #e7f1ff; 
+    border-color: var(--primary-neon); 
+}
+
+/* 3. Neon Light Active (REVISI: Ungu Glowing) */
+body.neon-light .cat-card.active {
+    background: rgba(176, 0, 224, 0.15); /* Ungu transparan yang lebih pekat */
+    border-color: var(--secondary-neon);   /* Border Ungu */
+    box-shadow: 0 0 15px rgba(176, 0, 224, 0.4); /* Efek cahaya (Glow) Ungu */
+    transform: translateY(-3px);
+}
 
 /* --- FIX: Sub-category Text & Show All Icon in Dark Mode --- */
 /* Default (Neon Dark) & Simple Dark: Make muted text lighter */
