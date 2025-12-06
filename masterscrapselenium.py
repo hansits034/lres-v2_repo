@@ -64,7 +64,7 @@ def smart_sleep():
     if sleep_time < 30:
         sleep_time = 30 + (30 - sleep_time)
         
-    print(f"   ⏳ Menunggu {sleep_time:.2f} detik (Mode Manusia)...")
+    print(f"    ⏳ Menunggu {sleep_time:.2f} detik (Mode Manusia)...")
     time.sleep(sleep_time)
 
 # LANGKAH 0: BERSIH-BERSIH 
@@ -103,7 +103,7 @@ def step_1_fetch_laptops_selenium():
     time.sleep(random_start_delay)
     # ------------------------------------
 
-    print("   🌐 Membuka Google Chrome (Headless Mode)...")
+    print("    🌐 Membuka Google Chrome (Headless Mode)...")
 
     # Setup Chrome Driver
     options = webdriver.ChromeOptions()
@@ -136,7 +136,7 @@ def step_1_fetch_laptops_selenium():
 
     try:
         for base_url in LAPTOP_START_URLS:
-            print(f"   🔗 Memproses Filter Utama...")
+            print(f"    🔗 Memproses Filter Utama...")
 
             # LOOP HALAMAN 1 SAMPAI 10
             for i in range(1, MAX_PAGES_PER_URL + 1):
@@ -153,15 +153,15 @@ def step_1_fetch_laptops_selenium():
                     else:
                         target_url = base_url + f"?current=n_{i}_n"
 
-                print(f"\n   🌍 Mengakses Halaman {i}...")
-                print(f"   (Link: {target_url[:60]}...)")
+                print(f"\n    🌍 Mengakses Halaman {i}...")
+                print(f"    (Link: {target_url[:60]}...)")
                 
                 driver.get(target_url)
                 
                 smart_sleep() 
 
                 filename = f"halaman{page_counter}.html"
-                print(f"   💾 Menyimpan {filename}...")
+                print(f"    💾 Menyimpan {filename}...")
                 
                 with open(filename, "w", encoding="utf-8") as f:
                     f.write(driver.page_source)
@@ -169,9 +169,9 @@ def step_1_fetch_laptops_selenium():
                 page_counter += 1
                 
     except Exception as e:
-        print(f"   ❌ Terjadi error fatal pada browser: {e}")
+        print(f"    ❌ Terjadi error fatal pada browser: {e}")
     finally:
-        print("   ✅ Menutup Browser.")
+        print("    ✅ Menutup Browser.")
         driver.quit()
 
 # LANGKAH 2: PARSING HTML LAPTOP
@@ -246,23 +246,23 @@ def step_2_process_laptops():
             
             # Cek validitas konten
             if "laptopLayoutSmall" not in content and "priceBtn" not in content:
-                print(f"   ⚠️ {file_name} sepertinya halaman kosong/error. Skip.")
+                print(f"    ⚠️ {file_name} sepertinya halaman kosong/error. Skip.")
                 continue
 
             data = parse_single_laptop_page(content)
             all_data.extend(data)
-            print(f"   ✅ {file_name}: {len(data)} item.")
+            print(f"    ✅ {file_name}: {len(data)} item.")
         except Exception as e:
-            print(f"   ❌ Error membaca {file_name}: {e}")
+            print(f"    ❌ Error membaca {file_name}: {e}")
 
     if all_data:
         df = pd.DataFrame(all_data)
         df['Storage'] = df['Storage'].astype(str).str.strip().replace(r'\s+', ' ', regex=True)
         df.to_csv(FILE_FINAL_RAW, index=False)
-        print(f"   🎉 Data mentah disimpan ke: {os.path.abspath(FILE_FINAL_RAW)}")
-        print(f"   (Jumlah Baris: {len(df)})")
+        print(f"    🎉 Data mentah disimpan ke: {os.path.abspath(FILE_FINAL_RAW)}")
+        print(f"    (Jumlah Baris: {len(df)})")
     else:
-        print("   ⚠️ Tidak ada data laptop yang terekstrak.")
+        print("    ⚠️ Tidak ada data laptop yang terekstrak.")
 
 # LANGKAH 3-6: BENCHMARK 
 # Menggunakan requests biasa karena situs benchmark jarang memblokir
@@ -271,7 +271,7 @@ import requests
 def download_benchmark(url, filename):
     if os.path.exists(filename): 
         return True
-    print(f"   Downloading {filename}...")
+    print(f"    Downloading {filename}...")
     headers = {'User-Agent': 'Mozilla/5.0'}
     try:
         r = requests.get(url, headers=headers)
@@ -301,9 +301,9 @@ def step_3_to_6_benchmarks():
                         'CPU Mark': re.sub(r'[^\d]', '', cols[1].get_text(strip=True))
                     })
             pd.DataFrame(cpu_data).to_csv(FILE_CPU_CSV, index=False)
-            print(f"   ✅ CPU Benchmark: {len(cpu_data)} items.")
+            print(f"    ✅ CPU Benchmark: {len(cpu_data)} items.")
     except Exception as e:
-        print(f"   ❌ Error CPU: {e}")
+        print(f"    ❌ Error CPU: {e}")
 
     # GPU
     download_benchmark(URL_GPU_BENCHMARK, "gpu_list.html")
@@ -322,9 +322,9 @@ def step_3_to_6_benchmarks():
                         'Passmark G3D Mark': re.sub(r'[^\d]', '', cols[1].get_text(strip=True))
                     })
             pd.DataFrame(gpu_data).to_csv(FILE_GPU_CSV, index=False)
-            print(f"   ✅ GPU Benchmark: {len(gpu_data)} items.")
+            print(f"    ✅ GPU Benchmark: {len(gpu_data)} items.")
     except Exception as e:
-        print(f"   ❌ Error GPU: {e}")
+        print(f"    ❌ Error GPU: {e}")
 
 # LANGKAH 7: PREPROCESSING FINAL 
 def step_7_preprocessing():
@@ -389,14 +389,67 @@ def step_7_preprocessing():
             if v > 500000: return int(v)
             return int(v * 16000)
         except: return 0
+
+    # --- FUNGSI SCREEN SCORE (DITAMBAHKAN) ---
+    def get_screen_quality(display_text):
+        text = str(display_text).lower()
+        score = 0
+        
+        # 1. Panel Type
+        if 'oled' in text or 'amoled' in text or 'mini-led' in text: 
+            score += 80
+        elif 'ips' in text or 'uwva' in text or 'retina' in text: 
+            score += 50
+        elif 'tn' in text: 
+            score += 10
+        else:
+            score += 20 # Standar SVA/WVA/Unknown
+
+        # 2. Resolution Dimension
+        # 4K / UHD
+        if '3840' in text or '4k' in text or 'uhd' in text: 
+            score += 100
+        # 2K / QHD / WQHD
+        elif '2560' in text or '2k' in text or 'qhd' in text or 'wqhd' in text or '2880' in text: 
+            score += 70
+        # FHD+ / WUXGA (1920x1200)
+        elif '1920' in text or 'fhd' in text or '1080' in text or 'wuxga' in text: 
+            score += 40
+        # HD / WXGA
+        elif '1366' in text or 'hd ' in text or 'wxga' in text: 
+            score += 10
+        else:
+            score += 20 # Unknown, kasih poin tengah
+
+        # 3. Refresh Rate (Pencarian menggunakan Regex)
+        # Mencari angka sebelum kata "hz"
+        hz_match = re.search(r'(\d+)\s*hz', text)
+        if hz_match:
+            hz_val = int(hz_match.group(1))
+            if hz_val >= 240: score += 60      # Esports Grade
+            elif hz_val >= 144: score += 40    # Standard Gaming
+            elif hz_val >= 120: score += 30    # Entry Gaming / Premium Office
+            elif hz_val >= 90: score += 15     # Smooth Office
+            # 60Hz tidak menambah skor (standar)
+        
+        # 4. Fitur Tambahan
+        if 'touch' in text: score += 10
+        if '100% srgb' in text or '100% dci-p3' in text: score += 20
+
+        return score
     
     df['Price_IDR'] = df['Harga_USD'].apply(clean_price)
     df['CPU_Score'] = df['Processor'].apply(get_cpu_score)
     df['GPU_Score'] = df['GPU'].apply(get_gpu_score)
     
+    # APPLY FUNCTION SCREEN SCORE
+    df['Screen_Score'] = df['Display'].apply(get_screen_quality)
+    
     df.to_csv(FILE_FINAL_DATASET, index=False)
     print(f"\n🎉 SUKSES! Dataset Lengkap disimpan di: {os.path.abspath(FILE_FINAL_DATASET)}")
-    print(df[['Nama_Laptop', 'CPU_Score', 'GPU_Score', 'Price_IDR']].head())
+    
+    # Preview dengan Screen_Score
+    print(df[['Nama_Laptop', 'CPU_Score', 'GPU_Score', 'Screen_Score', 'Price_IDR']].head())
 
 # MAIN LOOP
 if __name__ == "__main__":
@@ -411,7 +464,3 @@ if __name__ == "__main__":
     
     end_time = time.time()
     print(f"\n⏱️ Selesai dalam {end_time - start_time:.2f} detik.")
-
-
-
-
