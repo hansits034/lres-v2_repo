@@ -360,3 +360,110 @@ body.simple-light .ai-terminal::before { display: none; }
 .modal-cyber li, .modal-cyber p, .modal-cyber label, .modal-cyber span { color: #212529 !important; }
 .modal-cyber .form-check-input { border: 1px solid #666; background-color: #fff; }
 .modal-cyber .form-check-input:checked { background-color: var(--primary-neon); border-color: var(--primary-neon); }
+
+/* =========================================
+   6. RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* --- TABLET & LAPTOP KECIL (Max Width: 1024px) --- */
+@media (max-width: 1024px) {
+    .glitch-title {
+        font-size: 2.8rem; /* Perkecil judul utama */
+    }
+    
+    .glass-panel {
+        padding: 2rem; /* Kurangi padding panel */
+    }
+}
+
+/* --- TABLET POTRAIT & HP BESAR (Max Width: 768px) --- */
+@media (max-width: 768px) {
+    /* Header Adjustment */
+    .cyber-header {
+        padding: 3rem 0 1.5rem;
+        text-align: center; /* Pusatkan teks di layar kecil */
+    }
+    
+    .glitch-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    /* Top Controls (Tombol Ganti Tema) */
+    .top-controls {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .btn-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem; /* Perkecil ikon */
+    }
+
+    /* Cards & Grid */
+    .category-grid {
+        /* Paksa minimal 2 kolom di tablet agar tidak terlalu lebar */
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+        gap: 10px;
+    }
+    
+    .tech-card {
+        margin-bottom: 15px;
+    }
+    
+    /* Buttons */
+    .btn-cyber {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+}
+
+/* --- MOBILE / HP KECIL (Max Width: 576px) --- */
+@media (max-width: 576px) {
+    /* Container Padding */
+    .glass-panel {
+        padding: 1.5rem 1rem; /* Padding lebih tipis di HP */
+        border-radius: 15px;
+    }
+
+    /* Typography */
+    .glitch-title {
+        font-size: 1.8rem; /* Judul lebih kecil agar tidak pecah */
+    }
+    
+    /* Form Elements */
+    .cyber-input, 
+    .cyber-select, 
+    .cyber-text-input {
+        font-size: 0.9rem;
+        height: 45px;
+        padding: 10px;
+    }
+
+    /* Category Cards */
+    .cat-card {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    /* Result Cards Button Group */
+    .btn-action-group {
+        /* Jika layar sangat sempit, tombol ditumpuk vertikal */
+        grid-template-columns: 1fr; 
+    }
+    
+    .tech-price {
+        font-size: 1.3rem;
+        margin: 10px 0;
+    }
+    
+    /* Modal Adjustment */
+    .modal-dialog {
+        margin: 0.5rem; /* Margin tipis di modal HP */
+    }
+}
