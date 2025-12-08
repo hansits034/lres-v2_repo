@@ -22,6 +22,7 @@ def index():
     search_query = ""
     selected_brand = "ALL"
     
+    tolerance_val = 0  # <--- Default 0%
     # Pagination & Sorting Defaults
     current_page = 1
     total_pages = 1
@@ -38,6 +39,13 @@ def index():
             # 2. Ambil Parameter Baru (Search & Brand)
             search_query = request.form.get('search_query', '')
             selected_brand = request.form.get('brand_filter', 'ALL')
+
+            # --- [FIX START] Ambil Nilai Tolerance dari Form HTML ---
+            try:
+                tolerance_val = int(request.form.get('tolerance', 0))
+            except:
+                tolerance_val = 0
+            # --- [FIX END] ---
 
             # 3. Ambil Parameter Pagination & Sorting
             try: current_page = int(request.form.get('page', 1))
@@ -59,6 +67,7 @@ def index():
                 search_query=search_query,     # NEW
                 brand_filter=selected_brand,   # NEW
                 sort_option=sort_option, 
+                tolerance_percent=tolerance_val, # <--- [FIX] Kirim nilai tolerance ke engine
                 page=current_page,
                 per_page=24
             )
@@ -90,8 +99,9 @@ def index():
                            current_page=current_page,
                            total_pages=total_pages,
                            current_sort=sort_option,
+                           tolerance=tolerance_val,     # <--- [FIX] Kirim balik ke HTML agar UI tidak reset
                            brands=brands_list)          # NEW
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 
-#     app.run(debug=True)
+ app.run(debug=True)

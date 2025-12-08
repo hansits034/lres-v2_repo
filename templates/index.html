@@ -63,10 +63,10 @@
                             <div class="col-md-3">
                                 <label class="form-label">TOLERANCE</label>
                                 <select class="form-select cyber-select" name="tolerance">
-                                    <option value="0" {% if last_tolerance == 0 %}selected{% endif %}>Exact Budget (0%)</option>
-                                    <option value="5" {% if last_tolerance == 5 %}selected{% endif %}>+5% Limit</option>
-                                    <option value="10" {% if last_tolerance == 10 %}selected{% endif %}>+10% Limit</option>
-                                    <option value="20" {% if last_tolerance == 20 %}selected{% endif %}>+20% Limit</option>
+                                    <option value="0" {% if tolerance == 0 %}selected{% endif %}>Exact Budget (0%)</option>
+                                    <option value="5" {% if tolerance == 5 %}selected{% endif %}>+5% Limit</option>
+                                    <option value="10" {% if tolerance == 10 %}selected{% endif %}>+10% Limit</option>
+                                    <option value="20" {% if tolerance == 20 %}selected{% endif %}>+20% Limit</option>
                                 </select>
                             </div>
 
@@ -76,7 +76,6 @@
                                        placeholder="e.g. Legion, ROG" value="{{ last_search }}">
                             </div>
                         </div>
-
                         <div class="mb-4">
                             <label class="form-label">BRAND FILTER</label>
                             <select class="form-select cyber-select" name="brand_filter" style="width: 100%;">
