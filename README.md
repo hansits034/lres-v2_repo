@@ -72,19 +72,20 @@ Sistem dapat diakses tanpa instalasi melalui link berikut:
 ```text
 Laptop-Expert-System/
 │
-├── dataset_final_super_lengkap.csv  # [Knowledge Source] Data spesifikasi laptop
+├── .github/workflows
+│   └── scrape_scheduler.yml         # Program untuk memperbaharui data (Data Laptop, CPU bench mark, GPU Benchmark, Score Layar) secara otomatis tiap hari.
+├── static/
+│   └── style.css                    # Design Visual
+├── templates/
+│   └── index.html                   # Antarmuka pengguna (Bootstrap 5)
+├── app.py                           # [Controller] Web Server Flask
+├── expertsystem.py                  # [Logic] Core sistem pakar, Rules, & Algoritma SAW
 ├── cpu_bm.csv                       # [Knowledge Source] Data Benchmark score tipe processor/CPU
+├── dataset_final_super_lengkap.csv  # [Knowledge Source] Data spesifikasi laptop
 ├── gpu_bm.csv                       # [Knowledge Source] Data Benchmark score tipe Graphic Card/GPU
 ├── masterscrapselenium.py           # [Acquisition] Script Automated Knowledge Extraction
-├── expertsystem.py                  # [Logic] Core sistem pakar, Rules, & Algoritma SAW
-├── app.py                           # [Controller] Web Server Flask
-├── README.md                        # Dokumentasi Proyek
-└── .github/workspace
-    └── autoscrape.yml               # Program untuk memperbaharui data (Data Laptop, CPU bench mark, GPU Benchmark, Score Layar) secara otomatis tiap hari.
-└── templates/
-    └── index.html                   # Antarmuka pengguna (Bootstrap 5)
-└── static/
-    └── style.css                    # Design Visual
+└── README.md                        # Dokumentasi Proyek
+
 ```
 
 ## 🧠 Dokumentasi Sistem Pakar
