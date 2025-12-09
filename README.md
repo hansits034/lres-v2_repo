@@ -73,7 +73,8 @@ Sistem dapat diakses tanpa instalasi melalui link berikut:
 Laptop-Expert-System/
 │
 ├── .github/workflows
-│   └── scrape_scheduler.yml         # Program untuk memperbaharui data (Data Laptop, CPU bench mark, GPU Benchmark, Score Layar) secara otomatis tiap hari.
+│   └── scrape_scheduler.yml         # Program untuk memperbaharui data (Data Laptop, CPU bench mark,
+│                                    GPU Benchmark, Score Layar) secara otomatis tiap hari.
 ├── static/
 │   └── style.css                    # Design Visual
 ├── templates/
@@ -83,7 +84,8 @@ Laptop-Expert-System/
 ├── expertsystem.py                  # [Logic] Core sistem pakar, Rules, & Algoritma SAW
 ├── cpu_bm.csv                       # [Knowledge Source] Data Benchmark score tipe processor/CPU
 ├── dataset_final_super_lengkap.csv  # [Knowledge Source] Data spesifikasi laptop yang sudah siap pakai 
-├── final_scrape.csv                 # [Knowledge Source] Data spesifikasi laptop yang masih mentah, belum ada score benchmark
+├── final_scrape.csv                 # [Knowledge Source] Data spesifikasi laptop yang masih mentah,
+│                                    belum ada score benchmark
 ├── gpu_bm.csv                       # [Knowledge Source] Data Benchmark score tipe Graphic Card/GPU
 ├── masterscrapselenium.py           # [Acquisition] Script Automated Knowledge Extraction
 └── requirements.txt                 # Daftar kebutuhan library untuk menjalankan, terutama untuk dideploy
