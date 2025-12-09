@@ -88,7 +88,7 @@ Laptop-Expert-System/
 │                                    belum ada score benchmark
 ├── gpu_bm.csv                       # [Knowledge Source] Data Benchmark score tipe Graphic Card/GPU
 ├── masterscrapselenium.py           # [Acquisition] Script Automated Knowledge Extraction
-└── requirements.txt                 # Daftar kebutuhan library untuk menjalankan, terutama untuk dideploy
+└── requirements.txt                 # Daftar kebutuhan library untuk menjalankan, untuk deployment
 
 
 ```
