@@ -22,8 +22,8 @@ def index():
     search_query = ""
     selected_brand = "ALL"
     
-    tolerance_val = 0  # <--- Default 0%
-    # Pagination & Sorting Defaults
+    tolerance_val = 0  
+    
     current_page = 1
     total_pages = 1
     sort_option = "score" 
@@ -36,16 +36,15 @@ def index():
             selected_cat = request.form.get('category')
             selected_sub = request.form.get('sub_category')
             
-            # 2. Ambil Parameter Baru (Search & Brand)
+            # 2. Ambil Parameter (Search & Brand)
             search_query = request.form.get('search_query', '')
             selected_brand = request.form.get('brand_filter', 'ALL')
 
-            # --- [FIX START] Ambil Nilai Tolerance dari Form HTML ---
             try:
                 tolerance_val = int(request.form.get('tolerance', 0))
             except:
                 tolerance_val = 0
-            # --- [FIX END] ---
+    
 
             # 3. Ambil Parameter Pagination & Sorting
             try: current_page = int(request.form.get('page', 1))
@@ -64,10 +63,10 @@ def index():
                 input_budget, 
                 selected_cat, 
                 selected_sub, 
-                search_query=search_query,     # NEW
-                brand_filter=selected_brand,   # NEW
+                search_query=search_query,    
+                brand_filter=selected_brand,
                 sort_option=sort_option, 
-                tolerance_percent=tolerance_val, # <--- [FIX] Kirim nilai tolerance ke engine
+                tolerance_percent=tolerance_val, 
                 page=current_page,
                 per_page=24
             )
@@ -94,14 +93,15 @@ def index():
                            last_budget=input_budget,
                            last_cat=selected_cat,
                            last_sub=selected_sub,
-                           last_search=search_query,    # NEW
-                           last_brand=selected_brand,   # NEW
+                           last_search=search_query,    
+                           last_brand=selected_brand, 
                            current_page=current_page,
                            total_pages=total_pages,
                            current_sort=sort_option,
-                           tolerance=tolerance_val,     # <--- [FIX] Kirim balik ke HTML agar UI tidak reset
-                           brands=brands_list)          # NEW
+                           tolerance=tolerance_val,     
+                           brands=brands_list)         
 
 if __name__ == '__main__':
 
  app.run(debug=True)
+
