@@ -78,13 +78,16 @@ Laptop-Expert-System/
 │   └── style.css                    # Design Visual
 ├── templates/
 │   └── index.html                   # Antarmuka pengguna (Bootstrap 5)
+└── README.md                        # Dokumentasi Proyek
 ├── app.py                           # [Controller] Web Server Flask
 ├── expertsystem.py                  # [Logic] Core sistem pakar, Rules, & Algoritma SAW
 ├── cpu_bm.csv                       # [Knowledge Source] Data Benchmark score tipe processor/CPU
-├── dataset_final_super_lengkap.csv  # [Knowledge Source] Data spesifikasi laptop
+├── dataset_final_super_lengkap.csv  # [Knowledge Source] Data spesifikasi laptop yang sudah siap pakai 
+├── final_scrape.csv                 # [Knowledge Source] Data spesifikasi laptop yang masih mentah, belum ada score benchmark
 ├── gpu_bm.csv                       # [Knowledge Source] Data Benchmark score tipe Graphic Card/GPU
 ├── masterscrapselenium.py           # [Acquisition] Script Automated Knowledge Extraction
-└── README.md                        # Dokumentasi Proyek
+└── requirements.txt                 # Daftar kebutuhan library untuk menjalankan, terutama untuk dideploy
+
 
 ```
 
