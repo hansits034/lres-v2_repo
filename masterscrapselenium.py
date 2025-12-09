@@ -146,8 +146,7 @@ def step_1_fetch_laptops_selenium():
                     # Halaman 1 
                     target_url = base_url
                 else:
-                    # Halaman 2+ menyisipkan parameter 'current=n_X_n' setelah tanda tanya (?)
-                    # Pola: .../specs/?size=...  MENJADI .../specs/?current=n_2_n&size=...
+                    # Halaman 2+
                     if "?" in base_url:
                         target_url = base_url.replace("?", f"?current=n_{i}_n&")
                     else:
@@ -464,5 +463,6 @@ if __name__ == "__main__":
     
     end_time = time.time()
     print(f"\n⏱️ Selesai dalam {end_time - start_time:.2f} detik.")
+
 
 
