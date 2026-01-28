@@ -43,30 +43,67 @@ class SistemPakarLaptop:
 
     def _load_and_clean_data(self):
         try:
+            # Baca CSV
             df = pd.read_csv(self.file_path, encoding='utf-8', low_memory=False)
-            column_map = {'Harga_USD': 'Harga', 'CPU_Score': 'CpuScore', 'GPU_Score': 'GpuScore', 'RAM_Clean': 'RAM', 'Storage': 'Storage_GB', 'Nama_Laptop': 'Nama_Produk', 'Screen_Score': 'ScreenScore', 'Processor': 'TipeProcessor', 'GPU': 'TipeGPU', 'Display': 'DetailLayar', 'Detail_URL': 'LinkPenjelasan', 'Buy_Link': 'LinkPembelian'}
+            
+            # 1. PERBAIKAN MAPPING: Sesuaikan dengan nama kolom asli di CSV Anda
+            column_map = {
+                'Harga_USD': 'Harga', 
+                'Price': 'Harga',
+                'CPU_Score': 'CpuScore', 
+                'GPU_Score': 'GpuScore', 
+                'RAM': 'RAM',          # Ganti 'RAM_Clean' jadi 'RAM' (sesuai CSV)
+                'Storage': 'Storage_GB', 
+                'Nama_Laptop': 'Nama_Produk', 
+                'Screen_Score': 'ScreenScore', 
+                'Processor': 'TipeProcessor', 
+                'GPU': 'TipeGPU', 
+                'Display': 'DetailLayar', 
+                'Detail_URL': 'LinkPenjelasan', 
+                'Buy_Link': 'LinkPembelian'
+            }
+            
+            # Rename kolom yang ditemukan
             df = df.rename(columns={k: v for k, v in column_map.items() if k in df.columns})
+            
+            # Hapus duplikat kolom jika ada
             df = df.loc[:, ~df.columns.duplicated()]
             
+            # Pastikan kolom Harga ada
             if 'Harga' not in df.columns:
-                if 'Price' in df.columns: df = df.rename(columns={'Price': 'Harga'})
-                else: return pd.DataFrame()
+                return pd.DataFrame()
             
+            # 2. PERBAIKAN CLEANING: Gunakan 'extract' bukan 'replace'
+            # Agar "16GB DDR4" diambil "16"-nya saja, bukan "164"
             numeric_cols = ['Harga', 'CpuScore', 'GpuScore', 'RAM', 'Storage_GB', 'ScreenScore']
+            
             for col in numeric_cols:
-                if col not in df.columns: df[col] = 0
-                if isinstance(df[col], pd.DataFrame): df[col] = df[col].iloc[:, 0]
-                if df[col].dtype == 'object': df[col] = df[col].astype(str).str.replace(r'[^\d.]', '', regex=True)
+                # Jika kolom tidak ada, buat baru dengan isi 0
+                if col not in df.columns:
+                    df[col] = 0
+                
+                # Ubah ke string dulu
+                df[col] = df[col].astype(str)
+                
+                # LOGIKA BARU: Ambil angka pertama yang muncul (ekstrak)
+                # Contoh: "512GB SSD" -> ambil "512"
+                df[col] = df[col].str.extract(r'(\d+)').fillna(0)
+                
+                # Ubah ke numerik
                 df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
 
+            # Ekstrak Refresh Rate (Hz)
             def extract_hz(text):
                 if not isinstance(text, str): return 60 
                 match = re.search(r'(\d+)\s*Hz', text, re.IGNORECASE)
                 return int(match.group(1)) if match else 60
             
-            if 'DetailLayar' in df.columns: df['RefreshRate'] = df['DetailLayar'].apply(extract_hz)
-            else: df['RefreshRate'] = 60
+            if 'DetailLayar' in df.columns: 
+                df['RefreshRate'] = df['DetailLayar'].apply(extract_hz)
+            else: 
+                df['RefreshRate'] = 60
 
+            # Identifikasi Brand
             def identify_brand(product_name):
                 if not isinstance(product_name, str): return "Other"
                 name_upper = product_name.upper()
@@ -78,6 +115,7 @@ class SistemPakarLaptop:
             df['Brand'] = df['Nama_Produk'].apply(identify_brand)
             
             return df
+            
         except Exception as e: 
             print(f"Error Loading: {e}")
             return pd.DataFrame()
@@ -223,3 +261,4 @@ class SistemPakarLaptop:
 
     def get_brands(self):
         return self.TARGET_BRANDS
+
