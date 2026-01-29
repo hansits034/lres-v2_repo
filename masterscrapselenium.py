@@ -39,8 +39,8 @@ MAX_PAGES_PER_URL = 10
 
 # Nama File Output
 FILE_FINAL_RAW = 'final_scrap.csv'
-FILE_CPU_CSV = 'cpu_bm.csv'
-FILE_GPU_CSV = 'gpu_bm.csv'
+FILE_CPU_CSV = 'cpu_bm_1.csv'
+FILE_GPU_CSV = 'gpu_bm_1.csv'
 FILE_FINAL_DATASET = 'dataset_final_super_lengkap.csv'
 
 # URL Benchmark 
@@ -463,6 +463,7 @@ if __name__ == "__main__":
     
     end_time = time.time()
     print(f"\n⏱️ Selesai dalam {end_time - start_time:.2f} detik.")
+
 
 
 
