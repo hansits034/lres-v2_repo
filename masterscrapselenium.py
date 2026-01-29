@@ -299,7 +299,7 @@ def step_3_to_6_benchmarks():
                         'CPU Name': cols[0].get_text(strip=True),
                         'CPU Mark': re.sub(r'[^\d]', '', cols[1].get_text(strip=True))
                     })
-            pd.DataFrame(cpu_data).to_csv(FILE_CPU_CSV, index=False)
+            pd.DataFrame(cpu_data).to_csv(cpu_bm.csv, index=False)
             print(f"    ✅ CPU Benchmark: {len(cpu_data)} items.")
     except Exception as e:
         print(f"    ❌ Error CPU: {e}")
@@ -320,7 +320,7 @@ def step_3_to_6_benchmarks():
                         'Videocard Name': cols[0].get_text(strip=True),
                         'Passmark G3D Mark': re.sub(r'[^\d]', '', cols[1].get_text(strip=True))
                     })
-            pd.DataFrame(gpu_data).to_csv(FILE_GPU_CSV, index=False)
+            pd.DataFrame(gpu_data).to_csv(gpu_bm.csv, index=False)
             print(f"    ✅ GPU Benchmark: {len(gpu_data)} items.")
     except Exception as e:
         print(f"    ❌ Error GPU: {e}")
@@ -337,15 +337,15 @@ def step_7_preprocessing():
 
     # Load Referensi
     cpu_dict = {}
-    if os.path.exists(FILE_CPU_CSV):
-        df_cpu = pd.read_csv(FILE_CPU_CSV)
+    if os.path.exists(cpu_bm.csv):
+        df_cpu = pd.read_csv(cpu_bm.csv)
         df_cpu['CPU Name'] = df_cpu['CPU Name'].astype(str).str.replace(r'\s*@.*', '', regex=True).str.lower().str.strip()
         df_cpu['CPU Mark'] = pd.to_numeric(df_cpu['CPU Mark'], errors='coerce').fillna(0).astype(int)
         cpu_dict = dict(zip(df_cpu['CPU Name'], df_cpu['CPU Mark']))
 
     gpu_dict = {}
-    if os.path.exists(FILE_GPU_CSV):
-        df_gpu = pd.read_csv(FILE_GPU_CSV)
+    if os.path.exists(gpu_bm.csv):
+        df_gpu = pd.read_csv(gpu_bm.csv)
         df_gpu['Videocard Name'] = df_gpu['Videocard Name'].astype(str).str.lower().str.strip()
         df_gpu['Passmark G3D Mark'] = pd.to_numeric(df_gpu['Passmark G3D Mark'], errors='coerce').fillna(0).astype(int)
         gpu_dict = dict(zip(df_gpu['Videocard Name'], df_gpu['Passmark G3D Mark']))
@@ -463,6 +463,7 @@ if __name__ == "__main__":
     
     end_time = time.time()
     print(f"\n⏱️ Selesai dalam {end_time - start_time:.2f} detik.")
+
 
 
 
