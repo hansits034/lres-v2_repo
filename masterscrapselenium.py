@@ -5,6 +5,7 @@ import glob
 import pandas as pd
 from bs4 import BeautifulSoup
 import random
+import requests # Pastikan library ini ada
 
 try:
     from selenium import webdriver
@@ -37,11 +38,15 @@ LAPTOP_START_URLS = [
 
 MAX_PAGES_PER_URL = 10  
 
-# Nama File Output
+# --- KONFIGURASI FILE ---
 FILE_FINAL_RAW = 'final_scrap.csv'
-FILE_CPU_CSV = 'cpu_bm_1.csv'
-FILE_GPU_CSV = 'gpu_bm_1.csv'
 FILE_FINAL_DATASET = 'dataset_final_super_lengkap.csv'
+
+# File Benchmark (OLD vs NEW)
+FILE_CPU_OLD = 'cpu_bm.csv'
+FILE_GPU_OLD = 'gpu_bm.csv'
+FILE_CPU_NEW = 'cpu_bm_1.csv'
+FILE_GPU_NEW = 'gpu_bm_1.csv'
 
 # URL Benchmark 
 URL_CPU_BENCHMARK = "https://www.cpubenchmark.net/cpu_list.php"
@@ -67,16 +72,17 @@ def smart_sleep():
     print(f"    ⏳ Menunggu {sleep_time:.2f} detik (Mode Manusia)...")
     time.sleep(sleep_time)
 
-# LANGKAH 0: BERSIH-BERSIH 
+# LANGKAH 0: BERSIH-BERSIH (Dengan Proteksi File Lama)
 def step_0_cleanup():
     print("\n[LANGKAH 0] Membersihkan file lama...")
+    # KITA TIDAK MENGHAPUS cpu_bm.csv dan gpu_bm.csv AGAR BISA JADI FALLBACK
     patterns = [
         "halaman*.html", 
         "cpu_list.php", 
         "gpu_list.html", 
         FILE_FINAL_RAW, 
-        FILE_CPU_CSV, 
-        FILE_GPU_CSV, 
+        FILE_CPU_NEW, # Hapus yang _1 saja
+        FILE_GPU_NEW, # Hapus yang _1 saja
         FILE_FINAL_DATASET
     ]
     
@@ -88,9 +94,9 @@ def step_0_cleanup():
                 deleted_count += 1
             except Exception as e:
                 print(f"⚠️ Gagal menghapus {f}: {e}")
-    print(f"✅ Berhasil menghapus {deleted_count} file lama.")
+    print(f"✅ Berhasil menghapus {deleted_count} file sementara.")
 
-# LANGKAH 1: BROWSER AUTOMATION
+# LANGKAH 1: BROWSER AUTOMATION (LAPTOP MEDIA)
 def step_1_fetch_laptops_selenium():
     if not HAS_SELENIUM:
         return
@@ -263,69 +269,86 @@ def step_2_process_laptops():
     else:
         print("    ⚠️ Tidak ada data laptop yang terekstrak.")
 
-# LANGKAH 3-6: BENCHMARK 
-# Menggunakan requests biasa karena situs benchmark jarang memblokir
-import requests 
-
+# LANGKAH 3-6: BENCHMARK (Dimodifikasi agar Fail-Safe)
 def download_benchmark(url, filename):
-    if os.path.exists(filename): 
-        return True
-    print(f"    Downloading {filename}...")
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    print(f"    ⏳ Mencoba mendownload {filename}...")
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Referer': 'https://www.google.com/'
+    }
     try:
-        r = requests.get(url, headers=headers)
-        with open(filename, 'w', encoding='utf-8') as f:
-            f.write(r.text)
-        return True
-    except:
+        r = requests.get(url, headers=headers, timeout=20)
+        if r.status_code == 200:
+            with open(filename, 'w', encoding='utf-8') as f:
+                f.write(r.text)
+            return True
+        else:
+            print(f"    ⚠️ Gagal download (Status {r.status_code}). Website mungkin memblokir bot.")
+            return False
+    except Exception as e:
+        print(f"    ⚠️ Gagal download: {e}")
         return False
 
 def step_3_to_6_benchmarks():
-    print("\n[LANGKAH 3-6] Mengurus Benchmark CPU & GPU...")
+    print("\n[LANGKAH 3-6] Mengurus Benchmark CPU & GPU (Mode Toleransi Blokir)...")
     
-    # CPU
-    download_benchmark(URL_CPU_BENCHMARK, "cpu_list.php")
-    try:
-        with open("cpu_list.php", 'r', encoding='utf-8', errors='ignore') as f:
-            soup = BeautifulSoup(f.read(), 'html.parser')
-        table = soup.find('table', id='cputable') or soup.find('table')
-        if table:
-            rows = table.find_all('tr')[1:]
-            cpu_data = []
-            for row in rows:
-                cols = row.find_all('td')
-                if len(cols) >= 2:
-                    cpu_data.append({
-                        'CPU Name': cols[0].get_text(strip=True),
-                        'CPU Mark': re.sub(r'[^\d]', '', cols[1].get_text(strip=True))
-                    })
-            pd.DataFrame(cpu_data).to_csv(cpu_bm.csv, index=False)
-            print(f"    ✅ CPU Benchmark: {len(cpu_data)} items.")
-    except Exception as e:
-        print(f"    ❌ Error CPU: {e}")
+    # --- CPU ---
+    success_cpu = download_benchmark(URL_CPU_BENCHMARK, "cpu_list.php")
+    if success_cpu:
+        try:
+            with open("cpu_list.php", 'r', encoding='utf-8', errors='ignore') as f:
+                soup = BeautifulSoup(f.read(), 'html.parser')
+            table = soup.find('table', id='cputable') or soup.find('table')
+            if table:
+                rows = table.find_all('tr')[1:]
+                cpu_data = []
+                for row in rows:
+                    cols = row.find_all('td')
+                    if len(cols) >= 2:
+                        cpu_data.append({
+                            'CPU Name': cols[0].get_text(strip=True),
+                            'CPU Mark': re.sub(r'[^\d]', '', cols[1].get_text(strip=True))
+                        })
+                # Simpan ke _1.csv (FILE BARU)
+                if cpu_data:
+                    pd.DataFrame(cpu_data).to_csv(FILE_CPU_NEW, index=False)
+                    print(f"    ✅ Berhasil scrap CPU baru: {len(cpu_data)} items -> {FILE_CPU_NEW}")
+                else:
+                    print("    ⚠️ Table CPU tidak ditemukan dalam HTML.")
+        except Exception as e:
+            print(f"    ❌ Error Parsing CPU: {e}")
+    else:
+        print(f"    ⏭️ Skip scraping CPU (akan menggunakan '{FILE_CPU_OLD}' di langkah 7 jika tersedia).")
 
-    # GPU
-    download_benchmark(URL_GPU_BENCHMARK, "gpu_list.html")
-    try:
-        with open("gpu_list.html", 'r', encoding='utf-8', errors='ignore') as f:
-            soup = BeautifulSoup(f.read(), 'html.parser')
-        table = soup.find('table', id='cputable') or soup.find('table', id='gputable') or soup.find('table')
-        if table:
-            rows = table.find_all('tr')[1:]
-            gpu_data = []
-            for row in rows:
-                cols = row.find_all('td')
-                if len(cols) >= 2:
-                    gpu_data.append({
-                        'Videocard Name': cols[0].get_text(strip=True),
-                        'Passmark G3D Mark': re.sub(r'[^\d]', '', cols[1].get_text(strip=True))
-                    })
-            pd.DataFrame(gpu_data).to_csv(gpu_bm.csv, index=False)
-            print(f"    ✅ GPU Benchmark: {len(gpu_data)} items.")
-    except Exception as e:
-        print(f"    ❌ Error GPU: {e}")
+    # --- GPU ---
+    success_gpu = download_benchmark(URL_GPU_BENCHMARK, "gpu_list.html")
+    if success_gpu:
+        try:
+            with open("gpu_list.html", 'r', encoding='utf-8', errors='ignore') as f:
+                soup = BeautifulSoup(f.read(), 'html.parser')
+            table = soup.find('table', id='cputable') or soup.find('table', id='gputable') or soup.find('table')
+            if table:
+                rows = table.find_all('tr')[1:]
+                gpu_data = []
+                for row in rows:
+                    cols = row.find_all('td')
+                    if len(cols) >= 2:
+                        gpu_data.append({
+                            'Videocard Name': cols[0].get_text(strip=True),
+                            'Passmark G3D Mark': re.sub(r'[^\d]', '', cols[1].get_text(strip=True))
+                        })
+                # Simpan ke _1.csv (FILE BARU)
+                if gpu_data:
+                    pd.DataFrame(gpu_data).to_csv(FILE_GPU_NEW, index=False)
+                    print(f"    ✅ Berhasil scrap GPU baru: {len(gpu_data)} items -> {FILE_GPU_NEW}")
+                else:
+                    print("    ⚠️ Table GPU tidak ditemukan dalam HTML.")
+        except Exception as e:
+            print(f"    ❌ Error Parsing GPU: {e}")
+    else:
+        print(f"    ⏭️ Skip scraping GPU (akan menggunakan '{FILE_GPU_OLD}' di langkah 7 jika tersedia).")
 
-# LANGKAH 7: PREPROCESSING FINAL 
+# LANGKAH 7: PREPROCESSING FINAL (Dengan Logika Fallback)
 def step_7_preprocessing():
     print("\n[LANGKAH 7] Preprocessing & Scoring (Final)...")
     
@@ -335,21 +358,52 @@ def step_7_preprocessing():
         df = pd.read_csv(FILE_FINAL_RAW, on_bad_lines='skip', engine='python')
     except: return
 
-    # Load Referensi
+    # --- LOGIKA PEMILIHAN FILE BENCHMARK (Smart Fallback) ---
+    
+    # 1. LOAD CPU
+    cpu_file_to_use = None
+    if os.path.exists(FILE_CPU_NEW) and os.path.getsize(FILE_CPU_NEW) > 100:
+        cpu_file_to_use = FILE_CPU_NEW
+        print(f"    📘 Menggunakan Data CPU BARU: {FILE_CPU_NEW}")
+    elif os.path.exists(FILE_CPU_OLD):
+        cpu_file_to_use = FILE_CPU_OLD
+        print(f"    📙 Menggunakan Data CPU LAMA (Fallback): {FILE_CPU_OLD}")
+    else:
+        print("    ⚠️ TIDAK ADA DATA BENCHMARK CPU SAMA SEKALI! Scoring CPU mungkin tidak akurat.")
+
     cpu_dict = {}
-    if os.path.exists(cpu_bm.csv):
-        df_cpu = pd.read_csv(cpu_bm.csv)
-        df_cpu['CPU Name'] = df_cpu['CPU Name'].astype(str).str.replace(r'\s*@.*', '', regex=True).str.lower().str.strip()
-        df_cpu['CPU Mark'] = pd.to_numeric(df_cpu['CPU Mark'], errors='coerce').fillna(0).astype(int)
-        cpu_dict = dict(zip(df_cpu['CPU Name'], df_cpu['CPU Mark']))
+    if cpu_file_to_use:
+        try:
+            df_cpu = pd.read_csv(cpu_file_to_use)
+            df_cpu['CPU Name'] = df_cpu['CPU Name'].astype(str).str.replace(r'\s*@.*', '', regex=True).str.lower().str.strip()
+            df_cpu['CPU Mark'] = pd.to_numeric(df_cpu['CPU Mark'], errors='coerce').fillna(0).astype(int)
+            cpu_dict = dict(zip(df_cpu['CPU Name'], df_cpu['CPU Mark']))
+        except Exception as e:
+            print(f"    ❌ Error membaca file CPU: {e}")
+
+    # 2. LOAD GPU
+    gpu_file_to_use = None
+    if os.path.exists(FILE_GPU_NEW) and os.path.getsize(FILE_GPU_NEW) > 100:
+        gpu_file_to_use = FILE_GPU_NEW
+        print(f"    📘 Menggunakan Data GPU BARU: {FILE_GPU_NEW}")
+    elif os.path.exists(FILE_GPU_OLD):
+        gpu_file_to_use = FILE_GPU_OLD
+        print(f"    📙 Menggunakan Data GPU LAMA (Fallback): {FILE_GPU_OLD}")
+    else:
+        print("    ⚠️ TIDAK ADA DATA BENCHMARK GPU SAMA SEKALI!")
 
     gpu_dict = {}
-    if os.path.exists(gpu_bm.csv):
-        df_gpu = pd.read_csv(gpu_bm.csv)
-        df_gpu['Videocard Name'] = df_gpu['Videocard Name'].astype(str).str.lower().str.strip()
-        df_gpu['Passmark G3D Mark'] = pd.to_numeric(df_gpu['Passmark G3D Mark'], errors='coerce').fillna(0).astype(int)
-        gpu_dict = dict(zip(df_gpu['Videocard Name'], df_gpu['Passmark G3D Mark']))
+    if gpu_file_to_use:
+        try:
+            df_gpu = pd.read_csv(gpu_file_to_use)
+            df_gpu['Videocard Name'] = df_gpu['Videocard Name'].astype(str).str.lower().str.strip()
+            df_gpu['Passmark G3D Mark'] = pd.to_numeric(df_gpu['Passmark G3D Mark'], errors='coerce').fillna(0).astype(int)
+            gpu_dict = dict(zip(df_gpu['Videocard Name'], df_gpu['Passmark G3D Mark']))
+        except Exception as e:
+            print(f"    ❌ Error membaca file GPU: {e}")
 
+
+    # --- SCORING FUNCTIONS ---
     def get_cpu_score(name):
         name = str(name).lower()
         best = 0
@@ -389,7 +443,7 @@ def step_7_preprocessing():
             return int(v * 16000)
         except: return 0
 
-    # --- FUNGSI SCREEN SCORE (DITAMBAHKAN) ---
+    # --- FUNGSI SCREEN SCORE ---
     def get_screen_quality(display_text):
         text = str(display_text).lower()
         score = 0
@@ -463,8 +517,3 @@ if __name__ == "__main__":
     
     end_time = time.time()
     print(f"\n⏱️ Selesai dalam {end_time - start_time:.2f} detik.")
-
-
-
-
-
