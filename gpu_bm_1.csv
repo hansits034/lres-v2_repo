@@ -28,7 +28,7 @@ ALL-IN-WONDER RADEON 8500DV,5
 All-in-Wonder X1800XL,30
 All-in-Wonder X1900,127
 ALL-IN-WONDER X800 GT,84
-AMD Ryzen Z1 Extreme,6438
+AMD Ryzen Z1 Extreme,6437
 AMIGAMERLIN 3.1-R1 For Voodoo 4 4500 PCI,3
 ASUS A7000,9
 ASUS AGP-V3800PRO v31.40H,4
@@ -52,7 +52,7 @@ Beijing Fantasy Technology Fantasy II-M,288
 CARRIZO 9874,226
 Citrix Indirect Display Adapter,1888
 CMP 30HX,5346
-CMP 40HX,9377
+CMP 40HX,9485
 CONNECT 3D RADEON X300,36
 Custom GPU 0405,2939
 Custom GPU 0932,3244
@@ -179,7 +179,7 @@ GeForce 305M,150
 GeForce 310,144
 GeForce 310M,127
 GeForce 315,196
-GeForce 315M,115
+GeForce 315M,120
 GeForce 320M,190
 GeForce 405,117
 GeForce 410M,274
@@ -313,14 +313,14 @@ GeForce 9300M G,84
 GeForce 9300M GS,128
 GeForce 930A,1217
 GeForce 930M,1012
-GeForce 930MX,1275
+GeForce 930MX,1276
 GeForce 9400,146
 GeForce 9400 GT,195
 GeForce 9400M,101
 GeForce 9400M G,148
 GeForce 940A,1113
-GeForce 940M,1131
-GeForce 940MX,1508
+GeForce 940M,1132
+GeForce 940MX,1509
 GeForce 9450,104
 GeForce 945A,1852
 GeForce 945M,2137
@@ -405,7 +405,7 @@ GeForce Go 7900 GTX,270
 GeForce Go 7950 GTX,263
 GeForce GPU,1153
 GeForce GT 1010,972
-GeForce GT 1030,2399
+GeForce GT 1030,2400
 GeForce GT 120,186
 GeForce GT 120 / 9500 GT,324
 GeForce GT 120M,150
@@ -436,7 +436,7 @@ GeForce GT 440,769
 GeForce GT 445M,811
 GeForce GT 520,324
 GeForce GT 520M,285
-GeForce GT 520MX,289
+GeForce GT 520MX,288
 GeForce GT 525M,448
 GeForce GT 530,657
 GeForce GT 540M,472
@@ -453,8 +453,8 @@ GeForce GT 630,686
 GeForce GT 630M,519
 GeForce GT 635,810
 GeForce GT 635M,536
-GeForce GT 640,1165
-GeForce GT 640M,887
+GeForce GT 640,1166
+GeForce GT 640M,886
 GeForce GT 640M LE,687
 GeForce GT 645,2005
 GeForce GT 645M,945
@@ -489,7 +489,7 @@ GeForce GTS 450,1342
 GeForce GTX 1050,5046
 GeForce GTX 1050 (Mobile),4462
 GeForce GTX 1050 3GB,5110
-GeForce GTX 1050 Ti,6356
+GeForce GTX 1050 Ti,6357
 GeForce GTX 1050 Ti (Mobile),5917
 GeForce GTX 1050 Ti with Max-Q Design,5306
 GeForce GTX 1050 with Max-Q Design,3916
@@ -514,7 +514,7 @@ GeForce GTX 1650 Ti with Max-Q Design,6610
 GeForce GTX 1650 with Max-Q Design,6336
 GeForce GTX 1660,11619
 GeForce GTX 1660 SUPER,12685
-GeForce GTX 1660 Ti,12686
+GeForce GTX 1660 Ti,12685
 GeForce GTX 1660 Ti (Mobile),10099
 GeForce GTX 1660 Ti with Max-Q Design,8611
 GeForce GTX 260,1200
@@ -572,16 +572,16 @@ GeForce GTX 760 Ti OEM,5474
 GeForce GTX 760A,1071
 GeForce GTX 760M,1727
 GeForce GTX 765M,2003
-GeForce GTX 770,5971
-GeForce GTX 770M,2787
+GeForce GTX 770,5969
+GeForce GTX 770M,2790
 GeForce GTX 775M,3939
-GeForce GTX 780,7950
+GeForce GTX 780,7949
 GeForce GTX 780 Ti,9466
 GeForce GTX 780M,3880
 GeForce GTX 850A,767
 GeForce GTX 850M,2538
 GeForce GTX 850M - MODDED,1091
-GeForce GTX 860M,3085
+GeForce GTX 860M,3086
 GeForce GTX 870M,3546
 GeForce GTX 880M,3840
 GeForce GTX 950,5354
@@ -591,8 +591,8 @@ GeForce GTX 960,6134
 GeForce GTX 960A,3464
 GeForce GTX 960M,3371
 GeForce GTX 965M,3874
-GeForce GTX 970,9635
-GeForce GTX 970M,5701
+GeForce GTX 970,9636
+GeForce GTX 970M,5703
 GeForce GTX 970XM FORCE,6706
 GeForce GTX 980,11071
 GeForce GTX 980 Ti,13669
@@ -615,79 +615,79 @@ GeForce MX570 A,6304
 GeForce PCX 5300,6
 GeForce PCX 5750,34
 GeForce PCX 5900,34
-GeForce RTX 2050,7710
+GeForce RTX 2050,7709
 GeForce RTX 2060,14106
 GeForce RTX 2060 (Mobile),11352
 GeForce RTX 2060 12GB,15926
 GeForce RTX 2060 SUPER,16489
 GeForce RTX 2060 with Max-Q Design,9628
-GeForce RTX 2070,16066
+GeForce RTX 2070,16063
 GeForce RTX 2070 (Mobile),12357
 GeForce RTX 2070 SUPER,18149
 GeForce RTX 2070 Super with Max-Q Design,13416
-GeForce RTX 2070 with Max-Q Design,11400
-GeForce RTX 2080,18630
+GeForce RTX 2070 with Max-Q Design,11397
+GeForce RTX 2080,18629
 GeForce RTX 2080 (Mobile),15013
 GeForce RTX 2080 SUPER,19462
 GeForce RTX 2080 Super with Max-Q Design,13525
-GeForce RTX 2080 Ti,21485
+GeForce RTX 2080 Ti,21484
 GeForce RTX 2080 with Max-Q Design,12735
-GeForce RTX 3050 4GB Laptop GPU,9492
-GeForce RTX 3050 6GB,10764
-GeForce RTX 3050 6GB Laptop GPU,10130
+GeForce RTX 3050 4GB Laptop GPU,9493
+GeForce RTX 3050 6GB,10765
+GeForce RTX 3050 6GB Laptop GPU,10129
 GeForce RTX 3050 8GB,12509
 GeForce RTX 3050 A Laptop GPU,11039
 GeForce RTX 3050 Laptop GPU,12003
 GeForce RTX 3050 OEM,11918
 GeForce RTX 3050 Ti Laptop GPU,10090
-GeForce RTX 3060,16999
-GeForce RTX 3060 12GB,16755
-GeForce RTX 3060 8GB,15261
-GeForce RTX 3060 Laptop GPU,13156
+GeForce RTX 3060,17001
+GeForce RTX 3060 12GB,16754
+GeForce RTX 3060 8GB,15262
+GeForce RTX 3060 Laptop GPU,13157
 GeForce RTX 3060 Ti,20287
 GeForce RTX 3070,22139
-GeForce RTX 3070 Laptop GPU,15132
+GeForce RTX 3070 Laptop GPU,15129
 GeForce RTX 3070 Ti,23276
-GeForce RTX 3070 Ti Laptop GPU,17521
+GeForce RTX 3070 Ti Laptop GPU,17520
 GeForce RTX 3080,25040
 GeForce RTX 3080 12GB,26575
-GeForce RTX 3080 Laptop GPU,16169
-GeForce RTX 3080 Ti,26796
+GeForce RTX 3080 Laptop GPU,16170
+GeForce RTX 3080 Ti,26795
 GeForce RTX 3080 Ti Laptop GPU,18993
-GeForce RTX 3090,26562
-GeForce RTX 3090 Ti,29337
+GeForce RTX 3090,26560
+GeForce RTX 3090 Ti,29334
 GeForce RTX 4050 Laptop GPU,14320
-GeForce RTX 4060,19531
-GeForce RTX 4060 Laptop GPU,17405
-GeForce RTX 4060 Ti,22628
+GeForce RTX 4060,19529
+GeForce RTX 4060 Laptop GPU,17404
+GeForce RTX 4060 Ti,22629
 GeForce RTX 4060 Ti 16GB,22684
-GeForce RTX 4070,26916
-GeForce RTX 4070 Laptop GPU,19537
-GeForce RTX 4070 SUPER,29963
+GeForce RTX 4070,26917
+GeForce RTX 4070 Laptop GPU,19538
+GeForce RTX 4070 SUPER,29964
 GeForce RTX 4070 Ti,31573
 GeForce RTX 4070 Ti SUPER,31805
-GeForce RTX 4080,34441
-GeForce RTX 4080 Laptop GPU,24759
-GeForce RTX 4080 SUPER,34243
-GeForce RTX 4090,38090
+GeForce RTX 4080,34440
+GeForce RTX 4080 Laptop GPU,24758
+GeForce RTX 4080 SUPER,34242
+GeForce RTX 4090,38088
 GeForce RTX 4090 D,30627
-GeForce RTX 4090 Laptop GPU,27111
-GeForce RTX 5050,17400
-GeForce RTX 5050 Laptop GPU,14453
-GeForce RTX 5060,20802
-GeForce RTX 5060 Laptop GPU,17020
-GeForce RTX 5060 Ti 16GB,22700
-GeForce RTX 5060 Ti 8GB,22489
+GeForce RTX 4090 Laptop GPU,27110
+GeForce RTX 5050,17398
+GeForce RTX 5050 Laptop GPU,14454
+GeForce RTX 5060,20800
+GeForce RTX 5060 Laptop GPU,17018
+GeForce RTX 5060 Ti 16GB,22697
+GeForce RTX 5060 Ti 8GB,22480
 GeForce RTX 5070,28786
-GeForce RTX 5070 Laptop GPU,19308
-GeForce RTX 5070 Ti,32462
-GeForce RTX 5070 Ti Laptop GPU,22705
-GeForce RTX 5080,35719
-GeForce RTX 5080 Laptop GPU,26546
-GeForce RTX 5090,38872
+GeForce RTX 5070 Laptop GPU,19311
+GeForce RTX 5070 Ti,32466
+GeForce RTX 5070 Ti Laptop GPU,22709
+GeForce RTX 5080,35721
+GeForce RTX 5080 Laptop GPU,26521
+GeForce RTX 5090,38874
 GeForce RTX 5090 D,41406
 GeForce RTX 5090 D v2,31108
-GeForce RTX 5090 Laptop GPU,28597
+GeForce RTX 5090 Laptop GPU,28607
 GeForce2 Go,4
 GeForce2 GTS/GeForce2 Pro,3
 GeForce2 Integrated GPU,4
@@ -821,7 +821,7 @@ Intel 945G Embedded Chipset Function 0,4
 Intel 946GZ Embedded Chipset,3
 Intel 946GZ Express,2
 Intel Arc,5492
-Intel Arc 130T GPU,6192
+Intel Arc 130T GPU,6196
 Intel Arc 130V GPU,4499
 Intel Arc 140T,5634
 Intel Arc 140T GPU,6648
@@ -830,18 +830,18 @@ Intel Arc 140V GPU RI,4870
 Intel Arc A310,5451
 Intel Arc A310 LP,4908
 Intel Arc A370M,5115
-Intel Arc A380,6290
+Intel Arc A380,6283
 Intel Arc A380E,6290
 Intel Arc A530M,8044
-Intel Arc A580,12052
+Intel Arc A580,12057
 Intel Arc A730M,9808
-Intel Arc A750,12609
-Intel Arc A770,13326
+Intel Arc A750,12610
+Intel Arc A770,13336
 Intel Arc A770M,11850
 Intel Arc B370 GPU,8811
-Intel Arc B390 GPU,9405
+Intel Arc B390 GPU,9429
 Intel Arc B570,13960
-Intel Arc B580,15807
+Intel Arc B580,15806
 Intel Arc GPU,9445
 Intel Arc Pro,5849
 Intel Arc Pro 130T GPU,6177
@@ -873,13 +873,13 @@ Intel HD 4600 manual-gen9_2015-134121,652
 Intel HD 500,302
 Intel HD 5000,586
 Intel HD 505,360
-Intel HD 510,621
+Intel HD 510,622
 Intel HD 515,636
 Intel HD 520,860
 Intel HD 5200,830
 Intel HD 530,989
 Intel HD 5300,406
-Intel HD 5500,596
+Intel HD 5500,597
 Intel HD 5600,1868
 Intel HD 6000,876
 Intel HD 610,674
@@ -904,7 +904,7 @@ Intel Iris 6100,900
 Intel Iris 650,1432
 Intel Iris P555,1736
 Intel Iris Plus,1787
-Intel Iris Plus 640,1359
+Intel Iris Plus 640,1358
 Intel Iris Plus 645,1750
 Intel Iris Plus 650,1599
 Intel Iris Plus 655,1730
@@ -925,7 +925,7 @@ Intel Media Accelerator HD,109
 Intel Poison Ivy,738
 Intel Q33 Express,7
 Intel Q35 Embedded,8
-Intel Q35 Express,58
+Intel Q35 Express,57
 Intel Q45/Q43 Express Chipset,202
 Intel Q45/Q43 Express-Chipsatz,57
 Intel Q965/Q963 Express,117
@@ -960,11 +960,12 @@ L4-6Q,4473
 L4-8Q,7114
 L40-8Q,11670
 L40S,20022
-L40S-12Q,5325
+L40S-12Q,5308
 L40S-1Q,2046
 L40S-24Q,3257
 L40S-6Q,6554
 L40S-8Q,5414
+LIANLI USB Display-60hz,18968
 LuminonCore IDDCX Adapter,6479
 M860G with Mobility Radeon 4100,75
 M880G with Mobility Radeon HD 4200,92
@@ -1169,7 +1170,7 @@ Quadro 1100M,755
 Quadro 2000,945
 Quadro 2000 D,1239
 Quadro 2000D,980
-Quadro 2000M,756
+Quadro 2000M,758
 Quadro 2100M,1100
 Quadro 280 NVS PCIe,5
 Quadro 3000M,1005
@@ -1237,7 +1238,7 @@ Quadro FX 560,113
 Quadro FX 5600,517
 Quadro FX 570,257
 Quadro FX 570M,99
-Quadro FX 580,188
+Quadro FX 580,192
 Quadro FX 5800,1210
 Quadro FX 770M,212
 Quadro FX 880M,236
@@ -1271,10 +1272,10 @@ Quadro K610M,712
 Quadro K620,2208
 Quadro K620M,1171
 Quadro M1000M,2837
-Quadro M1200,3209
+Quadro M1200,3211
 Quadro M2000,4032
-Quadro M2000M,3408
-Quadro M2200,4287
+Quadro M2000M,3406
+Quadro M2200,4286
 Quadro M3000M,5543
 Quadro M4000,6671
 Quadro M4000M,6070
@@ -1284,9 +1285,9 @@ Quadro M500M,1176
 Quadro M520,1924
 Quadro M5500,7915
 Quadro M6000,11767
-Quadro M6000 24GB,11539
+Quadro M6000 24GB,11537
 Quadro M600M,2246
-Quadro M620,2757
+Quadro M620,2760
 Quadro NVS 110M,47
 Quadro NVS 120M,46
 Quadro NVS 130M,97
@@ -1309,16 +1310,16 @@ Quadro NVS 450,66
 Quadro NVS 510M,238
 Quadro NVS 55/280 PCI,6
 Quadro P1000,4497
-Quadro P2000,6993
+Quadro P2000,6990
 Quadro P2000 with Max-Q Design,5346
-Quadro P2200,9413
+Quadro P2200,9414
 Quadro P3000,6352
 Quadro P3200,8485
 Quadro P3200 with Max-Q Design,9156
 Quadro P400,1661
-Quadro P4000,11445
+Quadro P4000,11446
 Quadro P4000 with Max-Q Design,9082
-Quadro P4200,10389
+Quadro P4200,10243
 Quadro P4200 with Max-Q Design,11519
 Quadro P500,1648
 Quadro P5000,12663
@@ -1328,7 +1329,7 @@ Quadro P5200 with Max-Q Design,12414
 Quadro P600,3325
 Quadro P6000,15555
 Quadro P620,3702
-Quadro RTX 3000,10738
+Quadro RTX 3000,10742
 Quadro RTX 3000 with Max-Q Design,8139
 Quadro RTX 4000,14882
 Quadro RTX 4000 (Mobile),11674
@@ -1340,7 +1341,7 @@ Quadro RTX 6000,17840
 Quadro RTX 8000,19911
 Quadro T1000,6490
 Quadro T1000 with Max-Q Design,6680
-Quadro T2000,7298
+Quadro T2000,7299
 Quadro T2000 with Max-Q Design,6982
 Quadro2 MXR/EX,4
 Quadro2 Pro,1
@@ -1358,7 +1359,7 @@ Qualcomm Adreno 7c Gen 3 GPU,777
 Qualcomm Adreno 7c+ Gen 3,705
 Qualcomm Adreno 8cx Gen 3,1949
 Qualcomm Adreno 8cx Gen 3 GPU,1932
-Qualcomm Adreno X1-45 GPU,1894
+Qualcomm Adreno X1-45 GPU,1895
 Qualcomm Adreno X1-85 GPU,3041
 QXL KMDOD,18
 Racer-Tech USB Display Device,13692
@@ -1372,7 +1373,7 @@ Radeon 530,1035
 Radeon 535,1045
 Radeon 535DX,773
 Radeon 540,1458
-Radeon 540X,1599
+Radeon 540X,1607
 Radeon 550,2127
 Radeon 550X,1479
 Radeon 610M,1201
@@ -1393,7 +1394,7 @@ Radeon 660M Ryzen 5 7533HS,2937
 Radeon 660M Ryzen 5 7535HS,3057
 Radeon 6750M,911
 Radeon 680M,3717
-Radeon 680M Ryzen 7 7735HS,4291
+Radeon 680M Ryzen 7 7735HS,4292
 Radeon 680M Ryzen 9 6900HX,5493
 Radeon 7000 / Radeon VE,2
 RADEON 7000 / RADEON VE Family,3
@@ -1401,17 +1402,17 @@ RADEON 7200,2
 Radeon 740M,3003
 RADEON 7500,3
 RADEON 7500 Family,4
-Radeon 760M,5406
+Radeon 760M,5405
 Radeon 780M,6873
 Radeon 8040S,10431
 Radeon 8050S,16262
 Radeon 8060S,18152
 Radeon 820M,2150
-Radeon 840M,3843
+Radeon 840M,3841
 RADEON 8500 Family,6
-Radeon 860M,4901
+Radeon 860M,4899
 Radeon 880M,7683
-Radeon 890M,8155
+Radeon 890M,8154
 RADEON 9000,4
 RADEON 9000 Family,3
 RADEON 9100 Family,6
@@ -1633,7 +1634,7 @@ Radeon HD 7560D + HD 7700 Dual,1346
 Radeon HD 7560D + HD 8570 Dual,935
 Radeon HD 7560D + R5 235 Dual,563
 Radeon HD 7570,622
-Radeon HD 7570M,418
+Radeon HD 7570M,417
 Radeon HD 7570M/HD 7670M,699
 Radeon HD 7580D,350
 Radeon HD 7600G,334
@@ -1923,7 +1924,7 @@ Radeon Pro 5500 XT,7910
 Radeon Pro 5500M,6733
 Radeon Pro 555,3140
 Radeon Pro 560,3475
-Radeon Pro 5600M,9335
+Radeon Pro 5600M,9284
 Radeon Pro 560X,3677
 Radeon Pro 570,6336
 Radeon Pro 5700,11456
@@ -1973,7 +1974,7 @@ Radeon Pro WX 4130,1909
 Radeon Pro WX 4150,2579
 Radeon Pro WX 4170,2869
 Radeon Pro WX 5100,5466
-Radeon Pro WX 7100,7715
+Radeon Pro WX 7100,7717
 Radeon Pro WX 7130,6583
 Radeon Pro WX 8200,12592
 Radeon Pro WX 9100,11852
@@ -2079,7 +2080,7 @@ Radeon R7 A10 Extreme Edition,806
 Radeon R7 A10 PRO-7800B,714
 Radeon R7 A10 PRO-7850B,822
 Radeon R7 A10-7700K,773
-Radeon R7 A10-7800,738
+Radeon R7 A10-7800,736
 Radeon R7 A10-7850K,926
 Radeon R7 A10-7860K,871
 Radeon R7 A10-7870K,1053
@@ -2100,19 +2101,19 @@ Radeon R7 A370,1281
 Radeon R7 A8 PRO-7600B,641
 Radeon R7 A8-7500,811
 Radeon R7 A8-7500 4C+6G,853
-Radeon R7 A8-7600,771
+Radeon R7 A8-7600,772
 Radeon R7 A8-7650K,757
 Radeon R7 A8-7670K,846
 Radeon R7 A8-7680,781
 Radeon R7 A8-8650,718
-Radeon R7 A8-9600 RADEON,855
+Radeon R7 A8-9600 RADEON,859
 Radeon R7 FX-8800P,819
 Radeon R7 FX-9800P RADEON,753
 Radeon R7 FX-9830P RADEON,1347
 Radeon R7 G,869
 Radeon R7 M260,528
 Radeon R7 M260DX,816
-Radeon R7 M260X,1015
+Radeon R7 M260X,1014
 Radeon R7 M265,558
 Radeon R7 M265DX,498
 Radeon R7 M270,779
@@ -2158,7 +2159,7 @@ Radeon R9 270X,4873
 Radeon R9 280,5529
 Radeon R9 280X,6086
 Radeon R9 285 / 380,5549
-Radeon R9 290,8148
+Radeon R9 290,8147
 Radeon R9 290 / 390,8150
 Radeon R9 290X,8434
 Radeon R9 290X / 390X,8380
@@ -2201,20 +2202,20 @@ Radeon RX 480,8537
 Radeon RX 5300,7605
 Radeon RX 5300M,5182
 Radeon RX 540,2160
-Radeon RX 550,2685
+Radeon RX 550,2686
 Radeon RX 5500,8849
-Radeon RX 5500 XT,9074
+Radeon RX 5500 XT,9073
 Radeon RX 5500M,5990
 Radeon RX 550X,2363
-Radeon RX 560,3680
+Radeon RX 560,3681
 Radeon RX 5600,11752
 Radeon RX 5600 OEM,12407
-Radeon RX 5600 XT,13420
+Radeon RX 5600 XT,13419
 Radeon RX 5600M,8879
 Radeon RX 560X,3414
-Radeon RX 5700,14257
+Radeon RX 5700,14258
 Radeon RX 5700 XT,16125
-Radeon RX 5700 XT 50th Anniversary,16579
+Radeon RX 5700 XT 50th Anniversary,16576
 Radeon RX 570X,1923
 Radeon RX 580,8791
 Radeon RX 580 2048SP,7628
@@ -2223,7 +2224,7 @@ Radeon RX 590,9306
 Radeon RX 6300,5336
 Radeon RX 6300M,6421
 Radeon RX 640,2203
-Radeon RX 6400,7745
+Radeon RX 6400,7747
 Radeon RX 6450M,6601
 Radeon RX 6500,7657
 Radeon RX 6500 XT,9628
@@ -2231,51 +2232,51 @@ Radeon RX 6500M,7326
 Radeon RX 6550M,9653
 Radeon RX 6600,15072
 Radeon RX 6600 LE,13952
-Radeon RX 6600 XT,16450
+Radeon RX 6600 XT,16452
 Radeon RX 6600M,13906
 Radeon RX 6600S,13016
-Radeon RX 6650 XT,17127
-Radeon RX 6650M,15203
+Radeon RX 6650 XT,17125
+Radeon RX 6650M,15179
 Radeon RX 6650M XT,17070
 Radeon RX 670,3128
 Radeon RX 6700,18918
-Radeon RX 6700 XT,19737
+Radeon RX 6700 XT,19736
 Radeon RX 6700M,13583
 Radeon RX 6700S,15080
 Radeon RX 6750 GRE 10GB,18985
 Radeon RX 6750 GRE 12GB,20178
-Radeon RX 6750 XT,20706
-Radeon RX 6800,22031
-Radeon RX 6800 XT,25014
-Radeon RX 6800M,13249
+Radeon RX 6750 XT,20705
+Radeon RX 6800,22032
+Radeon RX 6800 XT,25016
+Radeon RX 6800M,13243
 Radeon RX 6800S,15765
 Radeon RX 6850M,12274
-Radeon RX 6850M XT,17517
-Radeon RX 6900 XT,26688
-Radeon RX 6950 XT,28100
+Radeon RX 6850M XT,17266
+Radeon RX 6900 XT,26691
+Radeon RX 6950 XT,28102
 Radeon RX 7400,11908
-Radeon RX 7600,16538
-Radeon RX 7600 XT,17288
+Radeon RX 7600,16541
+Radeon RX 7600 XT,17292
 Radeon RX 7600M,10999
-Radeon RX 7600M XT,14703
+Radeon RX 7600M XT,14717
 Radeon RX 7600S,15566
 Radeon RX 7650 GRE,18280
-Radeon RX 7700,20115
-Radeon RX 7700 XT,22637
+Radeon RX 7700,20682
+Radeon RX 7700 XT,22635
 Radeon RX 7700S,15505
 Radeon RX 780,7657
-Radeon RX 7800 XT,24319
+Radeon RX 7800 XT,24320
 Radeon RX 7800M,16429
 Radeon RX 7900 GRE,27276
-Radeon RX 7900 XT,28985
-Radeon RX 7900 XTX,31342
+Radeon RX 7900 XT,28991
+Radeon RX 7900 XTX,31344
 Radeon RX 7900M,22436
-Radeon RX 9060,18631
-Radeon RX 9060 XT 16GB,20054
-Radeon RX 9060 XT 8GB,19783
-Radeon RX 9070,25404
+Radeon RX 9060,18449
+Radeon RX 9060 XT 16GB,20050
+Radeon RX 9060 XT 8GB,19759
+Radeon RX 9070,25418
 Radeon RX 9070 GRE,24418
-Radeon RX 9070 XT,26866
+Radeon RX 9070 XT,26870
 Radeon RX Vega - Renoir Ryzen 3 5300U,2312
 Radeon RX Vega 10,1628
 Radeon RX Vega 10 Ryzen 7 3700C,1166
@@ -2285,15 +2286,15 @@ Radeon RX Vega 11,2090
 Radeon RX Vega 11 PRD,2401
 Radeon RX Vega 11 Processor,1789
 Radeon RX Vega 11 Ryzen 5 3350G,1917
-Radeon RX Vega 11 Ryzen 5 3400G,2121
+Radeon RX Vega 11 Ryzen 5 3400G,2119
 Radeon RX Vega 11 Ryzen 5 3400GE,1971
 Radeon RX Vega 56,13005
 Radeon RX Vega 6,1492
 Radeon RX Vega 6 Ryzen 3 3200U,906
-Radeon RX Vega 64,13918
+Radeon RX Vega 64,13914
 Radeon RX Vega 8,1540
 Radeon RX Vega M GH,6554
-Radeon RX Vega M GL,3924
+Radeon RX Vega M GL,3925
 Radeon RX Vega Ryzen 3 5300U,2329
 Radeon RX Vega Ryzen 5 5500U,2356
 Radeon RX Vega Ryzen 5 5600GT,9558
@@ -2322,23 +2323,23 @@ Radeon Ryzen 5 3550H,1254
 Radeon Ryzen 5 4600GE with Radeon Graphics,2337
 Radeon Ryzen 5 5500GT,2420
 Radeon Ryzen 5 5500H,2048
-Radeon Ryzen 5 5500U,2018
+Radeon Ryzen 5 5500U,2019
 Radeon Ryzen 5 5560U,2031
 Radeon Ryzen 5 5600GE,2316
 Radeon Ryzen 5 5600GT,2400
 Radeon Ryzen 5 5600H,2368
 Radeon Ryzen 5 5600U,2089
 Radeon Ryzen 5 5625U,2055
-Radeon Ryzen 5 6600H,3471
+Radeon Ryzen 5 6600H,3469
 Radeon Ryzen 5 6600HS Creator Edition,3795
 Radeon Ryzen 5 6600U,3207
 Radeon Ryzen 5 7430U,2269
 Radeon Ryzen 5 7530U,2179
 Radeon Ryzen 5 7533HS,3320
 Radeon Ryzen 5 7535HS,3225
-Radeon Ryzen 5 7535U,3153
-Radeon Ryzen 5 7600 6-Core,1684
-Radeon Ryzen 5 7600X 6-Core,1613
+Radeon Ryzen 5 7535U,3152
+Radeon Ryzen 5 7600 6-Core,1685
+Radeon Ryzen 5 7600X 6-Core,1614
 Radeon Ryzen 5 7600X3D 6-Core,1669
 Radeon Ryzen 5 Microsoft Surface Edition,2028
 Radeon Ryzen 5 PRO 4400G,2272
@@ -2354,12 +2355,12 @@ Radeon Ryzen 5 PRO 6650U,3550
 Radeon Ryzen 5 PRO 7445 6-Core,1591
 Radeon Ryzen 5 Pro 7535U,2805
 Radeon Ryzen 5 PRO 7645 6-Core,1615
-Radeon Ryzen 7 170,5382
+Radeon Ryzen 7 170,5128
 Radeon Ryzen 7 3700U,1135
 Radeon Ryzen 7 4700G,2525
 Radeon Ryzen 7 4700GE,2586
 Radeon Ryzen 7 4700U,2041
-Radeon Ryzen 7 4800H,3173
+Radeon Ryzen 7 4800H,3171
 Radeon Ryzen 7 4800HS,3058
 Radeon Ryzen 7 4800U,2299
 Radeon Ryzen 7 5700U,2205
@@ -2376,7 +2377,7 @@ Radeon Ryzen 7 7700 8-Core,1655
 Radeon Ryzen 7 7700X 8-Core,1790
 Radeon Ryzen 7 7730U,2328
 Radeon Ryzen 7 7735H,5253
-Radeon Ryzen 7 7735HS,4902
+Radeon Ryzen 7 7735HS,4904
 Radeon Ryzen 7 7735U,4646
 Radeon Ryzen 7 7736U,5825
 Radeon Ryzen 7 7800X3D 8-Core,1713
@@ -2418,7 +2419,7 @@ Radeon Ryzen Embedded V2718,1998
 Radeon Ryzen Embedded V2748,2241
 Radeon Ryzen Z2 Go,4784
 Radeon Sky 500,4722
-Radeon TM,5537
+Radeon TM,5540
 Radeon TM R9 A360,2060
 Radeon V520 MxGPU,10473
 Radeon VE,2
@@ -2432,7 +2433,7 @@ Radeon Vega 2,506
 Radeon Vega 2 Athlon Silver 3050U,487
 Radeon Vega 3,891
 Radeon Vega 3 3020e,526
-Radeon Vega 3 Athlon 3000G,950
+Radeon Vega 3 Athlon 3000G,949
 Radeon Vega 3 Athlon 300GE,994
 Radeon Vega 3 Athlon 300U,813
 Radeon Vega 3 Athlon 320GE,744
@@ -2444,7 +2445,7 @@ Radeon Vega 3 Mobile,1052
 Radeon Vega 3 Ryzen 3 3200U,836
 Radeon Vega 3 Ryzen 3 3250U,686
 Radeon Vega 3 Ryzen Embedded R1305G,580
-Radeon Vega 3 Ryzen Embedded R1505G,729
+Radeon Vega 3 Ryzen Embedded R1505G,732
 Radeon Vega 3 Ryzen Embedded R1606G,1000
 Radeon Vega 6,1308
 Radeon Vega 6 Ryzen 3 3300U,1332
@@ -2525,7 +2526,7 @@ RadeonT 660M Ryzen 5 7535HS,4051
 RadeonT 680M,5680
 RadeonT 680M Ryzen 7 6800H,2381
 RadeonT 680M Ryzen 7 7735HS,5680
-RadeonT 780M,7112
+RadeonT 780M,7111
 RadeonT RX 6850M XT,13992
 RadeonT RX Vega 11,1916
 RadeonT Ryzen 3 3250U,581
@@ -2542,53 +2543,53 @@ RTX 1000 Ada Generation Laptop GPU,13599
 RTX 2000 Ada Generation,17219
 RTX 2000 Ada Generation Embedded GPU,14444
 RTX 2000 Ada Generation Laptop GPU,14879
-RTX 2000E Ada Generation,16091
+RTX 2000E Ada Generation,15990
 RTX 3000 Ada Generation Laptop GPU,15958
 RTX 3500 Ada Generation Embedded GPU,23981
-RTX 3500 Ada Generation Laptop GPU,19771
+RTX 3500 Ada Generation Laptop GPU,19772
 RTX 4000 Ada Generation,23881
 RTX 4000 Ada Generation Laptop GPU,22030
 RTX 4000 SFF Ada Generation,20975
 RTX 4500 Ada Generation,28179
-RTX 500 Ada Generation Laptop GPU,11194
-RTX 5000 Ada Generation,30194
+RTX 500 Ada Generation Laptop GPU,11189
+RTX 5000 Ada Generation,30223
 RTX 5000 Ada Generation Embedded GPU,17055
 RTX 5000 Ada Generation Laptop GPU,23259
 RTX 5880 Ada Generation,25095
 RTX 6000 Ada Generation,28502
-RTX A1000,10804
+RTX A1000,10788
 RTX A1000 6GB Laptop GPU,10068
 RTX A1000 Embedded GPU,11009
-RTX A1000 Laptop GPU,9472
-RTX A2000,13430
+RTX A1000 Laptop GPU,9477
+RTX A2000,13429
 RTX A2000 12GB,13689
 RTX A2000 8GB Laptop GPU,10492
 RTX A2000 Embedded GPU,11117
-RTX A2000 Laptop GPU,9463
+RTX A2000 Laptop GPU,9462
 RTX A3000 12GB Laptop GPU,13894
-RTX A3000 Laptop GPU,12645
-RTX A400,5999
+RTX A3000 Laptop GPU,12638
+RTX A400,5998
 RTX A4000,19467
 RTX A4000 Laptop GPU,14775
 RTX A4000H,11815
 RTX A4500,21106
 RTX A4500 Embedded GPU,8295
-RTX A4500 Laptop GPU,16683
+RTX A4500 Laptop GPU,16698
 RTX A500 Embedded GPU,6197
 RTX A500 Laptop GPU,6579
-RTX A5000,23009
+RTX A5000,23014
 RTX A5000 Laptop GPU,16425
 RTX A5500,21334
 RTX A5500 Laptop GPU,17130
 RTX A6000,22815
 RTX PRO 1000 Blackwell Generation Laptop GPU,14952
-RTX PRO 2000 Blackwell,20452
+RTX PRO 2000 Blackwell,20463
 RTX PRO 2000 Blackwell Generation Laptop GPU,16972
-RTX PRO 3000 Blackwell Generation Laptop GPU,22754
+RTX PRO 3000 Blackwell Generation Laptop GPU,22634
 RTX PRO 4000 Blackwell,27416
 RTX PRO 4000 Blackwell Generation Laptop GPU,23528
 RTX PRO 4000 Blackwell SFF Edition,22847
-RTX PRO 4500 Blackwell,31836
+RTX PRO 4500 Blackwell,32083
 RTX PRO 500 Blackwell Generation Laptop GPU,13316
 RTX PRO 5000 72GB Blackwell,40493
 RTX PRO 5000 Blackwell,31470
@@ -2599,7 +2600,7 @@ RTX PRO 6000 Blackwell Workstation Edition,35484
 RV530 PRO,118
 Ryzen 3 4300G with Radeon Graphics,1699
 Ryzen 3 4300GE with Radeon Graphics,2289
-Ryzen 3 4300U with Radeon Graphics,1371
+Ryzen 3 4300U with Radeon Graphics,1370
 Ryzen 3 5300G with Radeon Graphics,1992
 Ryzen 3 5300GE with Radeon Graphics,1968
 Ryzen 3 5300U with Radeon Graphics,1539
@@ -2619,8 +2620,8 @@ Ryzen 3 PRO 5475U with Radeon Graphics,1431
 Ryzen 3 PRO 7330U with Radeon Graphics,2144
 Ryzen 5 2500U with Radeon Vega,1503
 Ryzen 5 4500U with Radeon Graphics,1803
-Ryzen 5 4600G with Radeon Graphics,2329
-Ryzen 5 4600H with Radeon Graphics,2116
+Ryzen 5 4600G with Radeon Graphics,2330
+Ryzen 5 4600H with Radeon Graphics,2114
 Ryzen 5 4600HS with Radeon Graphics,8370
 Ryzen 5 4600U with Radeon Graphics,1895
 Ryzen 5 5500GT with Radeon Graphics,2224
@@ -2642,7 +2643,7 @@ Ryzen 5 9600X 6-Core Processor,1858
 Ryzen 5 PRO 4400G with Radeon Graphics,2305
 Ryzen 5 PRO 4400GE with Radeon Graphics,1441
 Ryzen 5 PRO 4500U with Radeon Graphics,2007
-Ryzen 5 Pro 4650G with Radeon Graphics,2375
+Ryzen 5 Pro 4650G with Radeon Graphics,2374
 Ryzen 5 PRO 4650GE with Radeon Graphics,2166
 Ryzen 5 PRO 4650U with Radeon Graphics,1690
 Ryzen 5 PRO 5650G with Radeon Graphics,2481
@@ -2684,7 +2685,7 @@ Ryzen 7 PRO 4750GE with Radeon Graphics,2549
 Ryzen 7 PRO 4750U with Radeon Graphics,2029
 Ryzen 7 PRO 5750G with Radeon Graphics,2335
 Ryzen 7 PRO 5750GE with Radeon Graphics,2382
-Ryzen 7 PRO 5850U with Radeon Graphics,2258
+Ryzen 7 PRO 5850U with Radeon Graphics,2259
 Ryzen 7 PRO 5875U with Radeon Graphics,2067
 Ryzen 7 PRO 6850H with Radeon Graphics,5790
 Ryzen 7 PRO 6850HS with Radeon Graphics,4087
@@ -2696,10 +2697,10 @@ Ryzen 7 PRO 7730U with Radeon Graphics,2566
 Ryzen 7 Pro 7735U with Radeon Graphics,5142
 Ryzen 9 4900HS with Radeon Graphics,6790
 Ryzen 9 5900HS with Radeon Graphics,5460
-Ryzen 9 5900HX with Radeon Graphics,2960
+Ryzen 9 5900HX with Radeon Graphics,2959
 Ryzen 9 6900HS,8005
 Ryzen 9 6900HS with Radeon Graphics,6109
-Ryzen 9 6900HX with Radeon Graphics,5115
+Ryzen 9 6900HX with Radeon Graphics,5116
 Ryzen 9 9900X 12-Core Processor,1729
 Ryzen 9 9950X 16-Core Processor,1770
 Ryzen 9 PRO 6950H,5758
@@ -2734,10 +2735,10 @@ T1000 8GB,7680
 T1200 Laptop GPU,7846
 T400,3615
 T400 4GB,3810
-T500,3608
+T500,3609
 T550 Laptop GPU,4753
-T600,6369
-T600 Laptop GPU,7032
+T600,6368
+T600 Laptop GPU,7035
 TENSOR 1.0 Driver Intel HD 630,1299
 Tesla C2050,3175
 Tesla C2050 / C2070,3428
@@ -2755,7 +2756,7 @@ Tesla M40 24GB,10641
 Tesla M6,6224
 Tesla M60,7002
 Tesla P100-PCIE-16GB,8067
-Tesla P4,9109
+Tesla P4,9158
 Tesla P40,11595
 Tesla T10,11763
 Tesla T4,9903
