@@ -298,7 +298,7 @@ Intel Celeron J3455 @ 1.50GHz,2240
 Intel Celeron J3455E @ 1.50GHz,2191
 Intel Celeron J4005 @ 2.00GHz,1547
 Intel Celeron J4025 @ 2.00GHz,1449
-Intel Celeron J4105 @ 1.50GHz,2815
+Intel Celeron J4105 @ 1.50GHz,2816
 Intel Celeron J4115 @ 1.80GHz,2678
 Intel Celeron J4125 @ 2.00GHz,2930
 Intel Celeron J6412 @ 2.00GHz,3825
@@ -352,12 +352,12 @@ Intel Celeron N4020 @ 1.10GHz,1536
 Intel Celeron N4020C @ 1.10GHz,1540
 Intel Celeron N4100 @ 1.10GHz,2455
 Intel Celeron N4120 @ 1.10GHz,2457
-Intel Celeron N4500 @ 1.10GHz,1787
+Intel Celeron N4500 @ 1.10GHz,1788
 Intel Celeron N4505 @ 2.00GHz,2018
 Intel Celeron N5095 @ 2.00GHz,4008
 Intel Celeron N5095A @ 2.00GHz,4050
 Intel Celeron N5100 @ 1.10GHz,3311
-Intel Celeron N5105 @ 2.00GHz,3991
+Intel Celeron N5105 @ 2.00GHz,3990
 Intel Celeron N6210 @ 1.20GHz,1915
 Intel Celeron N6211 @ 1.20GHz,2245
 Intel Celeron P4500 @ 1.87GHz,878
@@ -378,9 +378,9 @@ Intel Core 3 N355,10359
 Intel Core 330 @ 1.60GHz,419
 Intel Core 5 120,18235
 Intel Core 5 120F,21477
-Intel Core 5 120U,15547
+Intel Core 5 120U,15543
 Intel Core 5 120UL,10558
-Intel Core 5 210H,18424
+Intel Core 5 210H,18415
 Intel Core 5 211EF,23988
 Intel Core 5 211TE,11685
 Intel Core 5 213PE,27488
@@ -392,7 +392,7 @@ Intel Core 5 221TE,19513
 Intel Core 5 223PE,32658
 Intel Core 7 150U,14824
 Intel Core 7 160UL,11043
-Intel Core 7 240H,24515
+Intel Core 7 240H,24520
 Intel Core 7 250H,26554
 Intel Core 7 250U,13806
 Intel Core 7 251TE,30022
@@ -420,13 +420,13 @@ Intel Core i3-1000NG4 @ 1.10GHz,3520
 Intel Core i3-1005G1 @ 1.20GHz,4804
 Intel Core i3-10100 @ 3.60GHz,8508
 Intel Core i3-10100E @ 3.20GHz,7816
-Intel Core i3-10100F @ 3.60GHz,8718
+Intel Core i3-10100F @ 3.60GHz,8719
 Intel Core i3-10100T @ 3.00GHz,7320
 Intel Core i3-10100TE @ 2.30GHz,6371
 Intel Core i3-10100Y @ 1.30GHz,2990
 Intel Core i3-10105 @ 3.70GHz,8260
-Intel Core i3-10105F @ 3.70GHz,8869
-Intel Core i3-10105T @ 3.00GHz,7798
+Intel Core i3-10105F @ 3.70GHz,8870
+Intel Core i3-10105T @ 3.00GHz,7793
 Intel Core i3-10110U @ 2.10GHz,3824
 Intel Core i3-10110Y @ 1.00GHz,3106
 Intel Core i3-1025G1 @ 1.20GHz,6122
@@ -449,7 +449,7 @@ Intel Core i3-12100F,13971
 Intel Core i3-12100T,12343
 Intel Core i3-12100TE,10511
 Intel Core i3-1210U,9525
-Intel Core i3-1215U,10211
+Intel Core i3-1215U,10209
 Intel Core i3-1215UE,8331
 Intel Core i3-1215UL,7817
 Intel Core i3-1220P,15677
@@ -457,19 +457,19 @@ Intel Core i3-1220PE,16146
 Intel Core i3-12300,14342
 Intel Core i3-12300HL,20321
 Intel Core i3-12300T,13062
-Intel Core i3-1305U,8563
+Intel Core i3-1305U,8566
 Intel Core i3-13100,14097
 Intel Core i3-13100E,13727
 Intel Core i3-13100F,14659
 Intel Core i3-13100T,12731
 Intel Core i3-13100TE,11248
-Intel Core i3-1315U,11168
+Intel Core i3-1315U,11167
 Intel Core i3-1315UE,9283
 Intel Core i3-1315URE,8310
 Intel Core i3-1320PE,11849
 Intel Core i3-1320PRE,17759
 Intel Core i3-13300HE,21057
-Intel Core i3-14100,15117
+Intel Core i3-14100,15115
 Intel Core i3-14100F,15413
 Intel Core i3-14100T,13703
 Intel Core i3-2100 @ 3.10GHz,1863
@@ -485,7 +485,7 @@ Intel Core i3-2140 @ 3.50GHz,2307
 Intel Core i3-2310E @ 2.10GHz,1845
 Intel Core i3-2310M @ 2.10GHz,1222
 Intel Core i3-2312M @ 2.10GHz,1189
-Intel Core i3-2328M @ 2.20GHz,1227
+Intel Core i3-2328M @ 2.20GHz,1228
 Intel Core i3-2330E @ 2.20GHz,1823
 Intel Core i3-2330M @ 2.20GHz,1251
 Intel Core i3-2332M @ 2.20GHz,1353
@@ -540,12 +540,12 @@ Intel Core i3-4120U @ 2.00GHz,1504
 Intel Core i3-4130 @ 3.40GHz,3335
 Intel Core i3-4130T @ 2.90GHz,2874
 Intel Core i3-4150 @ 3.50GHz,3400
-Intel Core i3-4150T @ 3.00GHz,2886
+Intel Core i3-4150T @ 3.00GHz,2878
 Intel Core i3-4158U @ 2.00GHz,1874
 Intel Core i3-4160 @ 3.60GHz,3499
 Intel Core i3-4160T @ 3.10GHz,3094
 Intel Core i3-4170 @ 3.70GHz,3577
-Intel Core i3-4170T @ 3.20GHz,3144
+Intel Core i3-4170T @ 3.20GHz,3149
 Intel Core i3-4330 @ 3.50GHz,3481
 Intel Core i3-4330T @ 3.00GHz,3105
 Intel Core i3-4330TE @ 2.40GHz,2022
@@ -563,7 +563,7 @@ Intel Core i3-5015U @ 2.10GHz,2013
 Intel Core i3-5020U @ 2.20GHz,2218
 Intel Core i3-5157U @ 2.50GHz,2592
 Intel Core i3-530 @ 2.93GHz,1521
-Intel Core i3-540 @ 3.07GHz,1557
+Intel Core i3-540 @ 3.07GHz,1558
 Intel Core i3-550 @ 3.20GHz,1634
 Intel Core i3-560 @ 3.33GHz,1642
 Intel Core i3-6006U @ 2.00GHz,2275
@@ -594,7 +594,7 @@ Intel Core i3-7300 @ 4.00GHz,4522
 Intel Core i3-7300T @ 3.50GHz,4140
 Intel Core i3-7320 @ 4.10GHz,4773
 Intel Core i3-7350K @ 4.20GHz,4874
-Intel Core i3-8100 @ 3.60GHz,6059
+Intel Core i3-8100 @ 3.60GHz,6060
 Intel Core i3-8100B @ 3.60GHz,5891
 Intel Core i3-8100H @ 3.00GHz,4435
 Intel Core i3-8100T @ 3.10GHz,5266
@@ -609,7 +609,7 @@ Intel Core i3-8300T @ 3.20GHz,5457
 Intel Core i3-8350K @ 4.00GHz,6927
 Intel Core i3-9100 @ 3.60GHz,6605
 Intel Core i3-9100E @ 3.10GHz,6529
-Intel Core i3-9100F @ 3.60GHz,6702
+Intel Core i3-9100F @ 3.60GHz,6701
 Intel Core i3-9100HL @ 1.60GHz,3454
 Intel Core i3-9100T @ 3.10GHz,5626
 Intel Core i3-9100TE @ 2.20GHz,4589
@@ -622,36 +622,36 @@ Intel Core i3-N300,8133
 Intel Core i3-N305,9503
 Intel Core i5 750S @ 2.40GHz,1326
 Intel Core i5 E 520 @ 2.40GHz,1619
-Intel Core i5-10200H @ 2.40GHz,7968
+Intel Core i5-10200H @ 2.40GHz,7961
 Intel Core i5-10210U @ 1.60GHz,6066
-Intel Core i5-10210Y @ 1.00GHz,4072
-Intel Core i5-10300H @ 2.50GHz,8191
+Intel Core i5-10210Y @ 1.00GHz,4080
+Intel Core i5-10300H @ 2.50GHz,8190
 Intel Core i5-1030NG7 @ 1.10GHz,5599
-Intel Core i5-10310U @ 1.70GHz,5905
+Intel Core i5-10310U @ 1.70GHz,5906
 Intel Core i5-1035G1 @ 1.00GHz,7147
 Intel Core i5-1035G4 @ 1.10GHz,7609
 Intel Core i5-1035G7 @ 1.20GHz,7952
-Intel Core i5-1038NG7 @ 2.00GHz,8792
+Intel Core i5-1038NG7 @ 2.00GHz,8787
 Intel Core i5-10400 @ 2.90GHz,11981
-Intel Core i5-10400F @ 2.90GHz,12105
-Intel Core i5-10400H @ 2.60GHz,8204
+Intel Core i5-10400F @ 2.90GHz,12104
+Intel Core i5-10400H @ 2.60GHz,8209
 Intel Core i5-10400T @ 2.00GHz,9810
 Intel Core i5-10500 @ 3.10GHz,12962
 Intel Core i5-10500E @ 3.10GHz,11368
 Intel Core i5-10500H @ 2.50GHz,10960
 Intel Core i5-10500T @ 2.30GHz,10199
-Intel Core i5-10500TE @ 2.30GHz,8864
+Intel Core i5-10500TE @ 2.30GHz,8970
 Intel Core i5-10505 @ 3.20GHz,12078
-Intel Core i5-10600 @ 3.30GHz,13544
+Intel Core i5-10600 @ 3.30GHz,13545
 Intel Core i5-10600K @ 4.10GHz,14249
-Intel Core i5-10600KF @ 4.10GHz,14115
+Intel Core i5-10600KF @ 4.10GHz,14119
 Intel Core i5-10600T @ 2.40GHz,11550
 Intel Core i5-11260H @ 2.60GHz,15267
 Intel Core i5-11300H @ 3.10GHz,10762
 Intel Core i5-1130G7 @ 1.10GHz,8222
 Intel Core i5-11320H @ 3.20GHz,10825
-Intel Core i5-1135G7 @ 2.40GHz,9364
-Intel Core i5-11400 @ 2.60GHz,16657
+Intel Core i5-1135G7 @ 2.40GHz,9363
+Intel Core i5-11400 @ 2.60GHz,16658
 Intel Core i5-11400F @ 2.60GHz,16884
 Intel Core i5-11400H @ 2.70GHz,15185
 Intel Core i5-11400T @ 1.30GHz,13080
@@ -659,23 +659,23 @@ Intel Core i5-1140G7 @ 1.10GHz,8435
 Intel Core i5-1145G7 @ 2.60GHz,9221
 Intel Core i5-1145G7E @ 2.60GHz,9144
 Intel Core i5-1145GRE @ 2.60GHz,8237
-Intel Core i5-11500 @ 2.70GHz,17085
+Intel Core i5-11500 @ 2.70GHz,17088
 Intel Core i5-11500B @ 3.30GHz,17075
 Intel Core i5-11500H @ 2.90GHz,15514
 Intel Core i5-11500T @ 1.50GHz,12728
-Intel Core i5-1155G7 @ 2.50GHz,9617
+Intel Core i5-1155G7 @ 2.50GHz,9616
 Intel Core i5-11600 @ 2.80GHz,17966
 Intel Core i5-11600K @ 3.90GHz,19499
 Intel Core i5-11600KF @ 3.90GHz,19436
 Intel Core i5-11600T @ 1.70GHz,14447
 Intel Core i5-1230U,10931
-Intel Core i5-1235U,12609
-Intel Core i5-12400,18792
-Intel Core i5-12400F,19591
+Intel Core i5-1235U,12608
+Intel Core i5-12400,18793
+Intel Core i5-12400F,19590
 Intel Core i5-12400T,15578
 Intel Core i5-1240P,15890
 Intel Core i5-1240U,14083
-Intel Core i5-12450H,16008
+Intel Core i5-12450H,16007
 Intel Core i5-12450HX,17834
 Intel Core i5-1245U,12862
 Intel Core i5-1245UE,9473
@@ -683,7 +683,7 @@ Intel Core i5-1245UL,15357
 Intel Core i5-12490F,20375
 Intel Core i5-12500,19725
 Intel Core i5-12500E,19615
-Intel Core i5-12500H,20394
+Intel Core i5-12500H,20395
 Intel Core i5-12500HL,23366
 Intel Core i5-12500T,16354
 Intel Core i5-12500TE,15472
@@ -694,10 +694,10 @@ Intel Core i5-12600H,20657
 Intel Core i5-12600HE,22827
 Intel Core i5-12600HL,23615
 Intel Core i5-12600HX,24386
-Intel Core i5-12600K,27542
+Intel Core i5-12600K,27543
 Intel Core i5-12600KF,27525
 Intel Core i5-12600T,17420
-Intel Core i5-1334U,13116
+Intel Core i5-1334U,13115
 Intel Core i5-1335U,13944
 Intel Core i5-1335UE,11647
 Intel Core i5-13400,23818
@@ -707,19 +707,19 @@ Intel Core i5-13400F,24970
 Intel Core i5-13400T,20263
 Intel Core i5-1340P,18417
 Intel Core i5-1340PE,18490
-Intel Core i5-13420H,17007
-Intel Core i5-13450HX,24792
-Intel Core i5-1345U,14034
+Intel Core i5-13420H,17006
+Intel Core i5-13450HX,24796
+Intel Core i5-1345U,14030
 Intel Core i5-1345UE,9577
 Intel Core i5-1345URE,10981
 Intel Core i5-13490F,26692
-Intel Core i5-13500,30960
+Intel Core i5-13500,30956
 Intel Core i5-13500E,25917
 Intel Core i5-13500H,21005
-Intel Core i5-13500HX,27635
+Intel Core i5-13500HX,27633
 Intel Core i5-13500T,22475
 Intel Core i5-13500TE,20511
-Intel Core i5-1350P,18757
+Intel Core i5-1350P,18728
 Intel Core i5-1350PRE,19945
 Intel Core i5-13600,31450
 Intel Core i5-13600H,23077
@@ -727,18 +727,18 @@ Intel Core i5-13600HE,23483
 Intel Core i5-13600HRE,14591
 Intel Core i5-13600HX,27451
 Intel Core i5-13600K,37537
-Intel Core i5-13600KF,37386
+Intel Core i5-13600KF,37387
 Intel Core i5-13600T,27956
-Intel Core i5-14400,25139
-Intel Core i5-14400F,25561
+Intel Core i5-14400,25140
+Intel Core i5-14400F,25557
 Intel Core i5-14400T,20501
 Intel Core i5-14450HX,23864
 Intel Core i5-14490F,26545
-Intel Core i5-14500,30965
+Intel Core i5-14500,30967
 Intel Core i5-14500HX,28451
 Intel Core i5-14500T,23040
-Intel Core i5-14600,36049
-Intel Core i5-14600K,38452
+Intel Core i5-14600,36057
+Intel Core i5-14600K,38450
 Intel Core i5-14600KF,38406
 Intel Core i5-14600T,26627
 Intel Core i5-2300 @ 2.80GHz,3477
@@ -754,10 +754,10 @@ Intel Core i5-2410M @ 2.30GHz,1955
 Intel Core i5-2415M @ 2.30GHz,1947
 Intel Core i5-2430M @ 2.40GHz,2019
 Intel Core i5-2435M @ 2.40GHz,2031
-Intel Core i5-2450M @ 2.50GHz,2078
+Intel Core i5-2450M @ 2.50GHz,2079
 Intel Core i5-2450P @ 3.20GHz,4273
 Intel Core i5-2467M @ 1.60GHz,1401
-Intel Core i5-2500 @ 3.30GHz,4096
+Intel Core i5-2500 @ 3.30GHz,4097
 Intel Core i5-2500K @ 3.30GHz,4144
 Intel Core i5-2500S @ 2.70GHz,3376
 Intel Core i5-2500T @ 2.30GHz,2929
@@ -788,9 +788,9 @@ Intel Core i5-3380M @ 2.90GHz,2948
 Intel Core i5-3427U @ 1.80GHz,2251
 Intel Core i5-3437U @ 1.90GHz,2167
 Intel Core i5-3439Y @ 1.50GHz,1957
-Intel Core i5-3450 @ 3.10GHz,4519
+Intel Core i5-3450 @ 3.10GHz,4520
 Intel Core i5-3450S @ 2.80GHz,4402
-Intel Core i5-3470 @ 3.20GHz,4662
+Intel Core i5-3470 @ 3.20GHz,4661
 Intel Core i5-3470S @ 2.90GHz,4369
 Intel Core i5-3470T @ 2.90GHz,3000
 Intel Core i5-3475S @ 2.90GHz,4325
@@ -817,7 +817,7 @@ Intel Core i5-4258U @ 2.40GHz,2609
 Intel Core i5-4260U @ 1.40GHz,2307
 Intel Core i5-4278U @ 2.60GHz,2825
 Intel Core i5-4288U @ 2.60GHz,2656
-Intel Core i5-4300M @ 2.60GHz,2959
+Intel Core i5-4300M @ 2.60GHz,2962
 Intel Core i5-4300U @ 1.90GHz,2489
 Intel Core i5-4300Y @ 1.60GHz,1485
 Intel Core i5-4302Y @ 1.60GHz,1580
@@ -849,16 +849,16 @@ Intel Core i5-4570T @ 2.90GHz,3214
 Intel Core i5-4570TE @ 2.70GHz,3148
 Intel Core i5-4590 @ 3.30GHz,5382
 Intel Core i5-4590S @ 3.00GHz,5126
-Intel Core i5-4590T @ 2.00GHz,4065
+Intel Core i5-4590T @ 2.00GHz,4062
 Intel Core i5-460M @ 2.53GHz,1320
 Intel Core i5-4670 @ 3.40GHz,5482
-Intel Core i5-4670K @ 3.40GHz,5582
+Intel Core i5-4670K @ 3.40GHz,5581
 Intel Core i5-4670K CPT @ 3.40GHz,5034
 Intel Core i5-4670R @ 3.00GHz,5233
 Intel Core i5-4670S @ 3.10GHz,5264
 Intel Core i5-4670T @ 2.30GHz,4495
 Intel Core i5-4690 @ 3.50GHz,5591
-Intel Core i5-4690K @ 3.50GHz,5682
+Intel Core i5-4690K @ 3.50GHz,5683
 Intel Core i5-4690S @ 3.20GHz,5476
 Intel Core i5-4690T @ 2.50GHz,4615
 Intel Core i5-470UM @ 1.33GHz,788
@@ -891,7 +891,7 @@ Intel Core i5-6350HQ @ 2.30GHz,4255
 Intel Core i5-6360U @ 2.00GHz,3122
 Intel Core i5-6400 @ 2.70GHz,5178
 Intel Core i5-6400T @ 2.20GHz,4254
-Intel Core i5-6402P @ 2.80GHz,5367
+Intel Core i5-6402P @ 2.80GHz,5365
 Intel Core i5-6440EQ @ 2.70GHz,5329
 Intel Core i5-6440HQ @ 2.60GHz,5021
 Intel Core i5-6442EQ @ 1.90GHz,4483
@@ -903,7 +903,7 @@ Intel Core i5-655K @ 3.20GHz,2017
 Intel Core i5-660 @ 3.33GHz,2395
 Intel Core i5-6600 @ 3.30GHz,6072
 Intel Core i5-6600K @ 3.50GHz,6305
-Intel Core i5-6600T @ 2.70GHz,5572
+Intel Core i5-6600T @ 2.70GHz,5573
 Intel Core i5-661 @ 3.33GHz,2387
 Intel Core i5-670 @ 3.47GHz,2553
 Intel Core i5-680 @ 3.60GHz,2626
@@ -913,7 +913,7 @@ Intel Core i5-7267U @ 3.10GHz,3623
 Intel Core i5-7287U @ 3.30GHz,3743
 Intel Core i5-7300HQ @ 2.50GHz,5081
 Intel Core i5-7300U @ 2.60GHz,3625
-Intel Core i5-7360U @ 2.30GHz,3824
+Intel Core i5-7360U @ 2.30GHz,3822
 Intel Core i5-7400 @ 3.00GHz,5480
 Intel Core i5-7400T @ 2.40GHz,4680
 Intel Core i5-7440EQ @ 2.90GHz,5711
@@ -923,7 +923,7 @@ Intel Core i5-750 @ 2.67GHz,2549
 Intel Core i5-7500 @ 3.40GHz,6037
 Intel Core i5-7500T @ 2.70GHz,5237
 Intel Core i5-760 @ 2.80GHz,2674
-Intel Core i5-7600 @ 3.50GHz,6585
+Intel Core i5-7600 @ 3.50GHz,6586
 Intel Core i5-7600K @ 3.80GHz,6817
 Intel Core i5-7600T @ 2.80GHz,5835
 Intel Core i5-760S @ 2.53GHz,5440
@@ -932,18 +932,18 @@ Intel Core i5-7Y54 @ 1.20GHz,2583
 Intel Core i5-7Y57 @ 1.20GHz,2549
 Intel Core i5-8200Y @ 1.30GHz,2258
 Intel Core i5-8210Y @ 1.60GHz,2726
-Intel Core i5-8250U @ 1.60GHz,5800
+Intel Core i5-8250U @ 1.60GHz,5799
 Intel Core i5-8257U @ 1.40GHz,7408
-Intel Core i5-8259U @ 2.30GHz,7808
+Intel Core i5-8259U @ 2.30GHz,7806
 Intel Core i5-8260U @ 1.60GHz,7261
 Intel Core i5-8265U @ 1.60GHz,5797
 Intel Core i5-8265UC @ 1.60GHz,5274
 Intel Core i5-8269U @ 2.60GHz,7111
 Intel Core i5-8279U @ 2.40GHz,7425
-Intel Core i5-8300H @ 2.30GHz,7362
+Intel Core i5-8300H @ 2.30GHz,7363
 Intel Core i5-8305G @ 2.80GHz,6917
 Intel Core i5-8350U @ 1.70GHz,6101
-Intel Core i5-8365U @ 1.60GHz,5951
+Intel Core i5-8365U @ 1.60GHz,5950
 Intel Core i5-8365UE @ 1.60GHz,5504
 Intel Core i5-8400 @ 2.80GHz,9231
 Intel Core i5-8400H @ 2.50GHz,7513
@@ -954,13 +954,13 @@ Intel Core i5-8500T @ 2.10GHz,7722
 Intel Core i5-8600 @ 3.10GHz,9969
 Intel Core i5-8600K @ 3.60GHz,10138
 Intel Core i5-8600T @ 2.30GHz,9176
-Intel Core i5-9300H @ 2.40GHz,7417
+Intel Core i5-9300H @ 2.40GHz,7418
 Intel Core i5-9300HF @ 2.40GHz,7213
 Intel Core i5-9400 @ 2.90GHz,9378
 Intel Core i5-9400F @ 2.90GHz,9461
 Intel Core i5-9400H @ 2.50GHz,7816
 Intel Core i5-9400T @ 1.80GHz,8141
-Intel Core i5-9500 @ 3.00GHz,9856
+Intel Core i5-9500 @ 3.00GHz,9857
 Intel Core i5-9500E @ 3.00GHz,9074
 Intel Core i5-9500F @ 3.00GHz,9997
 Intel Core i5-9500T @ 2.20GHz,8039
@@ -986,20 +986,20 @@ Intel Core i7-10700TE @ 2.00GHz,13430
 Intel Core i7-10710U @ 1.10GHz,9205
 Intel Core i7-10750H @ 2.60GHz,11469
 Intel Core i7-10810U @ 1.10GHz,8038
-Intel Core i7-10850H @ 2.70GHz,11536
+Intel Core i7-10850H @ 2.70GHz,11535
 Intel Core i7-10870H @ 2.20GHz,13989
-Intel Core i7-10875H @ 2.30GHz,14431
-Intel Core i7-11370H @ 3.30GHz,11537
+Intel Core i7-10875H @ 2.30GHz,14433
+Intel Core i7-11370H @ 3.30GHz,11538
 Intel Core i7-11375H @ 3.30GHz,11622
 Intel Core i7-11390H @ 3.40GHz,9699
 Intel Core i7-11600H @ 2.90GHz,15525
 Intel Core i7-1160G7 @ 1.20GHz,8718
-Intel Core i7-1165G7 @ 2.80GHz,9807
-Intel Core i7-11700 @ 2.50GHz,20633
+Intel Core i7-1165G7 @ 2.80GHz,9806
+Intel Core i7-11700 @ 2.50GHz,20632
 Intel Core i7-11700B @ 3.20GHz,21572
 Intel Core i7-11700F @ 2.50GHz,20791
 Intel Core i7-11700K @ 3.60GHz,24347
-Intel Core i7-11700KF @ 3.60GHz,23819
+Intel Core i7-11700KF @ 3.60GHz,23816
 Intel Core i7-11700T @ 1.40GHz,15338
 Intel Core i7-11800H @ 2.30GHz,19703
 Intel Core i7-1180G7 @ 1.30GHz,7803
@@ -1008,67 +1008,67 @@ Intel Core i7-11850HE @ 2.60GHz,20111
 Intel Core i7-1185G7 @ 3.00GHz,9957
 Intel Core i7-1185G7E @ 2.80GHz,9787
 Intel Core i7-1185GRE @ 2.80GHz,7767
-Intel Core i7-1195G7 @ 2.90GHz,10399
+Intel Core i7-1195G7 @ 2.90GHz,10402
 Intel Core i7-1250U,11228
-Intel Core i7-1255U,12945
-Intel Core i7-1260P,16562
+Intel Core i7-1255U,12944
+Intel Core i7-1260P,16563
 Intel Core i7-1260U,13315
-Intel Core i7-12650H,21509
+Intel Core i7-12650H,21507
 Intel Core i7-12650HX,22768
-Intel Core i7-1265U,13172
+Intel Core i7-1265U,13176
 Intel Core i7-1265UE,10183
 Intel Core i7-1265UL,18294
-Intel Core i7-12700,29937
+Intel Core i7-12700,29936
 Intel Core i7-12700E,28437
 Intel Core i7-12700F,30261
-Intel Core i7-12700H,25169
-Intel Core i7-12700K,34294
-Intel Core i7-12700KF,33987
+Intel Core i7-12700H,25168
+Intel Core i7-12700K,34293
+Intel Core i7-12700KF,33988
 Intel Core i7-12700T,21212
 Intel Core i7-12700TE,19259
-Intel Core i7-1270P,16371
+Intel Core i7-1270P,16372
 Intel Core i7-1270PE,16740
-Intel Core i7-12800H,23880
+Intel Core i7-12800H,23874
 Intel Core i7-12800HE,26096
 Intel Core i7-12800HX,31189
 Intel Core i7-1280P,20101
 Intel Core i7-12850HX,30612
-Intel Core i7-1355U,13988
+Intel Core i7-1355U,13986
 Intel Core i7-1360P,18439
-Intel Core i7-13620H,23461
-Intel Core i7-13650HX,30305
+Intel Core i7-13620H,23459
+Intel Core i7-13650HX,30303
 Intel Core i7-1365U,13729
 Intel Core i7-1365UE,10829
 Intel Core i7-1365URE,10891
-Intel Core i7-13700,36078
+Intel Core i7-13700,36076
 Intel Core i7-13700E,32992
-Intel Core i7-13700F,37928
+Intel Core i7-13700F,37925
 Intel Core i7-13700H,25994
 Intel Core i7-13700HX,31868
-Intel Core i7-13700K,45714
-Intel Core i7-13700KF,45601
+Intel Core i7-13700K,45716
+Intel Core i7-13700KF,45600
 Intel Core i7-13700T,27606
 Intel Core i7-13700TE,21953
 Intel Core i7-13705H,25544
-Intel Core i7-1370P,19699
+Intel Core i7-1370P,19695
 Intel Core i7-1370PE,19254
 Intel Core i7-1370PRE,19197
 Intel Core i7-13790F,42202
 Intel Core i7-13800H,26206
 Intel Core i7-13800HRE,19845
-Intel Core i7-13850HX,36505
-Intel Core i7-14650HX,33819
-Intel Core i7-14700,40680
-Intel Core i7-14700F,41456
-Intel Core i7-14700HX,36856
-Intel Core i7-14700K,52044
-Intel Core i7-14700KF,52140
+Intel Core i7-13850HX,36509
+Intel Core i7-14650HX,33815
+Intel Core i7-14700,40668
+Intel Core i7-14700F,41450
+Intel Core i7-14700HX,36872
+Intel Core i7-14700K,52045
+Intel Core i7-14700KF,52138
 Intel Core i7-14700T,30888
 Intel Core i7-14701E,26103
 Intel Core i7-14701TE,26039
 Intel Core i7-14790F,39292
 Intel Core i7-2600 @ 3.40GHz,5334
-Intel Core i7-2600K @ 3.40GHz,5478
+Intel Core i7-2600K @ 3.40GHz,5479
 Intel Core i7-2600S @ 2.80GHz,4628
 Intel Core i7-2610UE @ 1.50GHz,1527
 Intel Core i7-2617M @ 1.50GHz,1687
@@ -1089,19 +1089,19 @@ Intel Core i7-2720QM @ 2.20GHz,4029
 Intel Core i7-2760QM @ 2.40GHz,4285
 Intel Core i7-2820QM @ 2.30GHz,4363
 Intel Core i7-2840QM @ 2.40GHz,3842
-Intel Core i7-2860QM @ 2.50GHz,4572
+Intel Core i7-2860QM @ 2.50GHz,4566
 Intel Core i7-2920XM @ 2.50GHz,4269
 Intel Core i7-2960XM @ 2.70GHz,4646
 Intel Core i7-3517U @ 1.90GHz,2107
 Intel Core i7-3517UE @ 1.70GHz,2384
-Intel Core i7-3520M @ 2.90GHz,2844
+Intel Core i7-3520M @ 2.90GHz,2846
 Intel Core i7-3537U @ 2.00GHz,2349
 Intel Core i7-3540M @ 3.00GHz,2987
 Intel Core i7-3555LE @ 2.50GHz,2195
 Intel Core i7-3610QE @ 2.30GHz,5333
 Intel Core i7-3610QM @ 2.30GHz,5147
 Intel Core i7-3612QE @ 2.10GHz,4929
-Intel Core i7-3612QM @ 2.10GHz,4657
+Intel Core i7-3612QM @ 2.10GHz,4652
 Intel Core i7-3615QE @ 2.30GHz,5617
 Intel Core i7-3615QM @ 2.30GHz,5172
 Intel Core i7-3630QM @ 2.40GHz,5134
@@ -1110,7 +1110,7 @@ Intel Core i7-3635QM @ 2.40GHz,4798
 Intel Core i7-3667U @ 2.00GHz,2458
 Intel Core i7-3687U @ 2.10GHz,2620
 Intel Core i7-3689Y @ 1.50GHz,1967
-Intel Core i7-3720QM @ 2.60GHz,5571
+Intel Core i7-3720QM @ 2.60GHz,5572
 Intel Core i7-3740QM @ 2.70GHz,5708
 Intel Core i7-3770 @ 3.40GHz,6414
 Intel Core i7-3770K @ 3.50GHz,6509
@@ -1139,17 +1139,17 @@ Intel Core i7-4700EQ @ 2.40GHz,5417
 Intel Core i7-4700HQ @ 2.40GHz,5576
 Intel Core i7-4700MQ @ 2.40GHz,5358
 Intel Core i7-4702HQ @ 2.20GHz,5421
-Intel Core i7-4702MQ @ 2.20GHz,5171
+Intel Core i7-4702MQ @ 2.20GHz,5172
 Intel Core i7-4710HQ @ 2.50GHz,5531
 Intel Core i7-4710MQ @ 2.50GHz,5791
 Intel Core i7-4712HQ @ 2.30GHz,5303
-Intel Core i7-4712MQ @ 2.30GHz,5322
-Intel Core i7-4720HQ @ 2.60GHz,5733
+Intel Core i7-4712MQ @ 2.30GHz,5309
+Intel Core i7-4720HQ @ 2.60GHz,5734
 Intel Core i7-4722HQ @ 2.40GHz,5778
 Intel Core i7-4750HQ @ 2.00GHz,5648
 Intel Core i7-4760HQ @ 2.10GHz,6300
 Intel Core i7-4765T @ 2.00GHz,5034
-Intel Core i7-4770 @ 3.40GHz,7066
+Intel Core i7-4770 @ 3.40GHz,7067
 Intel Core i7-4770HQ @ 2.20GHz,6025
 Intel Core i7-4770K @ 3.50GHz,7143
 Intel Core i7-4770R @ 3.20GHz,6561
@@ -1160,7 +1160,7 @@ Intel Core i7-4771 @ 3.50GHz,7147
 Intel Core i7-4785T @ 2.20GHz,5490
 Intel Core i7-4790 @ 3.60GHz,7261
 Intel Core i7-4790K @ 4.00GHz,8063
-Intel Core i7-4790S @ 3.20GHz,6971
+Intel Core i7-4790S @ 3.20GHz,6972
 Intel Core i7-4790T @ 2.70GHz,6310
 Intel Core i7-4800MQ @ 2.70GHz,5785
 Intel Core i7-4810MQ @ 2.80GHz,6033
@@ -1199,7 +1199,7 @@ Intel Core i7-620LM @ 2.00GHz,1457
 Intel Core i7-620M @ 2.67GHz,1982
 Intel Core i7-620UM @ 1.07GHz,1091
 Intel Core i7-640LM @ 2.13GHz,1534
-Intel Core i7-640M @ 2.80GHz,2105
+Intel Core i7-640M @ 2.80GHz,2106
 Intel Core i7-640UM @ 1.20GHz,1073
 Intel Core i7-6498DU @ 2.50GHz,3372
 Intel Core i7-6500U @ 2.50GHz,3275
@@ -1211,7 +1211,7 @@ Intel Core i7-6650U @ 2.20GHz,3570
 Intel Core i7-6660U @ 2.40GHz,3601
 Intel Core i7-6700 @ 3.40GHz,8036
 Intel Core i7-6700HQ @ 2.60GHz,6523
-Intel Core i7-6700K @ 4.00GHz,8939
+Intel Core i7-6700K @ 4.00GHz,8938
 Intel Core i7-6700T @ 2.80GHz,6997
 Intel Core i7-6700TE @ 2.40GHz,6204
 Intel Core i7-6770HQ @ 2.60GHz,7060
@@ -1219,7 +1219,7 @@ Intel Core i7-6800K @ 3.40GHz,10711
 Intel Core i7-680UM @ 1.47GHz,1281
 Intel Core i7-6820EQ @ 2.80GHz,7025
 Intel Core i7-6820HK @ 2.70GHz,6995
-Intel Core i7-6820HQ @ 2.70GHz,6753
+Intel Core i7-6820HQ @ 2.70GHz,6752
 Intel Core i7-6822EQ @ 2.00GHz,5550
 Intel Core i7-6850K @ 3.60GHz,11377
 Intel Core i7-6900K @ 3.20GHz,14650
@@ -1228,21 +1228,21 @@ Intel Core i7-6950X @ 3.00GHz,17567
 Intel Core i7-6970HQ @ 2.80GHz,4632
 Intel Core i7-720QM @ 1.60GHz,1678
 Intel Core i7-740QM @ 1.73GHz,1846
-Intel Core i7-7500U @ 2.70GHz,3637
+Intel Core i7-7500U @ 2.70GHz,3636
 Intel Core i7-7560U @ 2.40GHz,3855
 Intel Core i7-7567U @ 3.50GHz,4114
 Intel Core i7-7600U @ 2.80GHz,3698
 Intel Core i7-7660U @ 2.50GHz,4029
 Intel Core i7-7700 @ 3.60GHz,8646
 Intel Core i7-7700HQ @ 2.80GHz,6883
-Intel Core i7-7700K @ 4.20GHz,9636
+Intel Core i7-7700K @ 4.20GHz,9635
 Intel Core i7-7700T @ 2.90GHz,7536
 Intel Core i7-7740X @ 4.30GHz,9692
 Intel Core i7-7800X @ 3.50GHz,12994
 Intel Core i7-7820EQ @ 3.00GHz,7061
 Intel Core i7-7820HK @ 2.90GHz,7405
 Intel Core i7-7820HQ @ 2.90GHz,7158
-Intel Core i7-7820X @ 3.60GHz,17163
+Intel Core i7-7820X @ 3.60GHz,17157
 Intel Core i7-7900X @ 3.30GHz,20363
 Intel Core i7-7920HQ @ 3.10GHz,7271
 Intel Core i7-7Y75 @ 1.30GHz,2538
@@ -1256,16 +1256,16 @@ Intel Core i7-8559U @ 2.70GHz,8251
 Intel Core i7-8565U @ 1.80GHz,5958
 Intel Core i7-8565UC @ 1.80GHz,6187
 Intel Core i7-8569U @ 2.80GHz,8160
-Intel Core i7-860 @ 2.80GHz,3024
+Intel Core i7-860 @ 2.80GHz,3025
 Intel Core i7-860S @ 2.53GHz,2365
 Intel Core i7-8650U @ 1.90GHz,6186
 Intel Core i7-8665U @ 1.90GHz,6177
 Intel Core i7-8665UE @ 1.70GHz,4852
 Intel Core i7-870 @ 2.93GHz,3168
 Intel Core i7-8700 @ 3.20GHz,12746
-Intel Core i7-8700B @ 3.20GHz,11776
-Intel Core i7-8700K @ 3.70GHz,13575
-Intel Core i7-8700T @ 2.40GHz,10217
+Intel Core i7-8700B @ 3.20GHz,11770
+Intel Core i7-8700K @ 3.70GHz,13574
+Intel Core i7-8700T @ 2.40GHz,10216
 Intel Core i7-8705G @ 3.10GHz,7611
 Intel Core i7-8706G @ 3.10GHz,7492
 Intel Core i7-8709G @ 3.10GHz,7934
@@ -1274,20 +1274,20 @@ Intel Core i7-8750H @ 2.20GHz,9750
 Intel Core i7-875K @ 2.93GHz,3194
 Intel Core i7-880 @ 3.07GHz,3429
 Intel Core i7-8809G @ 3.10GHz,8442
-Intel Core i7-8850H @ 2.60GHz,10055
+Intel Core i7-8850H @ 2.60GHz,10054
 Intel Core i7-920 @ 2.67GHz,2870
 Intel Core i7-920XM @ 2.00GHz,2021
 Intel Core i7-930 @ 2.80GHz,3007
 Intel Core i7-940 @ 2.93GHz,3050
 Intel Core i7-940XM @ 2.13GHz,2269
-Intel Core i7-950 @ 3.07GHz,3261
+Intel Core i7-950 @ 3.07GHz,3263
 Intel Core i7-960 @ 3.20GHz,3394
 Intel Core i7-965 @ 3.20GHz,3375
 Intel Core i7-970 @ 3.20GHz,6562
-Intel Core i7-9700 @ 3.00GHz,13192
+Intel Core i7-9700 @ 3.00GHz,13191
 Intel Core i7-9700E @ 2.60GHz,12561
 Intel Core i7-9700F @ 3.00GHz,13162
-Intel Core i7-9700K @ 3.60GHz,14402
+Intel Core i7-9700K @ 3.60GHz,14403
 Intel Core i7-9700KF @ 3.60GHz,14259
 Intel Core i7-9700T @ 2.00GHz,10501
 Intel Core i7-9700TE @ 1.80GHz,9720
@@ -1298,7 +1298,7 @@ Intel Core i7-980 @ 3.33GHz,6898
 Intel Core i7-9800X @ 3.80GHz,18151
 Intel Core i7-980X @ 3.33GHz,6826
 Intel Core i7-985 @ 3.47GHz,3928
-Intel Core i7-9850H @ 2.60GHz,10845
+Intel Core i7-9850H @ 2.60GHz,10844
 Intel Core i7-9850HE @ 2.70GHz,9972
 Intel Core i7-9850HL @ 1.90GHz,7897
 Intel Core i7-990X @ 3.47GHz,7143
@@ -1313,12 +1313,12 @@ Intel Core i9-10900K @ 3.70GHz,22301
 Intel Core i9-10900KF @ 3.70GHz,22194
 Intel Core i9-10900T @ 1.90GHz,14721
 Intel Core i9-10900TE @ 1.80GHz,14159
-Intel Core i9-10900X @ 3.70GHz,22326
+Intel Core i9-10900X @ 3.70GHz,22321
 Intel Core i9-10910 @ 3.60GHz,21374
 Intel Core i9-10920X @ 3.50GHz,25793
 Intel Core i9-10940X @ 3.30GHz,27645
-Intel Core i9-10980HK @ 2.40GHz,15098
-Intel Core i9-10980XE @ 3.00GHz,31984
+Intel Core i9-10980HK @ 2.40GHz,15099
+Intel Core i9-10980XE @ 3.00GHz,31985
 Intel Core i9-11900 @ 2.50GHz,22347
 Intel Core i9-11900F @ 2.50GHz,22093
 Intel Core i9-11900H @ 2.50GHz,19876
@@ -1326,40 +1326,40 @@ Intel Core i9-11900K @ 3.50GHz,24946
 Intel Core i9-11900KB @ 3.30GHz,22724
 Intel Core i9-11900KF @ 3.50GHz,24516
 Intel Core i9-11900T @ 1.50GHz,18515
-Intel Core i9-11950H @ 2.60GHz,20448
+Intel Core i9-11950H @ 2.60GHz,20447
 Intel Core i9-11980HK @ 2.60GHz,22134
 Intel Core i9-12900,33658
 Intel Core i9-12900E,28170
 Intel Core i9-12900F,35812
-Intel Core i9-12900H,26801
+Intel Core i9-12900H,26798
 Intel Core i9-12900HK,25241
 Intel Core i9-12900HX,33196
 Intel Core i9-12900K,41144
-Intel Core i9-12900KF,40710
+Intel Core i9-12900KF,40692
 Intel Core i9-12900KS,43440
 Intel Core i9-12900T,28950
 Intel Core i9-12900TE,23606
 Intel Core i9-12950HX,31196
-Intel Core i9-13900,44887
+Intel Core i9-13900,44879
 Intel Core i9-13900E,40314
-Intel Core i9-13900F,48444
-Intel Core i9-13900H,27193
+Intel Core i9-13900F,48426
+Intel Core i9-13900H,27197
 Intel Core i9-13900HK,26843
-Intel Core i9-13900HX,41915
-Intel Core i9-13900K,58220
-Intel Core i9-13900KF,57594
-Intel Core i9-13900KS,60531
+Intel Core i9-13900HX,41917
+Intel Core i9-13900K,58219
+Intel Core i9-13900KF,57593
+Intel Core i9-13900KS,60529
 Intel Core i9-13900T,42230
 Intel Core i9-13900TE,20602
 Intel Core i9-13905H,29724
-Intel Core i9-13950HX,40661
-Intel Core i9-13980HX,45653
-Intel Core i9-14900,44889
+Intel Core i9-13950HX,40656
+Intel Core i9-13980HX,45654
+Intel Core i9-14900,44891
 Intel Core i9-14900F,46673
-Intel Core i9-14900HX,44188
-Intel Core i9-14900K,58374
+Intel Core i9-14900HX,44187
+Intel Core i9-14900K,58372
 Intel Core i9-14900KF,58273
-Intel Core i9-14900KS,60180
+Intel Core i9-14900KS,60195
 Intel Core i9-14900T,38413
 Intel Core i9-14901E,30298
 Intel Core i9-7900X @ 3.30GHz,20887
@@ -1368,9 +1368,9 @@ Intel Core i9-7940X @ 3.10GHz,25317
 Intel Core i9-7960X @ 2.80GHz,27571
 Intel Core i9-7980XE @ 2.60GHz,29619
 Intel Core i9-8950HK @ 2.90GHz,10342
-Intel Core i9-9820X @ 3.30GHz,20547
-Intel Core i9-9880H @ 2.30GHz,13484
-Intel Core i9-9900 @ 3.10GHz,16269
+Intel Core i9-9820X @ 3.30GHz,20553
+Intel Core i9-9880H @ 2.30GHz,13483
+Intel Core i9-9900 @ 3.10GHz,16268
 Intel Core i9-9900B @ 3.10GHz,15893
 Intel Core i9-9900K @ 3.60GHz,18067
 Intel Core i9-9900KF @ 3.60GHz,18004
@@ -1408,7 +1408,7 @@ Intel Core Ultra 3 105UL,10285
 Intel Core Ultra 3 205,26193
 Intel Core Ultra 3 205T,23436
 Intel Core Ultra 5 115U,11714
-Intel Core Ultra 5 125H,20494
+Intel Core Ultra 5 125H,20511
 Intel Core Ultra 5 125U,16887
 Intel Core Ultra 5 134U,13127
 Intel Core Ultra 5 135H,21992
@@ -1418,65 +1418,65 @@ Intel Core Ultra 5 225F,31160
 Intel Core Ultra 5 225H,28588
 Intel Core Ultra 5 225T,25530
 Intel Core Ultra 5 225U,17897
-Intel Core Ultra 5 226V,18085
-Intel Core Ultra 5 228V,18255
+Intel Core Ultra 5 226V,18090
+Intel Core Ultra 5 228V,18212
 Intel Core Ultra 5 230F,33137
 Intel Core Ultra 5 235,40050
 Intel Core Ultra 5 235H,29546
 Intel Core Ultra 5 235HX,41115
-Intel Core Ultra 5 235T,32374
+Intel Core Ultra 5 235T,32312
 Intel Core Ultra 5 235U,17239
 Intel Core Ultra 5 236V,18386
-Intel Core Ultra 5 238V,18324
+Intel Core Ultra 5 238V,18333
 Intel Core Ultra 5 245,40168
 Intel Core Ultra 5 245HX,40388
-Intel Core Ultra 5 245K,43202
+Intel Core Ultra 5 245K,43204
 Intel Core Ultra 5 245KF,43226
 Intel Core Ultra 5 245T,30919
-Intel Core Ultra 5 250K Plus,53453
+Intel Core Ultra 5 250K Plus,53371
 Intel Core Ultra 5 250KF Plus,50746
 Intel Core Ultra 5 325,21039
 Intel Core Ultra 5 332,15337
 Intel Core Ultra 5 335,20798
-Intel Core Ultra 5 336H,25660
+Intel Core Ultra 5 336H,26546
 Intel Core Ultra 5 338H,29726
-Intel Core Ultra 7 155H,24608
-Intel Core Ultra 7 155U,16164
+Intel Core Ultra 7 155H,24606
+Intel Core Ultra 7 155U,16165
 Intel Core Ultra 7 164U,12464
 Intel Core Ultra 7 165H,25834
 Intel Core Ultra 7 165U,16765
-Intel Core Ultra 7 255H,30568
-Intel Core Ultra 7 255HX,48968
+Intel Core Ultra 7 255H,30571
+Intel Core Ultra 7 255HX,48986
 Intel Core Ultra 7 255U,17845
 Intel Core Ultra 7 256V,19541
-Intel Core Ultra 7 258V,18933
-Intel Core Ultra 7 265,49746
+Intel Core Ultra 7 258V,18931
+Intel Core Ultra 7 265,49744
 Intel Core Ultra 7 265F,49478
 Intel Core Ultra 7 265H,34270
-Intel Core Ultra 7 265HX,48687
-Intel Core Ultra 7 265K,58710
-Intel Core Ultra 7 265KF,58566
+Intel Core Ultra 7 265HX,48694
+Intel Core Ultra 7 265K,58712
+Intel Core Ultra 7 265KF,58569
 Intel Core Ultra 7 265T,38385
 Intel Core Ultra 7 265U,17657
 Intel Core Ultra 7 266V,19311
-Intel Core Ultra 7 268V,19461
-Intel Core Ultra 7 270K Plus,68424
+Intel Core Ultra 7 268V,19464
+Intel Core Ultra 7 270K Plus,68510
 Intel Core Ultra 7 355,20954
-Intel Core Ultra 7 356H,33691
+Intel Core Ultra 7 356H,33574
 Intel Core Ultra 7 365,21555
 Intel Core Ultra 7 366H,33282
-Intel Core Ultra 9 185H,29168
-Intel Core Ultra 9 275HX,55929
-Intel Core Ultra 9 285,57508
-Intel Core Ultra 9 285H,34335
-Intel Core Ultra 9 285HX,57410
-Intel Core Ultra 9 285K,67298
+Intel Core Ultra 9 185H,29169
+Intel Core Ultra 9 275HX,55918
+Intel Core Ultra 9 285,57507
+Intel Core Ultra 9 285H,34355
+Intel Core Ultra 9 285HX,57415
+Intel Core Ultra 9 285K,67299
 Intel Core Ultra 9 285T,39536
-Intel Core Ultra 9 288V,19991
-Intel Core Ultra 9 290HX Plus,66082
+Intel Core Ultra 9 288V,19982
+Intel Core Ultra 9 290HX Plus,66194
 Intel Core Ultra 9 290K Plus,60860
 Intel Core Ultra 9 386H,35270
-Intel Core Ultra X7 358H,33960
+Intel Core Ultra X7 358H,33965
 Intel Core Ultra X7 368H,34293
 Intel Core Ultra X9 388H,36317
 Intel Core2 6320 @ 1.86GHz,849
@@ -1563,7 +1563,7 @@ Intel Core2 Duo T6570 @ 2.10GHz,774
 Intel Core2 Duo T6600 @ 2.20GHz,810
 Intel Core2 Duo T6670 @ 2.20GHz,841
 Intel Core2 Duo T7100 @ 1.80GHz,603
-Intel Core2 Duo T7200 @ 2.00GHz,742
+Intel Core2 Duo T7200 @ 2.00GHz,745
 Intel Core2 Duo T7250 @ 2.00GHz,701
 Intel Core2 Duo T7300 @ 2.00GHz,705
 Intel Core2 Duo T7400 @ 2.16GHz,755
@@ -1609,7 +1609,7 @@ Intel Core2 Quad Q8400 @ 2.66GHz,2085
 Intel Core2 Quad Q9000 @ 2.00GHz,1597
 Intel Core2 Quad Q9100 @ 2.26GHz,1806
 Intel Core2 Quad Q9300 @ 2.50GHz,2016
-Intel Core2 Quad Q9400 @ 2.66GHz,2161
+Intel Core2 Quad Q9400 @ 2.66GHz,2162
 Intel Core2 Quad Q9450 @ 2.66GHz,2203
 Intel Core2 Quad Q9500 @ 2.83GHz,2246
 Intel Core2 Quad Q9505 @ 2.83GHz,2159
@@ -1624,8 +1624,8 @@ Intel CoreT i5-1350P,19429
 Intel CoreTM Ultra 5 115U,12771
 Intel E3000 @ 3.40GHz,1629
 Intel N100,5339
-Intel N150,5387
-Intel N200,4598
+Intel N150,5388
+Intel N200,4599
 Intel N250,4888
 Intel N50,2609
 Intel N95,5299
@@ -1968,6 +1968,7 @@ Intel Xeon 6741P,100660
 Intel Xeon 6745P,84210
 Intel Xeon 6747P,101685
 Intel Xeon 674X,84536
+Intel Xeon 6761P,14291
 Intel Xeon 676X,90312
 Intel Xeon 6780E,86734
 Intel Xeon 6781P,117946
@@ -2054,7 +2055,7 @@ Intel Xeon E-2226G @ 3.40GHz,11167
 Intel Xeon E-2226GE @ 3.40GHz,10026
 Intel Xeon E-2234 @ 3.60GHz,9659
 Intel Xeon E-2236 @ 3.40GHz,13806
-Intel Xeon E-2244G @ 3.80GHz,9564
+Intel Xeon E-2244G @ 3.80GHz,9557
 Intel Xeon E-2246G @ 3.60GHz,13907
 Intel Xeon E-2254ML @ 1.70GHz,6333
 Intel Xeon E-2274G @ 4.00GHz,9779
@@ -2066,7 +2067,7 @@ Intel Xeon E-2278G @ 3.40GHz,16912
 Intel Xeon E-2278GE @ 3.30GHz,15956
 Intel Xeon E-2278GEL @ 2.00GHz,12024
 Intel Xeon E-2286G @ 4.00GHz,13988
-Intel Xeon E-2286M @ 2.40GHz,15105
+Intel Xeon E-2286M @ 2.40GHz,15093
 Intel Xeon E-2288G @ 3.70GHz,17443
 Intel Xeon E-2314 @ 2.80GHz,7758
 Intel Xeon E-2324G @ 3.10GHz,10339
@@ -2095,7 +2096,7 @@ Intel Xeon E3-1220L v3 @ 1.10GHz,1407
 Intel Xeon E3-1225 @ 3.10GHz,3911
 Intel Xeon E3-1225 V2 @ 3.20GHz,4699
 Intel Xeon E3-1225 v3 @ 3.20GHz,5316
-Intel Xeon E3-1225 v5 @ 3.30GHz,5956
+Intel Xeon E3-1225 v5 @ 3.30GHz,5958
 Intel Xeon E3-1225 v6 @ 3.30GHz,5804
 Intel Xeon E3-1226 v3 @ 3.30GHz,5522
 Intel Xeon E3-1230 @ 3.20GHz,5139
@@ -2114,7 +2115,7 @@ Intel Xeon E3-1240 v5 @ 3.50GHz,8253
 Intel Xeon E3-1240 v6 @ 3.70GHz,8724
 Intel Xeon E3-1240L v3 @ 2.00GHz,5679
 Intel Xeon E3-1240L v5 @ 2.10GHz,6547
-Intel Xeon E3-1241 v3 @ 3.50GHz,7149
+Intel Xeon E3-1241 v3 @ 3.50GHz,7148
 Intel Xeon E3-1245 @ 3.30GHz,5356
 Intel Xeon E3-1245 V2 @ 3.40GHz,6359
 Intel Xeon E3-1245 v3 @ 3.40GHz,7011
@@ -2272,7 +2273,7 @@ Intel Xeon E5-2648L v3 @ 1.80GHz,9847
 Intel Xeon E5-2648L v4 @ 1.80GHz,11839
 Intel Xeon E5-2649 v3 @ 2.30GHz,12399
 Intel Xeon E5-2650 @ 2.00GHz,7352
-Intel Xeon E5-2650 v2 @ 2.60GHz,9783
+Intel Xeon E5-2650 v2 @ 2.60GHz,9784
 Intel Xeon E5-2650 v3 @ 2.30GHz,11652
 Intel Xeon E5-2650 v4 @ 2.20GHz,13218
 Intel Xeon E5-2650L @ 1.80GHz,6055
@@ -2295,14 +2296,14 @@ Intel Xeon E5-2666 v3 @ 2.90GHz,14022
 Intel Xeon E5-2666 v4 @ 2.80GHz,17958
 Intel Xeon E5-2667 @ 2.90GHz,7462
 Intel Xeon E5-2667 v2 @ 3.30GHz,12155
-Intel Xeon E5-2667 v3 @ 3.20GHz,12394
+Intel Xeon E5-2667 v3 @ 3.20GHz,12384
 Intel Xeon E5-2667 v4 @ 3.20GHz,13797
 Intel Xeon E5-2669 v3 @ 2.30GHz,16107
 Intel Xeon E5-2670 @ 2.60GHz,8880
 Intel Xeon E5-2670 v2 @ 2.50GHz,11281
 Intel Xeon E5-2670 v3 @ 2.30GHz,13476
 Intel Xeon E5-2673 v2 @ 3.30GHz,12127
-Intel Xeon E5-2673 v3 @ 2.40GHz,13636
+Intel Xeon E5-2673 v3 @ 2.40GHz,13638
 Intel Xeon E5-2673 v4 @ 2.30GHz,21098
 Intel Xeon E5-2675 v3 @ 1.80GHz,13180
 Intel Xeon E5-2676 v3 @ 2.40GHz,13055
@@ -2312,9 +2313,9 @@ Intel Xeon E5-2679 v4 @ 2.50GHz,24131
 Intel Xeon E5-2680 @ 2.70GHz,9264
 Intel Xeon E5-2680 v2 @ 2.80GHz,12644
 Intel Xeon E5-2680 v3 @ 2.50GHz,14822
-Intel Xeon E5-2680 v4 @ 2.40GHz,17220
+Intel Xeon E5-2680 v4 @ 2.40GHz,17221
 Intel Xeon E5-2680R v4 @ 2.40GHz,17487
-Intel Xeon E5-2682 v4 @ 2.50GHz,17598
+Intel Xeon E5-2682 v4 @ 2.50GHz,17638
 Intel Xeon E5-2683 v3 @ 2.00GHz,14778
 Intel Xeon E5-2683 v4 @ 2.10GHz,17506
 Intel Xeon E5-2685 v3 @ 2.60GHz,12944
@@ -2322,14 +2323,14 @@ Intel Xeon E5-2686 v3 @ 2.00GHz,18148
 Intel Xeon E5-2686 v4 @ 2.30GHz,19713
 Intel Xeon E5-2687W @ 3.10GHz,10010
 Intel Xeon E5-2687W v2 @ 3.40GHz,12340
-Intel Xeon E5-2687W v3 @ 3.10GHz,14567
+Intel Xeon E5-2687W v3 @ 3.10GHz,14464
 Intel Xeon E5-2687W v4 @ 3.00GHz,17755
-Intel Xeon E5-2689 @ 2.60GHz,9457
+Intel Xeon E5-2689 @ 2.60GHz,9458
 Intel Xeon E5-2689 v4 @ 3.10GHz,17099
 Intel Xeon E5-2690 @ 2.90GHz,9721
 Intel Xeon E5-2690 v2 @ 3.00GHz,13293
 Intel Xeon E5-2690 v3 @ 2.60GHz,16071
-Intel Xeon E5-2690 v4 @ 2.60GHz,19231
+Intel Xeon E5-2690 v4 @ 2.60GHz,19228
 Intel Xeon E5-2692 v2 @ 2.20GHz,12119
 Intel Xeon E5-2695 v2 @ 2.40GHz,13324
 Intel Xeon E5-2695 v3 @ 2.30GHz,16577
@@ -2346,7 +2347,7 @@ Intel Xeon E5-2698 v3 @ 2.30GHz,18929
 Intel Xeon E5-2698 v4 @ 2.20GHz,22603
 Intel Xeon E5-2698B v3 @ 2.00GHz,16287
 Intel Xeon E5-2698R v4 @ 2.20GHz,25605
-Intel Xeon E5-2699 v3 @ 2.30GHz,20029
+Intel Xeon E5-2699 v3 @ 2.30GHz,20042
 Intel Xeon E5-2699 v4 @ 2.20GHz,24653
 Intel Xeon E5-2699A v4 @ 2.40GHz,26739
 Intel Xeon E5-2699C v4 @ 2.20GHz,21113
@@ -2645,11 +2646,11 @@ Intel Xeon Silver 4510,32296
 Intel Xeon Silver 4510T,29119
 Intel Xeon Silver 4514Y,30483
 Intel Xeon W-10855M @ 2.80GHz,12228
-Intel Xeon W-10885M @ 2.40GHz,15429
+Intel Xeon W-10885M @ 2.40GHz,15418
 Intel Xeon W-11155MLE @ 1.80GHz,8394
 Intel Xeon W-11555MLE @ 1.90GHz,11324
 Intel Xeon W-11555MRE @ 2.60GHz,17484
-Intel Xeon W-11855M @ 3.20GHz,17359
+Intel Xeon W-11855M @ 3.20GHz,17367
 Intel Xeon W-11865MLE @ 1.50GHz,15917
 Intel Xeon W-11865MRE @ 2.60GHz,17634
 Intel Xeon W-11955M @ 2.60GHz,21532
@@ -2672,14 +2673,14 @@ Intel Xeon W-1370 @ 2.90GHz,22948
 Intel Xeon W-1370P @ 3.60GHz,23539
 Intel Xeon W-1390 @ 2.80GHz,23427
 Intel Xeon W-1390P @ 3.50GHz,24840
-Intel Xeon W-2102 @ 2.90GHz,5134
+Intel Xeon W-2102 @ 2.90GHz,5137
 Intel Xeon W-2104 @ 3.20GHz,5525
 Intel Xeon W-2123 @ 3.60GHz,8518
 Intel Xeon W-2125 @ 4.00GHz,9969
 Intel Xeon W-2133 @ 3.60GHz,12601
 Intel Xeon W-2135 @ 3.70GHz,14382
 Intel Xeon W-2140B @ 3.20GHz,17308
-Intel Xeon W-2145 @ 3.70GHz,18000
+Intel Xeon W-2145 @ 3.70GHz,18003
 Intel Xeon W-2150B @ 3.00GHz,20451
 Intel Xeon W-2155 @ 3.30GHz,20681
 Intel Xeon W-2170B @ 2.50GHz,24448
@@ -2688,9 +2689,9 @@ Intel Xeon W-2191B @ 2.30GHz,28103
 Intel Xeon W-2195 @ 2.30GHz,28025
 Intel Xeon W-2223 @ 3.60GHz,8587
 Intel Xeon W-2225 @ 4.10GHz,10411
-Intel Xeon W-2235 @ 3.80GHz,14191
+Intel Xeon W-2235 @ 3.80GHz,14189
 Intel Xeon W-2245 @ 3.90GHz,19416
-Intel Xeon W-2255 @ 3.70GHz,22568
+Intel Xeon W-2255 @ 3.70GHz,22574
 Intel Xeon W-2265 @ 3.50GHz,25738
 Intel Xeon W-2275 @ 3.30GHz,27782
 Intel Xeon W-2295 @ 3.00GHz,30796
